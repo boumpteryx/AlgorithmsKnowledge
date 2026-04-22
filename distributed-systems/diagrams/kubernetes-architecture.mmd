@@ -1,0 +1,63 @@
+graph TB
+    subgraph "Control Plane"
+        API[API Server<br/>kubectl interface]
+        Scheduler[Scheduler<br/>Pod placement]
+        Controller[Controller Manager<br/>Desired state]
+        etcd[(etcd<br/>Cluster state)]
+    end
+    
+    subgraph "Node 1"
+        Kubelet1[Kubelet<br/>Node agent]
+        Proxy1[kube-proxy<br/>Network rules]
+        Runtime1[Container Runtime<br/>Docker/containerd]
+        Pod1A[Pod 1A]
+        Pod1B[Pod 1B]
+    end
+    
+    subgraph "Node 2"
+        Kubelet2[Kubelet<br/>Node agent]
+        Proxy2[kube-proxy<br/>Network rules]
+        Runtime2[Container Runtime<br/>Docker/containerd]
+        Pod2A[Pod 2A]
+        Pod2B[Pod 2B]
+    end
+    
+    subgraph "Node 3"
+        Kubelet3[Kubelet<br/>Node agent]
+        Proxy3[kube-proxy<br/>Network rules]
+        Runtime3[Container Runtime<br/>Docker/containerd]
+        Pod3A[Pod 3A]
+        Pod3B[Pod 3B]
+    end
+    
+    API --> etcd
+    API --> Scheduler
+    API --> Controller
+    
+    API --> Kubelet1
+    API --> Kubelet2
+    API --> Kubelet3
+    
+    Kubelet1 --> Runtime1
+    Runtime1 --> Pod1A
+    Runtime1 --> Pod1B
+    
+    Kubelet2 --> Runtime2
+    Runtime2 --> Pod2A
+    Runtime2 --> Pod2B
+    
+    Kubelet3 --> Runtime3
+    Runtime3 --> Pod3A
+    Runtime3 --> Pod3B
+    
+    Proxy1 --> Pod1A
+    Proxy1 --> Pod1B
+    Proxy2 --> Pod2A
+    Proxy2 --> Pod2B
+    Proxy3 --> Pod3A
+    Proxy3 --> Pod3B
+    
+    style API fill:#e1f5ff
+    style etcd fill:#ffe1e1
+    style Scheduler fill:#fff4e1
+    style Controller fill:#e1ffe1

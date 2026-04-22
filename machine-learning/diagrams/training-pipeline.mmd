@@ -1,0 +1,52 @@
+graph LR
+    subgraph "Data Preparation"
+        Raw[Raw Data]
+        Split[Train/Val/Test Split]
+        Preprocess[Preprocessing]
+    end
+    
+    subgraph "Feature Engineering"
+        Select[Feature Selection]
+        Transform[Feature Transform]
+        Create[Feature Creation]
+    end
+    
+    subgraph "Model Training"
+        Init[Initialize Model]
+        Train[Training Loop]
+        Validate[Validation]
+    end
+    
+    subgraph "Optimization"
+        Loss[Compute Loss]
+        Grad[Compute Gradients]
+        Update[Update Parameters]
+    end
+    
+    subgraph "Evaluation"
+        Test[Test Set Evaluation]
+        Metrics[Compute Metrics]
+        Analysis[Error Analysis]
+    end
+    
+    Raw --> Split
+    Split --> Preprocess
+    Preprocess --> Select
+    Select --> Transform
+    Transform --> Create
+    Create --> Init
+    Init --> Train
+    Train --> Loss
+    Loss --> Grad
+    Grad --> Update
+    Update --> Train
+    Train --> Validate
+    Validate --> Decision{Converged?}
+    Decision -->|No| Train
+    Decision -->|Yes| Test
+    Test --> Metrics
+    Metrics --> Analysis
+    
+    style Train fill:#e1f5ff
+    style Loss fill:#ffe1e1
+    style Test fill:#e1ffe1

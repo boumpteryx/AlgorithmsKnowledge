@@ -1,0 +1,38 @@
+graph TB
+    subgraph "Expert System"
+        UI[User Interface]
+        IE[Inference Engine]
+        KB[Knowledge Base]
+        EF[Explanation Facility]
+        KA[Knowledge Acquisition]
+    end
+    
+    subgraph "Knowledge Base Components"
+        Facts[Facts Database]
+        Rules[Rules Database]
+        Heuristics[Heuristics]
+    end
+    
+    subgraph "Inference Engine Components"
+        FC[Forward Chaining]
+        BC[Backward Chaining]
+        CR[Conflict Resolution]
+    end
+    
+    User[User/Domain Expert] --> UI
+    UI --> IE
+    IE --> KB
+    KB --> Facts
+    KB --> Rules
+    KB --> Heuristics
+    IE --> FC
+    IE --> BC
+    IE --> CR
+    IE --> EF
+    EF --> UI
+    User --> KA
+    KA --> KB
+    
+    style IE fill:#e1f5ff
+    style KB fill:#fff4e1
+    style UI fill:#f0f0f0

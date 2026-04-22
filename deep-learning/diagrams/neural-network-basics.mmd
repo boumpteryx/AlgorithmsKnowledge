@@ -1,0 +1,63 @@
+graph LR
+    subgraph "Input Layer"
+        I1((x1))
+        I2((x2))
+        I3((x3))
+    end
+    
+    subgraph "Hidden Layer 1"
+        H11((h11))
+        H12((h12))
+        H13((h13))
+        H14((h14))
+    end
+    
+    subgraph "Hidden Layer 2"
+        H21((h21))
+        H22((h22))
+        H23((h23))
+    end
+    
+    subgraph "Output Layer"
+        O1((y1))
+        O2((y2))
+    end
+    
+    I1 --> H11
+    I1 --> H12
+    I1 --> H13
+    I1 --> H14
+    I2 --> H11
+    I2 --> H12
+    I2 --> H13
+    I2 --> H14
+    I3 --> H11
+    I3 --> H12
+    I3 --> H13
+    I3 --> H14
+    
+    H11 --> H21
+    H11 --> H22
+    H11 --> H23
+    H12 --> H21
+    H12 --> H22
+    H12 --> H23
+    H13 --> H21
+    H13 --> H22
+    H13 --> H23
+    H14 --> H21
+    H14 --> H22
+    H14 --> H23
+    
+    H21 --> O1
+    H21 --> O2
+    H22 --> O1
+    H22 --> O2
+    H23 --> O1
+    H23 --> O2
+    
+    style I1 fill:#e1f5ff
+    style I2 fill:#e1f5ff
+    style I3 fill:#e1f5ff
+    style O1 fill:#e1ffe1
+    style O2 fill:#e1ffe1

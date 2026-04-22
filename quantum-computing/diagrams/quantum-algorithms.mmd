@@ -1,0 +1,41 @@
+graph TB
+    subgraph "Search & Optimization"
+        Grover[Grover's Algorithm<br/>Unstructured Search<br/>O√N speedup]
+        QAOA[QAOA<br/>Combinatorial<br/>Optimization]
+        QA[Quantum Annealing<br/>Optimization]
+    end
+    
+    subgraph "Number Theory"
+        Shor[Shor's Algorithm<br/>Integer Factorization<br/>Exponential speedup]
+        QFT[Quantum Fourier<br/>Transform<br/>Basis change]
+        QPE[Quantum Phase<br/>Estimation<br/>Eigenvalue finding]
+    end
+    
+    subgraph "Linear Algebra"
+        HHL[HHL Algorithm<br/>Linear Systems<br/>Exponential speedup]
+        QSV[Quantum Singular<br/>Value Decomposition]
+    end
+    
+    subgraph "Machine Learning"
+        VQE[VQE<br/>Variational Quantum<br/>Eigensolver]
+        QNN[Quantum Neural<br/>Networks<br/>Parameterized circuits]
+        QKernel[Quantum Kernel<br/>Methods<br/>Feature maps]
+    end
+    
+    subgraph "Simulation"
+        QSim[Quantum Simulation<br/>Chemistry & Physics<br/>Natural advantage]
+        Hamiltonian[Hamiltonian<br/>Simulation<br/>Time evolution]
+    end
+    
+    QFT --> Shor
+    QFT --> QPE
+    QPE --> HHL
+    QPE --> VQE
+    
+    Grover --> QAOA
+    VQE --> QNN
+    
+    style Shor fill:#e1f5ff
+    style Grover fill:#ffe1e1
+    style VQE fill:#fff4e1
+    style QSim fill:#e1ffe1

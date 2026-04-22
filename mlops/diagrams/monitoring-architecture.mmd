@@ -1,0 +1,60 @@
+graph LR
+    subgraph "Production Model"
+        Input[Input Data]
+        Model[ML Model]
+        Output[Predictions]
+    end
+    
+    subgraph "Data Monitoring"
+        DataQuality[Data Quality Checks]
+        DataDrift[Data Drift Detection]
+        Schema[Schema Validation]
+    end
+    
+    subgraph "Model Monitoring"
+        Performance[Performance Metrics]
+        ConceptDrift[Concept Drift]
+        Latency[Latency Tracking]
+    end
+    
+    subgraph "System Monitoring"
+        Resources[Resource Usage]
+        Errors[Error Rates]
+        Throughput[Throughput]
+    end
+    
+    subgraph "Alerting & Response"
+        Metrics[(Metrics Store)]
+        Alerts[Alert Manager]
+        Dashboard[Monitoring Dashboard]
+        Retrain[Trigger Retraining]
+    end
+    
+    Input --> DataQuality
+    Input --> DataDrift
+    Input --> Schema
+    Input --> Model
+    Model --> Output
+    Output --> Performance
+    Output --> ConceptDrift
+    Model --> Latency
+    Model --> Resources
+    Model --> Errors
+    Model --> Throughput
+    
+    DataQuality --> Metrics
+    DataDrift --> Metrics
+    Performance --> Metrics
+    ConceptDrift --> Metrics
+    Latency --> Metrics
+    Resources --> Metrics
+    Errors --> Metrics
+    
+    Metrics --> Dashboard
+    Metrics --> Alerts
+    Alerts --> Retrain
+    
+    style DataDrift fill:#e1f5ff
+    style Performance fill:#ffe1e1
+    style Alerts fill:#fff4e1
+    style Dashboard fill:#e1ffe1

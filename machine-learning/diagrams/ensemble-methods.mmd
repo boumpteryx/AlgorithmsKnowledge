@@ -1,0 +1,40 @@
+graph TB
+    subgraph "Ensemble Learning"
+        Base[Base Models]
+    end
+    
+    subgraph "Bagging"
+        BagData[Bootstrap Samples]
+        BagModels[Parallel Models]
+        BagVote[Majority Vote/Average]
+    end
+    
+    subgraph "Boosting"
+        BoostSeq[Sequential Training]
+        BoostWeight[Reweight Errors]
+        BoostCombine[Weighted Combination]
+    end
+    
+    subgraph "Stacking"
+        StackBase[Base Models Layer]
+        StackMeta[Meta-Learner]
+        StackPred[Final Prediction]
+    end
+    
+    Base --> BagData
+    BagData --> BagModels
+    BagModels --> BagVote
+    BagVote --> RF[Random Forest]
+    
+    Base --> BoostSeq
+    BoostSeq --> BoostWeight
+    BoostWeight --> BoostCombine
+    BoostCombine --> GB[Gradient Boosting<br/>XGBoost, LightGBM]
+    
+    Base --> StackBase
+    StackBase --> StackMeta
+    StackMeta --> StackPred
+    
+    style BagModels fill:#e1f5ff
+    style BoostSeq fill:#ffe1e1
+    style StackMeta fill:#e1ffe1

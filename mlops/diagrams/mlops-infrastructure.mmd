@@ -1,0 +1,56 @@
+graph TB
+    subgraph "Data Layer"
+        DataLake[(Data Lake)]
+        FeatureStore[(Feature Store)]
+        DataWarehouse[(Data Warehouse)]
+    end
+    
+    subgraph "ML Platform"
+        ExpTrack[Experiment Tracking]
+        ModelReg[Model Registry]
+        Pipeline[Pipeline Orchestrator]
+    end
+    
+    subgraph "Compute"
+        TrainCluster[Training Cluster<br/>GPU/TPU]
+        InferCluster[Inference Cluster<br/>CPU/GPU]
+        Batch[Batch Processing]
+    end
+    
+    subgraph "Serving"
+        API[REST API]
+        Stream[Stream Processing]
+        Edge[Edge Devices]
+    end
+    
+    subgraph "Monitoring"
+        Metrics[Metrics Collection]
+        Logs[Log Aggregation]
+        Alerts[Alert Manager]
+        Dashboard[Dashboards]
+    end
+    
+    DataLake --> FeatureStore
+    DataWarehouse --> FeatureStore
+    FeatureStore --> Pipeline
+    Pipeline --> TrainCluster
+    TrainCluster --> ExpTrack
+    ExpTrack --> ModelReg
+    ModelReg --> InferCluster
+    InferCluster --> API
+    InferCluster --> Stream
+    ModelReg --> Edge
+    Batch --> InferCluster
+    
+    API --> Metrics
+    Stream --> Metrics
+    Edge --> Metrics
+    Metrics --> Dashboard
+    Metrics --> Alerts
+    TrainCluster --> Logs
+    InferCluster --> Logs
+    
+    style FeatureStore fill:#e1f5ff
+    style ModelReg fill:#ffe1e1
+    style InferCluster fill:#fff4e1
+    style Dashboard fill:#e1ffe1

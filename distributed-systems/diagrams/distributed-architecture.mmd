@@ -1,0 +1,64 @@
+graph TB
+    subgraph "Client Layer"
+        Client1[Client 1]
+        Client2[Client 2]
+        Client3[Client 3]
+    end
+    
+    subgraph "Load Balancer"
+        LB[Load Balancer<br/>Traffic Distribution]
+    end
+    
+    subgraph "Application Layer"
+        App1[App Server 1]
+        App2[App Server 2]
+        App3[App Server 3]
+    end
+    
+    subgraph "Cache Layer"
+        Cache[(Distributed Cache<br/>Redis/Memcached)]
+    end
+    
+    subgraph "Data Layer"
+        DB1[(Primary DB)]
+        DB2[(Replica DB)]
+        DB3[(Replica DB)]
+    end
+    
+    subgraph "Message Queue"
+        MQ[Message Broker<br/>Kafka/RabbitMQ]
+    end
+    
+    subgraph "Storage"
+        Storage[(Object Storage<br/>S3/Blob)]
+    end
+    
+    Client1 --> LB
+    Client2 --> LB
+    Client3 --> LB
+    LB --> App1
+    LB --> App2
+    LB --> App3
+    
+    App1 --> Cache
+    App2 --> Cache
+    App3 --> Cache
+    
+    App1 --> DB1
+    App2 --> DB1
+    App3 --> DB1
+    DB1 --> DB2
+    DB1 --> DB3
+    
+    App1 --> MQ
+    App2 --> MQ
+    App3 --> MQ
+    
+    App1 --> Storage
+    App2 --> Storage
+    App3 --> Storage
+    
+    style LB fill:#e1f5ff
+    style Cache fill:#ffe1e1
+    style DB1 fill:#fff4e1
+    style MQ fill:#e1ffe1

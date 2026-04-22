@@ -1,0 +1,48 @@
+graph TB
+    subgraph "Variational Autoencoders"
+        VAEInput[Input Data]
+        VAEEncoder[Encoder]
+        VAELatent[Latent Space<br/>μ, σ]
+        VAESample[Sample z]
+        VAEDecoder[Decoder]
+        VAEOutput[Reconstructed Data]
+    end
+    
+    subgraph "Generative Adversarial Networks"
+        GANNoise[Random Noise z]
+        GANGen[Generator G]
+        GANFake[Fake Data]
+        GANReal[Real Data]
+        GANDisc[Discriminator D]
+        GANLoss[Adversarial Loss]
+    end
+    
+    subgraph "Diffusion Models"
+        DiffReal[Real Data x₀]
+        DiffForward[Forward Process<br/>Add Noise]
+        DiffNoisy[Noisy Data xₜ]
+        DiffReverse[Reverse Process<br/>Denoise]
+        DiffGen[Generated Data]
+    end
+    
+    VAEInput --> VAEEncoder
+    VAEEncoder --> VAELatent
+    VAELatent --> VAESample
+    VAESample --> VAEDecoder
+    VAEDecoder --> VAEOutput
+    
+    GANNoise --> GANGen
+    GANGen --> GANFake
+    GANReal --> GANDisc
+    GANFake --> GANDisc
+    GANDisc --> GANLoss
+    GANLoss --> GANGen
+    
+    DiffReal --> DiffForward
+    DiffForward --> DiffNoisy
+    DiffNoisy --> DiffReverse
+    DiffReverse --> DiffGen
+    
+    style VAELatent fill:#e1f5ff
+    style GANGen fill:#ffe1e1
+    style DiffReverse fill:#e1ffe1

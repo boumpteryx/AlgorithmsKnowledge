@@ -1,0 +1,40 @@
+graph LR
+    Input[Input Image<br/>224x224x3]
+    
+    subgraph "Feature Extraction"
+        Conv1[Conv Layer 1<br/>+ ReLU]
+        Pool1[Max Pooling]
+        Conv2[Conv Layer 2<br/>+ ReLU]
+        Pool2[Max Pooling]
+        Conv3[Conv Layer 3<br/>+ ReLU]
+        Pool3[Max Pooling]
+    end
+    
+    subgraph "Classification"
+        Flatten[Flatten]
+        FC1[Fully Connected<br/>+ ReLU]
+        Dropout[Dropout]
+        FC2[Fully Connected]
+        Softmax[Softmax]
+    end
+    
+    Output[Class Probabilities]
+    
+    Input --> Conv1
+    Conv1 --> Pool1
+    Pool1 --> Conv2
+    Conv2 --> Pool2
+    Pool2 --> Conv3
+    Conv3 --> Pool3
+    Pool3 --> Flatten
+    Flatten --> FC1
+    FC1 --> Dropout
+    Dropout --> FC2
+    FC2 --> Softmax
+    Softmax --> Output
+    
+    style Input fill:#e1f5ff
+    style Conv1 fill:#ffe1e1
+    style Conv2 fill:#ffe1e1
+    style Conv3 fill:#ffe1e1
+    style Output fill:#e1ffe1

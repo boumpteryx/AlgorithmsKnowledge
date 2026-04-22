@@ -1,0 +1,25 @@
+graph TB
+    Start([Business Problem]) --> Define[1. Problem Definition]
+    Define --> Collect[2. Data Collection]
+    Collect --> Explore[3. Data Exploration]
+    Explore --> Prepare[4. Data Preparation]
+    Prepare --> Model[5. Modeling]
+    Model --> Evaluate[6. Evaluation]
+    
+    Evaluate --> Decision{Good Enough?}
+    Decision -->|No| Iterate[Iterate]
+    Iterate --> Prepare
+    Decision -->|Yes| Deploy[7. Deployment]
+    
+    Deploy --> Monitor[8. Monitoring]
+    Monitor --> Check{Performance OK?}
+    Check -->|Yes| Monitor
+    Check -->|No| Retrain[Retrain Model]
+    Retrain --> Collect
+    
+    Deploy --> End([Production System])
+    
+    style Define fill:#e1f5ff
+    style Model fill:#ffe1e1
+    style Deploy fill:#e1ffe1
+    style Monitor fill:#fff4e1

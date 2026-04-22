@@ -1,0 +1,41 @@
+graph TB
+    subgraph "Encoder"
+        InputEmbed[Input Embedding<br/>+ Positional Encoding]
+        EncSelfAttn[Multi-Head<br/>Self-Attention]
+        EncNorm1[Add & Norm]
+        EncFFN[Feed Forward<br/>Network]
+        EncNorm2[Add & Norm]
+    end
+    
+    subgraph "Decoder"
+        OutputEmbed[Output Embedding<br/>+ Positional Encoding]
+        DecSelfAttn[Masked Multi-Head<br/>Self-Attention]
+        DecNorm1[Add & Norm]
+        DecCrossAttn[Multi-Head<br/>Cross-Attention]
+        DecNorm2[Add & Norm]
+        DecFFN[Feed Forward<br/>Network]
+        DecNorm3[Add & Norm]
+    end
+    
+    Input[Input Sequence] --> InputEmbed
+    InputEmbed --> EncSelfAttn
+    EncSelfAttn --> EncNorm1
+    EncNorm1 --> EncFFN
+    EncFFN --> EncNorm2
+    
+    Output[Output Sequence] --> OutputEmbed
+    OutputEmbed --> DecSelfAttn
+    DecSelfAttn --> DecNorm1
+    DecNorm1 --> DecCrossAttn
+    EncNorm2 --> DecCrossAttn
+    DecCrossAttn --> DecNorm2
+    DecNorm2 --> DecFFN
+    DecFFN --> DecNorm3
+    DecNorm3 --> Linear[Linear Layer]
+    Linear --> Softmax[Softmax]
+    Softmax --> Prediction[Predictions]
+    
+    style EncSelfAttn fill:#e1f5ff
+    style DecSelfAttn fill:#ffe1e1
+    style DecCrossAttn fill:#fff4e1
+    style Prediction fill:#e1ffe1

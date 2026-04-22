@@ -1,0 +1,38 @@
+graph LR
+    subgraph "Input"
+        Facts[Known Facts]
+        Goal[Goal/Query]
+    end
+    
+    subgraph "Reasoning Engine"
+        Match[Pattern Matching]
+        Select[Rule Selection]
+        Execute[Rule Execution]
+        Update[Knowledge Update]
+    end
+    
+    subgraph "Knowledge"
+        KB[(Knowledge Base)]
+        WM[(Working Memory)]
+    end
+    
+    subgraph "Output"
+        Conclusion[Conclusions]
+        Explanation[Explanation Trace]
+    end
+    
+    Facts --> WM
+    Goal --> Match
+    WM --> Match
+    KB --> Match
+    Match --> Select
+    Select --> Execute
+    Execute --> Update
+    Update --> WM
+    Update --> Conclusion
+    Execute --> Explanation
+    
+    style Match fill:#e1f5ff
+    style Execute fill:#ffe1e1
+    style KB fill:#fff4e1
+    style WM fill:#e1ffe1

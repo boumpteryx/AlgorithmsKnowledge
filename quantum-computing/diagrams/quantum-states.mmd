@@ -1,0 +1,39 @@
+graph TB
+    subgraph "Classical Bit"
+        C0[State: 0]
+        C1[State: 1]
+    end
+    
+    subgraph "Quantum Qubit"
+        Q[Superposition State<br/>α|0⟩ + β|1⟩]
+        Q0[|0⟩ basis state]
+        Q1[|1⟩ basis state]
+    end
+    
+    subgraph "Measurement"
+        M[Measure Qubit]
+        M0[Outcome: 0<br/>Probability: |α|²]
+        M1[Outcome: 1<br/>Probability: |β|²]
+    end
+    
+    subgraph "Bloch Sphere"
+        Bloch[3D Representation<br/>θ, φ angles]
+        North[|0⟩ North Pole]
+        South[|1⟩ South Pole]
+        Equator[Superposition<br/>on Equator]
+    end
+    
+    Q --> Q0
+    Q --> Q1
+    Q --> M
+    M --> M0
+    M --> M1
+    
+    Q --> Bloch
+    Bloch --> North
+    Bloch --> South
+    Bloch --> Equator
+    
+    style Q fill:#e1f5ff
+    style M fill:#ffe1e1
+    style Bloch fill:#e1ffe1

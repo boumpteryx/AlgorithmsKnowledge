@@ -1,0 +1,38 @@
+graph TB
+    subgraph "Single-Qubit Gates"
+        X[X Gate<br/>Bit Flip<br/>|0⟩↔|1⟩]
+        Y[Y Gate<br/>Bit+Phase Flip]
+        Z[Z Gate<br/>Phase Flip]
+        H[Hadamard<br/>Superposition]
+        S[S Gate<br/>Phase π/2]
+        T[T Gate<br/>Phase π/4]
+    end
+    
+    subgraph "Two-Qubit Gates"
+        CNOT[CNOT<br/>Controlled-NOT<br/>Entanglement]
+        CZ[CZ<br/>Controlled-Z]
+        SWAP[SWAP<br/>Exchange States]
+    end
+    
+    subgraph "Multi-Qubit Gates"
+        Toffoli[Toffoli<br/>CCNOT<br/>3-qubit]
+        Fredkin[Fredkin<br/>CSWAP<br/>3-qubit]
+    end
+    
+    subgraph "Rotation Gates"
+        Rx[Rx θ<br/>X-axis Rotation]
+        Ry[Ry θ<br/>Y-axis Rotation]
+        Rz[Rz θ<br/>Z-axis Rotation]
+    end
+    
+    Input[Input Qubit|s⟩] --> X
+    Input --> H
+    Input --> Rx
+    
+    X --> CNOT
+    H --> CNOT
+    CNOT --> Toffoli
+    
+    style H fill:#e1f5ff
+    style CNOT fill:#ffe1e1
+    style Toffoli fill:#e1ffe1

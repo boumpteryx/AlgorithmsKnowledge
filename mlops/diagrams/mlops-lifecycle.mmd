@@ -1,0 +1,47 @@
+graph TB
+    subgraph "Development"
+        Data[Data Collection<br/>& Preparation]
+        Experiment[Experimentation<br/>& Training]
+        Validate[Model Validation]
+    end
+    
+    subgraph "Deployment"
+        Package[Model Packaging]
+        Deploy[Deployment]
+        Serve[Model Serving]
+    end
+    
+    subgraph "Operations"
+        Monitor[Monitoring]
+        Drift[Drift Detection]
+        Alert[Alerting]
+    end
+    
+    subgraph "Governance"
+        Registry[Model Registry]
+        Audit[Audit Trail]
+        Compliance[Compliance Check]
+    end
+    
+    Data --> Experiment
+    Experiment --> Validate
+    Validate --> Decision{Approved?}
+    Decision -->|No| Experiment
+    Decision -->|Yes| Registry
+    Registry --> Package
+    Package --> Deploy
+    Deploy --> Serve
+    Serve --> Monitor
+    Monitor --> Drift
+    Drift --> Alert
+    Alert --> Retrain{Retrain?}
+    Retrain -->|Yes| Data
+    Retrain -->|No| Monitor
+    
+    Registry --> Audit
+    Audit --> Compliance
+    
+    style Experiment fill:#e1f5ff
+    style Deploy fill:#ffe1e1
+    style Monitor fill:#fff4e1
+    style Registry fill:#e1ffe1

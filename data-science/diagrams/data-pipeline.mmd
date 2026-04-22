@@ -1,0 +1,51 @@
+graph LR
+    subgraph "Data Sources"
+        DB[(Databases)]
+        API[APIs]
+        Files[Files]
+        Stream[Streams]
+    end
+    
+    subgraph "Ingestion"
+        Extract[Extract]
+        Validate[Validate]
+    end
+    
+    subgraph "Processing"
+        Clean[Clean]
+        Transform[Transform]
+        Enrich[Enrich]
+    end
+    
+    subgraph "Storage"
+        Raw[(Raw Data)]
+        Processed[(Processed Data)]
+        Features[(Feature Store)]
+    end
+    
+    subgraph "Analysis"
+        EDA[Exploratory Analysis]
+        Model[Modeling]
+        Viz[Visualization]
+    end
+    
+    DB --> Extract
+    API --> Extract
+    Files --> Extract
+    Stream --> Extract
+    Extract --> Validate
+    Validate --> Raw
+    Raw --> Clean
+    Clean --> Transform
+    Transform --> Enrich
+    Enrich --> Processed
+    Processed --> Features
+    Features --> EDA
+    Features --> Model
+    EDA --> Viz
+    Model --> Viz
+    
+    style Extract fill:#e1f5ff
+    style Clean fill:#ffe1e1
+    style Transform fill:#fff4e1
+    style Model fill:#e1ffe1

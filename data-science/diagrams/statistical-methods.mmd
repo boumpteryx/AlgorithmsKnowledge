@@ -1,0 +1,39 @@
+graph TB
+    subgraph "Descriptive Statistics"
+        Central[Central Tendency<br/>Mean, Median, Mode]
+        Spread[Spread<br/>Variance, Std Dev, Range]
+        Shape[Distribution Shape<br/>Skewness, Kurtosis]
+    end
+    
+    subgraph "Inferential Statistics"
+        Estimation[Estimation<br/>Point & Interval]
+        HypTest[Hypothesis Testing<br/>t-test, ANOVA, Chi-square]
+        Regression[Regression Analysis<br/>Linear, Logistic]
+    end
+    
+    subgraph "Probability"
+        Dist[Distributions<br/>Normal, Binomial, Poisson]
+        Bayes[Bayesian Methods<br/>Prior, Posterior]
+        Sampling[Sampling Theory<br/>CLT, Law of Large Numbers]
+    end
+    
+    subgraph "Advanced Methods"
+        TimeSeries[Time Series<br/>ARIMA, Forecasting]
+        Multivariate[Multivariate Analysis<br/>PCA, Factor Analysis]
+        NonParam[Non-parametric<br/>Rank Tests, Bootstrap]
+    end
+    
+    Central --> Estimation
+    Spread --> HypTest
+    Shape --> Dist
+    Dist --> Bayes
+    Sampling --> Estimation
+    Estimation --> Regression
+    HypTest --> TimeSeries
+    Regression --> Multivariate
+    Bayes --> NonParam
+    
+    style Central fill:#e1f5ff
+    style HypTest fill:#ffe1e1
+    style Bayes fill:#fff4e1
+    style TimeSeries fill:#e1ffe1

@@ -1,0 +1,31 @@
+graph TB
+    ML[Machine Learning]
+    
+    ML --> Supervised[Supervised Learning]
+    ML --> Unsupervised[Unsupervised Learning]
+    ML --> SemiSupervised[Semi-Supervised Learning]
+    ML --> Reinforcement[Reinforcement Learning]
+    
+    Supervised --> Classification[Classification<br/>Discrete Output]
+    Supervised --> Regression[Regression<br/>Continuous Output]
+    
+    Classification --> Binary[Binary<br/>2 Classes]
+    Classification --> MultiClass[Multi-Class<br/>3+ Classes]
+    Classification --> MultiLabel[Multi-Label<br/>Multiple Tags]
+    
+    Unsupervised --> Clustering[Clustering<br/>Group Similar Data]
+    Unsupervised --> DimRed[Dimensionality Reduction<br/>Reduce Features]
+    Unsupervised --> Association[Association Rules<br/>Find Relationships]
+    
+    SemiSupervised --> SelfTrain[Self-Training]
+    SemiSupervised --> CoTrain[Co-Training]
+    SemiSupervised --> GraphBased[Graph-Based]
+    
+    Reinforcement --> ValueBased[Value-Based<br/>Q-Learning]
+    Reinforcement --> PolicyBased[Policy-Based<br/>Policy Gradient]
+    Reinforcement --> ActorCritic[Actor-Critic<br/>Hybrid]
+    
+    style ML fill:#e1f5ff
+    style Supervised fill:#ffe1e1
+    style Unsupervised fill:#fff4e1
+    style Reinforcement fill:#e1ffe1

@@ -1,0 +1,56 @@
+graph TB
+    subgraph "Data Parallel Training"
+        Data[Training Data]
+        Split[Data Split]
+        Worker1[Worker 1<br/>Model Copy]
+        Worker2[Worker 2<br/>Model Copy]
+        Worker3[Worker 3<br/>Model Copy]
+        Sync[Gradient Sync<br/>All-Reduce]
+        Update[Update Model]
+    end
+    
+    subgraph "Model Parallel Training"
+        Model[Large Model]
+        Layer1[Layer 1-3<br/>GPU 1]
+        Layer2[Layer 4-6<br/>GPU 2]
+        Layer3[Layer 7-9<br/>GPU 3]
+        Forward[Forward Pass]
+        Backward[Backward Pass]
+    end
+    
+    subgraph "Parameter Server"
+        PS[Parameter Server]
+        PSWorker1[Worker 1]
+        PSWorker2[Worker 2]
+        PSWorker3[Worker 3]
+        Pull[Pull Parameters]
+        Push[Push Gradients]
+    end
+    
+    Data --> Split
+    Split --> Worker1
+    Split --> Worker2
+    Split --> Worker3
+    Worker1 --> Sync
+    Worker2 --> Sync
+    Worker3 --> Sync
+    Sync --> Update
+    
+    Model --> Layer1
+    Layer1 --> Layer2
+    Layer2 --> Layer3
+    Layer3 --> Forward
+    Forward --> Backward
+    
+    PS --> Pull
+    Pull --> PSWorker1
+    Pull --> PSWorker2
+    Pull --> PSWorker3
+    PSWorker1 --> Push
+    PSWorker2 --> Push
+    PSWorker3 --> Push
+    Push --> PS
+    
+    style Sync fill:#e1f5ff
+    style Layer2 fill:#ffe1e1
+    style PS fill:#e1ffe1

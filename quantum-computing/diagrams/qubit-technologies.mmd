@@ -1,0 +1,54 @@
+graph TB
+    subgraph "Superconducting Qubits"
+        SC[Josephson Junctions<br/>IBM, Google, Rigetti]
+        SCPros[+ Fast gates<br/>+ Scalable fabrication]
+        SCCons[- Requires mK temps<br/>- Short coherence]
+    end
+    
+    subgraph "Trapped Ions"
+        TI[Laser-controlled ions<br/>IonQ, Honeywell]
+        TIPros[+ Long coherence<br/>+ High fidelity]
+        TICons[- Slow gates<br/>- Complex control]
+    end
+    
+    subgraph "Photonic"
+        PH[Light-based qubits<br/>Xanadu, PsiQuantum]
+        PHPros[+ Room temperature<br/>+ Low decoherence]
+        PHCons[- Probabilistic gates<br/>- Detection losses]
+    end
+    
+    subgraph "Topological"
+        TOP[Majorana fermions<br/>Microsoft]
+        TOPPros[+ Inherent protection<br/>+ Fault tolerance]
+        TOPCons[- Experimental stage<br/>- Complex fabrication]
+    end
+    
+    subgraph "Neutral Atoms"
+        NA[Optical tweezers<br/>QuEra, Pasqal]
+        NAPros[+ Flexible geometry<br/>+ Long coherence]
+        NACons[- Complex control<br/>- Loading challenges]
+    end
+    
+    subgraph "Silicon Spin"
+        SI[Electron spins<br/>Intel, SiQure]
+        SIPros[+ CMOS compatible<br/>+ Small footprint]
+        SICons[- Complex control<br/>- Scaling challenges]
+    end
+    
+    SC --> SCPros
+    SC --> SCCons
+    TI --> TIPros
+    TI --> TICons
+    PH --> PHPros
+    PH --> PHCons
+    TOP --> TOPPros
+    TOP --> TOPCons
+    NA --> NAPros
+    NA --> NACons
+    SI --> SIPros
+    SI --> SICons
+    
+    style SC fill:#e1f5ff
+    style TI fill:#ffe1e1
+    style PH fill:#fff4e1
+    style TOP fill:#e1ffe1
