@@ -21,6 +21,42 @@ This repository serves as a personal knowledge base and mental map for algorithm
 - Reference diagrams in markdown using: `![Diagram Description](diagrams/diagram-name.png)`
 - Naming convention: Use kebab-case for diagram files (e.g., `neural-network-architecture.mmd`)
 
+#### Rendering Diagrams to PNG
+
+**IMPORTANT**: The `.mmd` files need to be rendered to PNG before the diagrams will display in markdown.
+
+**Option 1: Using VS Code Extension (Easiest)**
+1. Install "Markdown Preview Mermaid Support" extension in VS Code
+2. Open any markdown file with mermaid references
+3. The extension will render diagrams in the preview
+4. Right-click on rendered diagram → "Save Image As" → save as PNG in the same diagrams/ folder
+
+**Option 2: Using Online Mermaid Editor**
+1. Go to https://mermaid.live/
+2. Copy content from .mmd file
+3. Paste into editor
+4. Click "Download PNG"
+5. Save to the corresponding diagrams/ folder
+
+**Option 3: Using mermaid-cli (Requires Node.js)**
+```bash
+# Install Node.js first, then:
+npx -y @mermaid-js/mermaid-cli -i path/to/diagram.mmd -o path/to/diagram.png -b transparent
+
+# Or use the batch script (after installing Node.js):
+scripts\render-diagrams.bat
+```
+
+**Current Status**:
+- All 22 .mmd files have been rendered to PNG
+- PNG files are in their respective diagrams/ folders
+- Markdown files correctly reference these PNG files
+
+**After rendering, verify that:**
+1. PNG files exist in the same directory as their .mmd sources
+2. Markdown files reference the PNG files correctly
+3. PNG files are committed to git (they are NOT in .gitignore)
+
 ### 3. Content Guidelines
 - Use clear, hierarchical structure with proper heading levels
 - Include cross-references between related topics
