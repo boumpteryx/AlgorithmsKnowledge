@@ -23,53 +23,53 @@ MLOps (Machine Learning Operations) is the practice of deploying, monitoring, an
 
 ### 1. Data Management
 
-- **[Data Versioning](data-versioning.md)** - DVC, Git LFS, data lineage
-- **[Data Quality](data-quality.md)** - Validation, profiling, monitoring
-- **[Feature Stores](feature-stores.md)** - Centralized feature management
-- **[Data Pipelines](data-pipelines.md)** - ETL/ELT workflows
-- **[Data Governance](data-governance.md)** - Privacy, security, compliance
+- **[Data Versioning](pages/data-versioning.md)** - DVC, Git LFS, data lineage
+- **[Data Quality](pages/data-quality.md)** - Validation, profiling, monitoring
+- **[Feature Stores](pages/feature-stores.md)** - Centralized feature management
+- **[Data Pipelines](pages/data-pipelines.md)** - ETL/ELT workflows
+- **[Data Governance](pages/data-governance.md)** - Privacy, security, compliance
 
 ### 2. Model Development
 
-- **[Experiment Tracking](experiment-tracking.md)** - MLflow, Weights & Biases
-- **[Model Versioning](model-versioning.md)** - Model registry, lineage
-- **[Hyperparameter Tuning](hyperparameter-tuning.md)** - Automated optimization
-- **[Reproducible Environments](reproducible-environments.md)** - Docker, conda
-- **[Collaborative Development](collaborative-dev.md)** - Code review, notebooks
+- **[Experiment Tracking](pages/experiment-tracking.md)** - MLflow, Weights & Biases
+- **[Model Versioning](pages/model-versioning.md)** - Model registry, lineage
+- **[Hyperparameter Tuning](pages/hyperparameter-tuning.md)** - Automated optimization
+- **[Reproducible Environments](pages/reproducible-environments.md)** - Docker, conda
+- **[Collaborative Development](pages/collaborative-dev.md)** - Code review, notebooks
 
 ### 3. Model Training
 
-- **[Training Pipelines](training-pipelines.md)** - Automated training workflows
-- **[Distributed Training](distributed-training.md)** - Multi-GPU, multi-node
-- **[Resource Management](resource-management.md)** - GPU scheduling, cost optimization
-- **[Training Monitoring](training-monitoring.md)** - Metrics, logs, alerts
-- **[Model Validation](model-validation.md)** - Performance testing
+- **[Training Pipelines](pages/training-pipelines.md)** - Automated training workflows
+- **[Distributed Training](pages/distributed-training.md)** - Multi-GPU, multi-node
+- **[Resource Management](pages/resource-management.md)** - GPU scheduling, cost optimization
+- **[Training Monitoring](pages/training-monitoring.md)** - Metrics, logs, alerts
+- **[Model Validation](pages/model-validation.md)** - Performance testing
 
 ### 4. Model Deployment
 
-- **[Deployment Strategies](deployment-strategies.md)** - Blue-green, canary, A/B testing
-- **[Model Serving](model-serving.md)** - REST APIs, gRPC, batch inference
-- **[Containerization](containerization.md)** - Docker, Kubernetes
-- **[Model Optimization](model-optimization.md)** - Quantization, pruning, distillation
-- **[Edge Deployment](edge-deployment.md)** - Mobile, IoT devices
+- **[Deployment Strategies](pages/deployment-strategies.md)** - Blue-green, canary, A/B testing
+- **[Model Serving](pages/model-serving.md)** - REST APIs, gRPC, batch inference
+- **[Containerization](pages/containerization.md)** - Docker, Kubernetes
+- **[Model Optimization](pages/model-optimization.md)** - Quantization, pruning, distillation
+- **[Edge Deployment](pages/edge-deployment.md)** - Mobile, IoT devices
 
 ### 5. Monitoring and Maintenance
 
 ![Monitoring Architecture](diagrams/monitoring-architecture.png)
 
-- **[Model Monitoring](model-monitoring.md)** - Performance metrics, drift detection
-- **[Data Drift Detection](data-drift.md)** - Input distribution changes
-- **[Concept Drift Detection](concept-drift.md)** - Target distribution changes
-- **[Alerting](alerting.md)** - Automated notifications
-- **[Model Retraining](model-retraining.md)** - Automated retraining triggers
+- **[Model Monitoring](pages/model-monitoring.md)** - Performance metrics, drift detection
+- **[Data Drift Detection](pages/data-drift.md)** - Input distribution changes
+- **[Concept Drift Detection](pages/concept-drift.md)** - Target distribution changes
+- **[Alerting](pages/alerting.md)** - Automated notifications
+- **[Model Retraining](pages/model-retraining.md)** - Automated retraining triggers
 
 ### 6. Governance and Compliance
 
-- **[Model Governance](model-governance.md)** - Policies, approval workflows
-- **[Audit Trails](audit-trails.md)** - Tracking changes and decisions
-- **[Explainability](explainability.md)** - Model interpretability
-- **[Bias Detection](bias-detection.md)** - Fairness monitoring
-- **[Regulatory Compliance](compliance.md)** - GDPR, CCPA, industry standards
+- **[Model Governance](pages/model-governance.md)** - Policies, approval workflows
+- **[Audit Trails](pages/audit-trails.md)** - Tracking changes and decisions
+- **[Explainability](pages/explainability.md)** - Model interpretability
+- **[Bias Detection](pages/bias-detection.md)** - Fairness monitoring
+- **[Regulatory Compliance](pages/compliance.md)** - GDPR, CCPA, industry standards
 
 ## MLOps Architecture
 
@@ -98,53 +98,63 @@ MLOps (Machine Learning Operations) is the practice of deploying, monitoring, an
 
 ### CI/CD for ML
 
-- **[Continuous Integration](ci-ml.md)** - Automated testing, validation
-- **[Continuous Training](ct.md)** - Automated model retraining
-- **[Continuous Deployment](cd-ml.md)** - Automated model deployment
-- **[Testing Strategies](testing-ml.md)** - Unit, integration, model tests
-- **[Pipeline Automation](pipeline-automation.md)** - End-to-end automation
+- **[Continuous Integration](pages/ci-ml.md)** - Automated testing, validation
+- **[Continuous Training](pages/ct.md)** - Automated model retraining
+- **[Continuous Deployment](pages/cd-ml.md)** - Automated model deployment
+- **[Testing Strategies](pages/testing-ml.md)** - Unit, integration, model tests
+- **[Pipeline Automation](pages/pipeline-automation.md)** - End-to-end automation
 
 ## Tools and Technologies
 
 ### Experiment Tracking
 
-- **MLflow** - Open-source platform for ML lifecycle
-- **Weights & Biases** - Experiment tracking and visualization
-- **Neptune.ai** - Metadata store for MLOps
-- **Comet** - ML experiment management
-- **TensorBoard** - TensorFlow visualization toolkit
+| Tool | Type | Strengths | Deployment | Cost |
+|------|------|-----------|------------|------|
+| **MLflow** | Open-source | Complete lifecycle, flexible | Self-hosted/Cloud | Free/Paid |
+| **Weights & Biases** | SaaS | Visualization, collaboration | Cloud | Free/Paid |
+| **Neptune.ai** | SaaS | Metadata management | Cloud | Free/Paid |
+| **Comet** | SaaS | Experiment comparison | Cloud | Free/Paid |
+| **TensorBoard** | Open-source | TensorFlow integration | Self-hosted | Free |
 
 ### Model Serving
 
-- **TensorFlow Serving** - Production ML serving system
-- **TorchServe** - PyTorch model serving
-- **Seldon Core** - Kubernetes-native ML deployment
-- **KServe** - Serverless inference on Kubernetes
-- **BentoML** - ML model serving framework
-- **Ray Serve** - Scalable model serving
+| Tool | Framework | Scalability | Deployment | Best For |
+|------|-----------|-------------|------------|----------|
+| **TensorFlow Serving** | TensorFlow | High | Docker/K8s | TF models |
+| **TorchServe** | PyTorch | High | Docker/K8s | PyTorch models |
+| **Seldon Core** | Agnostic | Very High | Kubernetes | K8s-native |
+| **KServe** | Agnostic | Very High | Kubernetes | Serverless on K8s |
+| **BentoML** | Agnostic | High | Docker/K8s | Easy packaging |
+| **Ray Serve** | Agnostic | Very High | Ray cluster | Distributed serving |
 
 ### Pipeline Orchestration
 
-- **Kubeflow** - ML toolkit for Kubernetes
-- **Apache Airflow** - Workflow orchestration
-- **Prefect** - Modern workflow orchestration
-- **Metaflow** - Human-centric ML framework
-- **ZenML** - Extensible MLOps framework
+| Tool | Complexity | Scalability | Learning Curve | Best For |
+|------|------------|-------------|----------------|----------|
+| **Kubeflow** | High | Very High | Steep | K8s-native ML |
+| **Apache Airflow** | Medium | High | Medium | General workflows |
+| **Prefect** | Low | High | Easy | Modern Python workflows |
+| **Metaflow** | Low | High | Easy | Data science teams |
+| **ZenML** | Medium | High | Medium | Extensible pipelines |
 
 ### Feature Stores
 
-- **Feast** - Open-source feature store
-- **Tecton** - Enterprise feature platform
-- **Hopsworks** - Data-intensive AI platform
-- **AWS SageMaker Feature Store** - Managed feature store
+| Tool | Type | Scalability | Integration | Cost |
+|------|------|-------------|-------------|------|
+| **Feast** | Open-source | High | Good | Free |
+| **Tecton** | Enterprise | Very High | Excellent | Paid |
+| **Hopsworks** | Open-source/Enterprise | High | Good | Free/Paid |
+| **AWS SageMaker Feature Store** | Managed | Very High | AWS ecosystem | Paid |
 
 ### Model Monitoring
 
-- **Evidently AI** - ML monitoring and testing
-- **Arize AI** - ML observability platform
-- **Fiddler** - ML model monitoring
-- **WhyLabs** - Data and ML monitoring
-- **Prometheus + Grafana** - Metrics and visualization
+| Tool | Type | Features | Deployment | Cost |
+|------|------|----------|------------|------|
+| **Evidently AI** | Open-source | Drift detection, testing | Self-hosted | Free |
+| **Arize AI** | SaaS | Full observability | Cloud | Paid |
+| **Fiddler** | SaaS | Explainability, monitoring | Cloud | Paid |
+| **WhyLabs** | SaaS | Data/model monitoring | Cloud | Free/Paid |
+| **Prometheus + Grafana** | Open-source | Metrics, dashboards | Self-hosted | Free |
 
 ### Data Versioning
 
@@ -219,19 +229,19 @@ MLOps (Machine Learning Operations) is the practice of deploying, monitoring, an
 
 ### Technical Challenges
 
-- **[Model Drift](model-drift.md)** - Performance degradation over time
-- **[Scalability](scalability.md)** - Handling increased load
-- **[Latency](latency.md)** - Meeting response time requirements
-- **[Resource Costs](cost-optimization.md)** - Managing infrastructure expenses
-- **[Debugging](debugging-production.md)** - Troubleshooting production issues
+- **[Model Drift](pages/model-drift.md)** - Performance degradation over time
+- **[Scalability](pages/scalability.md)** - Handling increased load
+- **[Latency](pages/latency.md)** - Meeting response time requirements
+- **[Resource Costs](pages/cost-optimization.md)** - Managing infrastructure expenses
+- **[Debugging](pages/debugging-production.md)** - Troubleshooting production issues
 
 ### Organizational Challenges
 
-- **[Team Collaboration](team-collaboration.md)** - Data scientists and engineers
-- **[Skill Gaps](skill-gaps.md)** - MLOps expertise requirements
-- **[Tool Proliferation](tool-management.md)** - Managing multiple tools
-- **[Change Management](change-management.md)** - Adopting MLOps practices
-- **[Governance](governance-challenges.md)** - Balancing speed and control
+- **[Team Collaboration](pages/team-collaboration.md)** - Data scientists and engineers
+- **[Skill Gaps](pages/skill-gaps.md)** - MLOps expertise requirements
+- **[Tool Proliferation](pages/tool-management.md)** - Managing multiple tools
+- **[Change Management](pages/change-management.md)** - Adopting MLOps practices
+- **[Governance](pages/governance-challenges.md)** - Balancing speed and control
 
 ## MLOps Maturity Model
 
@@ -281,11 +291,11 @@ MLOps (Machine Learning Operations) is the practice of deploying, monitoring, an
 
 ## Security Considerations
 
-- **[Model Security](model-security.md)** - Protecting model IP
-- **[Data Privacy](data-privacy.md)** - PII handling, encryption
-- **[Access Control](access-control.md)** - RBAC, authentication
-- **[Adversarial Robustness](adversarial-robustness.md)** - Defending against attacks
-- **[Compliance](compliance-security.md)** - Meeting regulatory requirements
+- **[Model Security](pages/model-security.md)** - Protecting model IP
+- **[Data Privacy](pages/data-privacy.md)** - PII handling, encryption
+- **[Access Control](pages/access-control.md)** - RBAC, authentication
+- **[Adversarial Robustness](pages/adversarial-robustness.md)** - Defending against attacks
+- **[Compliance](pages/compliance-security.md)** - Meeting regulatory requirements
 
 ## Metrics and KPIs
 

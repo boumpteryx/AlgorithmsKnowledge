@@ -12,20 +12,20 @@ Distributed Systems are collections of independent computers that appear to user
 
 ### Fundamental Principles
 
-- **[Scalability](scalability.md)** - Horizontal and vertical scaling
-- **[Fault Tolerance](fault-tolerance.md)** - Handling failures gracefully
-- **[Consistency](consistency.md)** - Data consistency models
-- **[Availability](availability.md)** - System uptime and reliability
-- **[Partition Tolerance](partition-tolerance.md)** - Operating despite network splits
-- **[CAP Theorem](cap-theorem.md)** - Consistency, Availability, Partition tolerance tradeoffs
+- **[Scalability](pages/scalability.md)** - Horizontal and vertical scaling
+- **[Fault Tolerance](pages/fault-tolerance.md)** - Handling failures gracefully
+- **[Consistency](pages/consistency.md)** - Data consistency models
+- **[Availability](pages/availability.md)** - System uptime and reliability
+- **[Partition Tolerance](pages/partition-tolerance.md)** - Operating despite network splits
+- **[CAP Theorem](pages/cap-theorem.md)** - Consistency, Availability, Partition tolerance tradeoffs
 
 ### System Properties
 
-- **[Transparency](transparency.md)** - Hiding distribution complexity
-- **[Concurrency](concurrency.md)** - Simultaneous operations
-- **[Replication](replication.md)** - Data redundancy
-- **[Load Balancing](load-balancing.md)** - Distributing workload
-- **[Latency](latency.md)** - Communication delays
+- **[Transparency](pages/transparency.md)** - Hiding distribution complexity
+- **[Concurrency](pages/concurrency.md)** - Simultaneous operations
+- **[Replication](pages/replication.md)** - Data redundancy
+- **[Load Balancing](pages/load-balancing.md)** - Distributing workload
+- **[Latency](pages/latency.md)** - Communication delays
 
 ## Distributed Computing Models
 
@@ -33,45 +33,45 @@ Distributed Systems are collections of independent computers that appear to user
 
 ![Parallel Computing](diagrams/parallel-computing.png)
 
-- **[Data Parallelism](data-parallelism.md)** - Same operation on different data
-- **[Model Parallelism](model-parallelism.md)** - Different parts of model on different devices
-- **[Pipeline Parallelism](pipeline-parallelism.md)** - Sequential stage processing
-- **[Task Parallelism](task-parallelism.md)** - Different operations simultaneously
+- **[Data Parallelism](pages/data-parallelism.md)** - Same operation on different data
+- **[Model Parallelism](pages/model-parallelism.md)** - Different parts of model on different devices
+- **[Pipeline Parallelism](pages/pipeline-parallelism.md)** - Sequential stage processing
+- **[Task Parallelism](pages/task-parallelism.md)** - Different operations simultaneously
 
 ### Communication Patterns
 
-- **[Point-to-Point](point-to-point.md)** - Direct communication
-- **[Broadcast](broadcast.md)** - One-to-all communication
-- **[Reduce](reduce.md)** - All-to-one aggregation
-- **[All-Reduce](all-reduce.md)** - Collective aggregation
-- **[Scatter/Gather](scatter-gather.md)** - Distribution and collection
+- **[Point-to-Point](pages/point-to-point.md)** - Direct communication
+- **[Broadcast](pages/broadcast.md)** - One-to-all communication
+- **[Reduce](pages/reduce.md)** - All-to-one aggregation
+- **[All-Reduce](pages/all-reduce.md)** - Collective aggregation
+- **[Scatter/Gather](pages/scatter-gather.md)** - Distribution and collection
 
 ## Distributed Data Processing
 
 ### Big Data Frameworks
 
-- **[MapReduce](mapreduce.md)** - Distributed data processing paradigm
-- **[Apache Hadoop](hadoop.md)** - Distributed storage and processing
-- **[Apache Spark](spark.md)** - Fast in-memory processing
-- **[Apache Flink](flink.md)** - Stream processing
-- **[Dask](dask.md)** - Parallel computing in Python
+- **[MapReduce](pages/mapreduce.md)** - Distributed data processing paradigm
+- **[Apache Hadoop](pages/hadoop.md)** - Distributed storage and processing
+- **[Apache Spark](pages/spark.md)** - Fast in-memory processing
+- **[Apache Flink](pages/flink.md)** - Stream processing
+- **[Dask](pages/dask.md)** - Parallel computing in Python
 
 ### Data Storage
 
 ![Distributed Storage](diagrams/distributed-storage.png)
 
-- **[HDFS](hdfs.md)** - Hadoop Distributed File System
-- **[Object Storage](object-storage.md)** - S3, Azure Blob, GCS
-- **[Distributed Databases](distributed-databases.md)** - Cassandra, MongoDB
-- **[Data Lakes](data-lakes.md)** - Centralized repositories
-- **[Data Warehouses](data-warehouses.md)** - Analytical databases
+- **[HDFS](pages/hdfs.md)** - Hadoop Distributed File System
+- **[Object Storage](pages/object-storage.md)** - S3, Azure Blob, GCS
+- **[Distributed Databases](pages/distributed-databases.md)** - Cassandra, MongoDB
+- **[Data Lakes](pages/data-lakes.md)** - Centralized repositories
+- **[Data Warehouses](pages/data-warehouses.md)** - Analytical databases
 
 ### Stream Processing
 
-- **[Apache Kafka](kafka.md)** - Distributed event streaming
-- **[Apache Pulsar](pulsar.md)** - Cloud-native messaging
-- **[RabbitMQ](rabbitmq.md)** - Message broker
-- **[Redis Streams](redis-streams.md)** - In-memory streaming
+- **[Apache Kafka](pages/kafka.md)** - Distributed event streaming
+- **[Apache Pulsar](pages/pulsar.md)** - Cloud-native messaging
+- **[RabbitMQ](pages/rabbitmq.md)** - Message broker
+- **[Redis Streams](pages/redis-streams.md)** - In-memory streaming
 
 ## Distributed Machine Learning
 
@@ -79,47 +79,53 @@ Distributed Systems are collections of independent computers that appear to user
 
 ![Distributed Training](diagrams/distributed-training.png)
 
-- **[Data Parallel Training](data-parallel-training.md)** - Replicate model, split data
-- **[Model Parallel Training](model-parallel-training.md)** - Split model across devices
-- **[Hybrid Parallelism](hybrid-parallelism.md)** - Combining strategies
-- **[Federated Learning](federated-learning.md)** - Training on decentralized data
+- **[Data Parallel Training](pages/data-parallel-training.md)** - Replicate model, split data
+- **[Model Parallel Training](pages/model-parallel-training.md)** - Split model across devices
+- **[Hybrid Parallelism](pages/hybrid-parallelism.md)** - Combining strategies
+- **[Federated Learning](pages/federated-learning.md)** - Training on decentralized data
 
 ### Synchronization Methods
 
-- **[Synchronous SGD](synchronous-sgd.md)** - Wait for all workers
-- **[Asynchronous SGD](asynchronous-sgd.md)** - Independent worker updates
-- **[Parameter Server](parameter-server.md)** - Centralized parameter management
-- **[Ring All-Reduce](ring-all-reduce.md)** - Efficient gradient aggregation
-- **[Horovod](horovod.md)** - Distributed deep learning framework
+- **[Synchronous SGD](pages/synchronous-sgd.md)** - Wait for all workers
+- **[Asynchronous SGD](pages/asynchronous-sgd.md)** - Independent worker updates
+- **[Parameter Server](pages/parameter-server.md)** - Centralized parameter management
+- **[Ring All-Reduce](pages/ring-all-reduce.md)** - Efficient gradient aggregation
+- **[Horovod](pages/horovod.md)** - Distributed deep learning framework
 
 ### Distributed Training Frameworks
 
-- **[PyTorch Distributed](pytorch-distributed.md)** - PyTorch's distributed package
-- **[TensorFlow Distributed](tensorflow-distributed.md)** - TF distribution strategies
-- **[DeepSpeed](deepspeed.md)** - Microsoft's training optimization
-- **[Ray](ray.md)** - Distributed computing framework
-- **[Mesh TensorFlow](mesh-tensorflow.md)** - Model parallelism
+- **[PyTorch Distributed](pages/pytorch-distributed.md)** - PyTorch's distributed package
+- **[TensorFlow Distributed](pages/tensorflow-distributed.md)** - TF distribution strategies
+- **[DeepSpeed](pages/deepspeed.md)** - Microsoft's training optimization
+- **[Ray](pages/ray.md)** - Distributed computing framework
+- **[Mesh TensorFlow](pages/mesh-tensorflow.md)** - Model parallelism
 
 ## Consensus and Coordination
 
 ### Consensus Algorithms
 
-- **[Paxos](paxos.md)** - Classic consensus protocol
-- **[Raft](raft.md)** - Understandable consensus
-- **[Byzantine Fault Tolerance](bft.md)** - Handling malicious nodes
-- **[Gossip Protocols](gossip-protocols.md)** - Epidemic information spread
+| Algorithm | Complexity | Fault Tolerance | Use Case | Best For |
+|-----------|------------|-----------------|----------|----------|
+| **[Paxos](pages/paxos.md)** | High | Crash faults | Distributed consensus | Theoretical foundation |
+| **[Raft](pages/raft.md)** | Medium | Crash faults | Leader election, log replication | Practical implementation |
+| **[Byzantine Fault Tolerance](pages/bft.md)** | Very High | Malicious nodes | Blockchain, critical systems | Untrusted environments |
+| **[Gossip Protocols](pages/gossip-protocols.md)** | Low | High | Membership, dissemination | Large-scale systems |
 
 ### Coordination Services
 
-- **[Apache ZooKeeper](zookeeper.md)** - Distributed coordination
-- **[etcd](etcd.md)** - Distributed key-value store
-- **[Consul](consul.md)** - Service mesh and configuration
+| Service | Type | Consistency | Use Case | Best For |
+|---------|------|-------------|----------|----------|
+| **[Apache ZooKeeper](pages/zookeeper.md)** | Coordination | Strong | Configuration, synchronization | Hadoop ecosystem |
+| **[etcd](pages/etcd.md)** | Key-value store | Strong | Kubernetes, service discovery | Cloud-native apps |
+| **[Consul](pages/consul.md)** | Service mesh | Strong | Service discovery, health checks | Microservices |
 
 ### Distributed Locking
 
-- **[Distributed Locks](distributed-locks.md)** - Mutual exclusion
-- **[Leader Election](leader-election.md)** - Choosing coordinators
-- **[Distributed Transactions](distributed-transactions.md)** - ACID across nodes
+| Mechanism | Granularity | Performance | Use Case | Best For |
+|-----------|-------------|-------------|----------|----------|
+| **[Distributed Locks](pages/distributed-locks.md)** | Resource-level | Medium | Mutual exclusion | Critical sections |
+| **[Leader Election](pages/leader-election.md)** | System-level | Low | Coordinator selection | Single-master systems |
+| **[Distributed Transactions](pages/distributed-transactions.md)** | Multi-resource | Low | ACID guarantees | Financial systems |
 
 ## Container Orchestration
 
@@ -127,159 +133,193 @@ Distributed Systems are collections of independent computers that appear to user
 
 ![Kubernetes Architecture](diagrams/kubernetes-architecture.png)
 
-- **[Kubernetes Basics](kubernetes-basics.md)** - Pods, services, deployments
-- **[Kubernetes Networking](k8s-networking.md)** - Service discovery, ingress
-- **[Kubernetes Storage](k8s-storage.md)** - Persistent volumes
-- **[Kubernetes Scaling](k8s-scaling.md)** - HPA, VPA, cluster autoscaling
-- **[Kubernetes Operators](k8s-operators.md)** - Custom resource management
+- **[Kubernetes Basics](pages/kubernetes-basics.md)** - Pods, services, deployments
+- **[Kubernetes Networking](pages/k8s-networking.md)** - Service discovery, ingress
+- **[Kubernetes Storage](pages/k8s-storage.md)** - Persistent volumes
+- **[Kubernetes Scaling](pages/k8s-scaling.md)** - HPA, VPA, cluster autoscaling
+- **[Kubernetes Operators](pages/k8s-operators.md)** - Custom resource management
 
 ### ML on Kubernetes
 
-- **[Kubeflow](kubeflow.md)** - ML toolkit for Kubernetes
-- **[KServe](kserve.md)** - Model serving on Kubernetes
-- **[Seldon Core](seldon-core.md)** - ML deployment platform
-- **[MLflow on K8s](mlflow-k8s.md)** - Experiment tracking
+- **[Kubeflow](pages/kubeflow.md)** - ML toolkit for Kubernetes
+- **[KServe](pages/kserve.md)** - Model serving on Kubernetes
+- **[Seldon Core](pages/seldon-core.md)** - ML deployment platform
+- **[MLflow on K8s](pages/mlflow-k8s.md)** - Experiment tracking
 
 ## Cloud Computing
 
 ### Cloud Platforms
 
-- **[AWS](aws.md)** - Amazon Web Services
-- **[Google Cloud](gcp.md)** - Google Cloud Platform
-- **[Azure](azure.md)** - Microsoft Azure
-- **[Multi-Cloud](multi-cloud.md)** - Using multiple providers
+| Platform | Strengths | ML Services | Best For | Market Share |
+|----------|-----------|-------------|----------|--------------|
+| **[AWS](pages/aws.md)** | Mature, comprehensive | SageMaker, Bedrock | Enterprise, variety | ~32% |
+| **[Google Cloud](pages/gcp.md)** | AI/ML, BigQuery | Vertex AI, TPUs | Data analytics, ML | ~10% |
+| **[Azure](pages/azure.md)** | Enterprise integration | Azure ML, OpenAI | Microsoft ecosystem | ~23% |
+| **[Multi-Cloud](pages/multi-cloud.md)** | Vendor independence | Varies | Avoid lock-in | Growing |
 
 ### Cloud Services
 
-- **[Compute Services](cloud-compute.md)** - EC2, Compute Engine, VMs
-- **[Storage Services](cloud-storage.md)** - S3, Cloud Storage, Blob
-- **[Database Services](cloud-databases.md)** - RDS, Cloud SQL, Cosmos DB
-- **[Serverless](serverless.md)** - Lambda, Cloud Functions, Azure Functions
+| Service Type | AWS | Google Cloud | Azure | Use Case |
+|--------------|-----|--------------|-------|----------|
+| **[Compute](pages/cloud-compute.md)** | EC2 | Compute Engine | Virtual Machines | General workloads |
+| **[Storage](pages/cloud-storage.md)** | S3 | Cloud Storage | Blob Storage | Object storage |
+| **[Database](pages/cloud-databases.md)** | RDS, DynamoDB | Cloud SQL, Firestore | SQL Database, Cosmos DB | Data persistence |
+| **[Serverless](pages/serverless.md)** | Lambda | Cloud Functions | Azure Functions | Event-driven |
 
 ## Performance and Optimization
 
 ### Performance Metrics
 
-- **[Throughput](throughput.md)** - Operations per second
-- **[Latency](latency-metrics.md)** - Response time (p50, p95, p99)
-- **[Bandwidth](bandwidth.md)** - Data transfer rate
-- **[Resource Utilization](resource-utilization.md)** - CPU, memory, network
+| Metric | Measurement | Target | Impact | Monitoring |
+|--------|-------------|--------|--------|------------|
+| **[Throughput](pages/throughput.md)** | Ops/second | High | Capacity | Rate counters |
+| **[Latency](pages/latency-metrics.md)** | Response time | Low (p50, p95, p99) | User experience | Histograms |
+| **[Bandwidth](pages/bandwidth.md)** | Data transfer rate | High | Network efficiency | Traffic monitoring |
+| **[Resource Utilization](pages/resource-utilization.md)** | CPU, memory, network | 60-80% | Cost efficiency | System metrics |
 
 ### Optimization Techniques
 
-- **[Caching](caching.md)** - Redis, Memcached, CDN
-- **[Load Balancing](load-balancing-techniques.md)** - Round-robin, least connections
-- **[Sharding](sharding.md)** - Horizontal data partitioning
-- **[Compression](compression.md)** - Reducing data size
-- **[Batching](batching.md)** - Grouping operations
+| Technique | Approach | Benefit | Trade-off | Best For |
+|-----------|----------|---------|-----------|----------|
+| **[Caching](pages/caching.md)** | Store frequently accessed data | Reduced latency | Stale data risk | Read-heavy workloads |
+| **[Load Balancing](pages/load-balancing-techniques.md)** | Distribute requests | Even utilization | Complexity | High traffic |
+| **[Sharding](pages/sharding.md)** | Partition data | Horizontal scaling | Query complexity | Large datasets |
+| **[Compression](pages/compression.md)** | Reduce data size | Lower bandwidth | CPU overhead | Network-bound |
+| **[Batching](pages/batching.md)** | Group operations | Higher throughput | Increased latency | Bulk processing |
 
 ### Network Optimization
 
-- **[Network Topology](network-topology.md)** - Tree, mesh, ring
-- **[Bandwidth Optimization](bandwidth-optimization.md)** - Compression, aggregation
-- **[Latency Reduction](latency-reduction.md)** - Proximity, caching
-- **[RDMA](rdma.md)** - Remote Direct Memory Access
+| Technique | Approach | Benefit | Use Case | Complexity |
+|-----------|----------|---------|----------|------------|
+| **[Network Topology](pages/network-topology.md)** | Optimize layout | Reduced hops | Data center design | High |
+| **[Bandwidth Optimization](pages/bandwidth-optimization.md)** | Compression, aggregation | Lower costs | WAN traffic | Medium |
+| **[Latency Reduction](pages/latency-reduction.md)** | Proximity, caching | Faster response | Real-time apps | Medium |
+| **[RDMA](pages/rdma.md)** | Direct memory access | Ultra-low latency | HPC, ML training | High |
 
 ## Fault Tolerance and Reliability
 
 ### Failure Handling
 
-- **[Failure Detection](failure-detection.md)** - Heartbeats, timeouts
-- **[Failure Recovery](failure-recovery.md)** - Checkpointing, restart
-- **[Redundancy](redundancy.md)** - Replication strategies
-- **[Circuit Breakers](circuit-breakers.md)** - Preventing cascade failures
+| Mechanism | Detection Time | Recovery Time | Overhead | Best For |
+|-----------|----------------|---------------|----------|----------|
+| **[Failure Detection](pages/failure-detection.md)** | Seconds | N/A | Low | Monitoring |
+| **[Failure Recovery](pages/failure-recovery.md)** | N/A | Minutes | Medium | Stateful services |
+| **[Redundancy](pages/redundancy.md)** | Instant | Instant | High | Critical systems |
+| **[Circuit Breakers](pages/circuit-breakers.md)** | Milliseconds | Automatic | Low | Microservices |
 
 ### High Availability
 
-- **[Replication Strategies](replication-strategies.md)** - Master-slave, multi-master
-- **[Failover](failover.md)** - Automatic switching
-- **[Disaster Recovery](disaster-recovery.md)** - Backup and restore
-- **[Chaos Engineering](chaos-engineering.md)** - Testing resilience
+| Strategy | Availability | Complexity | Cost | RPO/RTO |
+|----------|--------------|------------|------|---------|
+| **[Replication Strategies](pages/replication-strategies.md)** | 99.9-99.99% | Medium | Medium | Minutes |
+| **[Failover](pages/failover.md)** | 99.95%+ | Medium | Medium | Seconds-Minutes |
+| **[Disaster Recovery](pages/disaster-recovery.md)** | 99.9%+ | High | High | Hours |
+| **[Chaos Engineering](pages/chaos-engineering.md)** | Testing only | High | Low | N/A |
 
 ## Monitoring and Observability
 
 ### Monitoring Tools
 
-- **[Prometheus](prometheus.md)** - Metrics collection and alerting
-- **[Grafana](grafana.md)** - Visualization and dashboards
-- **[ELK Stack](elk-stack.md)** - Elasticsearch, Logstash, Kibana
-- **[Jaeger](jaeger.md)** - Distributed tracing
-- **[DataDog](datadog.md)** - Cloud monitoring
+| Tool | Type | Strengths | Deployment | Cost |
+|------|------|-----------|------------|------|
+| **[Prometheus](pages/prometheus.md)** | Metrics | Time-series, pull-based | Self-hosted | Free |
+| **[Grafana](pages/grafana.md)** | Visualization | Dashboards, multi-source | Self-hosted/Cloud | Free/Paid |
+| **[ELK Stack](pages/elk-stack.md)** | Logging | Full-text search, analytics | Self-hosted | Free/Paid |
+| **[Jaeger](pages/jaeger.md)** | Tracing | Distributed tracing | Self-hosted/Cloud | Free |
+| **[DataDog](pages/datadog.md)** | All-in-one | Comprehensive, easy setup | SaaS | Paid |
 
 ### Observability Practices
 
-- **[Metrics](metrics.md)** - Quantitative measurements
-- **[Logging](logging.md)** - Event recording
-- **[Tracing](tracing.md)** - Request flow tracking
-- **[Alerting](alerting-distributed.md)** - Automated notifications
+| Practice | Purpose | Data Type | Retention | Query Pattern |
+|----------|---------|-----------|-----------|---------------|
+| **[Metrics](pages/metrics.md)** | Performance monitoring | Time-series | Long-term | Aggregations |
+| **[Logging](pages/logging.md)** | Event tracking | Text/JSON | Medium-term | Search/filter |
+| **[Tracing](pages/tracing.md)** | Request flow | Spans | Short-term | Trace lookup |
+| **[Alerting](pages/alerting-distributed.md)** | Issue notification | Derived | N/A | Threshold-based |
 
 ## Security in Distributed Systems
 
 ### Security Concerns
 
-- **[Authentication](authentication.md)** - Identity verification
-- **[Authorization](authorization.md)** - Access control
-- **[Encryption](encryption.md)** - Data protection in transit and at rest
-- **[Network Security](network-security.md)** - Firewalls, VPNs, security groups
-- **[Zero Trust](zero-trust.md)** - Never trust, always verify
+| Concern | Mechanism | Scope | Complexity | Critical For |
+|---------|-----------|-------|------------|--------------|
+| **[Authentication](pages/authentication.md)** | Identity verification | User/service | Medium | Access control |
+| **[Authorization](pages/authorization.md)** | Permission checking | Resource | Medium | Data protection |
+| **[Encryption](pages/encryption.md)** | Data protection | Transit + rest | High | Confidentiality |
+| **[Network Security](pages/network-security.md)** | Firewalls, VPNs | Network layer | High | Infrastructure |
+| **[Zero Trust](pages/zero-trust.md)** | Continuous verification | All layers | Very High | Modern security |
 
 ### Security Practices
 
-- **[Secrets Management](secrets-management.md)** - Vault, AWS Secrets Manager
-- **[Certificate Management](certificate-management.md)** - TLS/SSL
-- **[API Security](api-security.md)** - Rate limiting, authentication
-- **[Compliance](compliance-distributed.md)** - Regulatory requirements
+| Practice | Tools | Purpose | Complexity | Compliance |
+|----------|-------|---------|------------|------------|
+| **[Secrets Management](pages/secrets-management.md)** | Vault, AWS Secrets Manager | Credential storage | Medium | Required |
+| **[Certificate Management](pages/certificate-management.md)** | Let's Encrypt, ACM | TLS/SSL | Medium | Required |
+| **[API Security](pages/api-security.md)** | Rate limiting, OAuth | API protection | Medium | Recommended |
+| **[Compliance](pages/compliance-distributed.md)** | Audit tools | Regulatory adherence | High | Industry-specific |
 
 ## Distributed AI Applications
 
 ### Model Serving
 
-- **[Model Deployment](model-deployment-distributed.md)** - Distributed inference
-- **[A/B Testing](ab-testing-distributed.md)** - Comparing models
-- **[Canary Deployments](canary-deployments.md)** - Gradual rollout
-- **[Multi-Model Serving](multi-model-serving.md)** - Serving multiple models
+| Strategy | Approach | Risk | Rollback | Best For |
+|----------|----------|------|----------|----------|
+| **[Model Deployment](pages/model-deployment-distributed.md)** | Distributed inference | Medium | Manual | Production serving |
+| **[A/B Testing](pages/ab-testing-distributed.md)** | Compare variants | Low | Easy | Model comparison |
+| **[Canary Deployments](pages/canary-deployments.md)** | Gradual rollout | Low | Automatic | Safe deployment |
+| **[Multi-Model Serving](pages/multi-model-serving.md)** | Multiple models | Medium | Complex | Ensemble/routing |
 
 ### Real-Time AI
 
-- **[Online Learning](online-learning.md)** - Continuous model updates
-- **[Stream Processing ML](stream-ml.md)** - Real-time predictions
-- **[Edge Computing](edge-computing.md)** - Processing at the edge
-- **[Hybrid Cloud-Edge](hybrid-cloud-edge.md)** - Distributed intelligence
+| Approach | Latency | Throughput | Complexity | Use Case |
+|----------|---------|------------|------------|----------|
+| **[Online Learning](pages/online-learning.md)** | Low | Medium | High | Adaptive models |
+| **[Stream Processing ML](pages/stream-ml.md)** | Very Low | High | Medium | Real-time predictions |
+| **[Edge Computing](pages/edge-computing.md)** | Ultra Low | Low | High | IoT, mobile |
+| **[Hybrid Cloud-Edge](pages/hybrid-cloud-edge.md)** | Low | High | Very High | Distributed intelligence |
 
 ## Design Patterns
 
 ### Architectural Patterns
 
-- **[Microservices](microservices.md)** - Independent, loosely coupled services
-- **[Service Mesh](service-mesh.md)** - Infrastructure layer for service communication
-- **[Event-Driven Architecture](event-driven.md)** - Asynchronous communication
-- **[CQRS](cqrs.md)** - Command Query Responsibility Segregation
-- **[Saga Pattern](saga-pattern.md)** - Distributed transactions
+| Pattern | Coupling | Scalability | Complexity | Best For |
+|---------|----------|-------------|------------|----------|
+| **[Microservices](pages/microservices.md)** | Loose | High | High | Large teams, independent services |
+| **[Service Mesh](pages/service-mesh.md)** | Loose | High | Very High | Microservices communication |
+| **[Event-Driven Architecture](pages/event-driven.md)** | Very Loose | Very High | Medium | Asynchronous workflows |
+| **[CQRS](pages/cqrs.md)** | Medium | High | High | Read/write optimization |
+| **[Saga Pattern](pages/saga-pattern.md)** | Medium | Medium | High | Distributed transactions |
 
 ### Communication Patterns
 
-- **[Request-Response](request-response.md)** - Synchronous communication
-- **[Publish-Subscribe](pub-sub.md)** - Asynchronous messaging
-- **[Message Queue](message-queue.md)** - Buffered communication
-- **[RPC](rpc.md)** - Remote Procedure Call
+| Pattern | Synchronous | Coupling | Latency | Best For |
+|---------|-------------|----------|---------|----------|
+| **[Request-Response](pages/request-response.md)** | Yes | Tight | Low | Direct queries |
+| **[Publish-Subscribe](pages/pub-sub.md)** | No | Loose | Medium | Event broadcasting |
+| **[Message Queue](pages/message-queue.md)** | No | Loose | Medium | Buffered processing |
+| **[RPC](pages/rpc.md)** | Yes | Medium | Low | Service calls |
 
 ## Challenges and Solutions
 
 ### Common Challenges
 
-- **Network Partitions** - Handling split-brain scenarios
-- **Clock Synchronization** - Dealing with time differences
-- **Data Consistency** - Maintaining coherent state
-- **Debugging Complexity** - Tracing issues across systems
-- **Cost Management** - Optimizing resource usage
+| Challenge | Impact | Difficulty | Mitigation Strategy |
+|-----------|--------|------------|---------------------|
+| **Network Partitions** | High | Very High | Consensus algorithms, partition tolerance |
+| **Clock Synchronization** | Medium | High | NTP, logical clocks, vector clocks |
+| **Data Consistency** | High | High | Eventual consistency, CQRS, conflict resolution |
+| **Debugging Complexity** | Medium | Very High | Distributed tracing, centralized logging |
+| **Cost Management** | High | Medium | Auto-scaling, resource optimization, monitoring |
 
 ### Best Practices
 
-1. **Design for Failure** - Assume components will fail
-2. **Idempotency** - Operations can be repeated safely
-3. **Loose Coupling** - Minimize dependencies
-4. **Monitoring First** - Instrument everything
-5. **Gradual Rollouts** - Deploy changes incrementally
+| Practice | Priority | Complexity | Impact | Implementation |
+|----------|----------|------------|--------|----------------|
+| **Design for Failure** | Critical | Medium | Very High | Circuit breakers, retries, fallbacks |
+| **Idempotency** | High | Low | High | Unique request IDs, state checks |
+| **Loose Coupling** | High | Medium | High | APIs, message queues, events |
+| **Monitoring First** | Critical | Medium | Very High | Metrics, logs, traces, alerts |
+| **Gradual Rollouts** | High | Medium | High | Canary, blue-green, feature flags |
 
 ## Related Topics
 

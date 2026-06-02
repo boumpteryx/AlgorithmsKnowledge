@@ -12,19 +12,19 @@ Quantum Computing leverages quantum mechanical phenomena such as superposition, 
 
 ### Core Principles
 
-- **[Superposition](superposition.md)** - Qubits existing in multiple states simultaneously
-- **[Entanglement](entanglement.md)** - Quantum correlation between qubits
-- **[Interference](interference.md)** - Amplifying correct answers, canceling wrong ones
-- **[Measurement](measurement.md)** - Collapsing quantum states to classical outcomes
-- **[No-Cloning Theorem](no-cloning.md)** - Impossibility of copying quantum states
+- **[Superposition](pages/superposition.md)** - Qubits existing in multiple states simultaneously
+- **[Entanglement](pages/entanglement.md)** - Quantum correlation between qubits
+- **[Interference](pages/interference.md)** - Amplifying correct answers, canceling wrong ones
+- **[Measurement](pages/measurement.md)** - Collapsing quantum states to classical outcomes
+- **[No-Cloning Theorem](pages/no-cloning.md)** - Impossibility of copying quantum states
 
 ### Mathematical Framework
 
-- **[Quantum States](quantum-states.md)** - Ket notation, Bloch sphere
-- **[Quantum Gates](quantum-gates.md)** - Unitary operations on qubits
-- **[Quantum Circuits](quantum-circuits.md)** - Sequences of quantum gates
-- **[Density Matrices](density-matrices.md)** - Mixed state representation
-- **[Tensor Products](tensor-products.md)** - Multi-qubit systems
+- **[Quantum States](pages/quantum-states.md)** - Ket notation, Bloch sphere
+- **[Quantum Gates](pages/quantum-gates.md)** - Unitary operations on qubits
+- **[Quantum Circuits](pages/quantum-circuits.md)** - Sequences of quantum gates
+- **[Density Matrices](pages/density-matrices.md)** - Mixed state representation
+- **[Tensor Products](pages/tensor-products.md)** - Multi-qubit systems
 
 ## Quantum Gates and Circuits
 
@@ -34,29 +34,29 @@ Quantum Computing leverages quantum mechanical phenomena such as superposition, 
 
 | Gate | Matrix | Effect | Use Case | Complexity |
 |------|--------|--------|----------|------------|
-| **[Pauli-X](pauli-gates.md)** | [[0,1],[1,0]] | Bit flip | NOT operation | O(1) |
-| **[Pauli-Y](pauli-gates.md)** | [[0,-i],[i,0]] | Bit + phase flip | Combined operation | O(1) |
-| **[Pauli-Z](pauli-gates.md)** | [[1,0],[0,-1]] | Phase flip | Phase correction | O(1) |
-| **[Hadamard](hadamard-gate.md)** | 1/√2[[1,1],[1,-1]] | Superposition | Basis change | O(1) |
-| **[S Gate](phase-gates.md)** | [[1,0],[0,i]] | π/2 phase | Phase rotation | O(1) |
-| **[T Gate](phase-gates.md)** | [[1,0],[0,e^(iπ/4)]] | π/4 phase | Universal gate set | O(1) |
-| **[Rotation](rotation-gates.md)** | Parametric | Arbitrary rotation | Variational circuits | O(1) |
+| **[Pauli-X](pages/pauli-gates.md)** | [[0,1],[1,0]] | Bit flip | NOT operation | O(1) |
+| **[Pauli-Y](pages/pauli-gates.md)** | [[0,-i],[i,0]] | Bit + phase flip | Combined operation | O(1) |
+| **[Pauli-Z](pages/pauli-gates.md)** | [[1,0],[0,-1]] | Phase flip | Phase correction | O(1) |
+| **[Hadamard](pages/hadamard-gate.md)** | 1/√2[[1,1],[1,-1]] | Superposition | Basis change | O(1) |
+| **[S Gate](pages/phase-gates.md)** | [[1,0],[0,i]] | π/2 phase | Phase rotation | O(1) |
+| **[T Gate](pages/phase-gates.md)** | [[1,0],[0,e^(iπ/4)]] | π/4 phase | Universal gate set | O(1) |
+| **[Rotation](pages/rotation-gates.md)** | Parametric | Arbitrary rotation | Variational circuits | O(1) |
 
 ### Multi-Qubit Gates
 
 | Gate | Qubits | Effect | Use Case | Complexity |
 |------|--------|--------|----------|------------|
-| **[CNOT](cnot-gate.md)** | 2 | Controlled bit flip | Entanglement | O(1) |
-| **[Toffoli](toffoli-gate.md)** | 3 | Controlled-controlled NOT | Reversible computing | O(1) |
-| **[SWAP](swap-gate.md)** | 2 | Exchange states | Qubit routing | O(1) |
-| **[Controlled-U](controlled-gates.md)** | 2+ | Conditional operation | General control | O(1) |
+| **[CNOT](pages/cnot-gate.md)** | 2 | Controlled bit flip | Entanglement | O(1) |
+| **[Toffoli](pages/toffoli-gate.md)** | 3 | Controlled-controlled NOT | Reversible computing | O(1) |
+| **[SWAP](pages/swap-gate.md)** | 2 | Exchange states | Qubit routing | O(1) |
+| **[Controlled-U](pages/controlled-gates.md)** | 2+ | Conditional operation | General control | O(1) |
 
 ### Circuit Design
 
-- **[Circuit Composition](circuit-composition.md)** - Building complex circuits
-- **[Circuit Optimization](circuit-optimization.md)** - Reducing gate count
-- **[Circuit Depth](circuit-depth.md)** - Minimizing sequential operations
-- **[Quantum Compilation](quantum-compilation.md)** - Mapping to hardware
+- **[Circuit Composition](pages/circuit-composition.md)** - Building complex circuits
+- **[Circuit Optimization](pages/circuit-optimization.md)** - Reducing gate count
+- **[Circuit Depth](pages/circuit-depth.md)** - Minimizing sequential operations
+- **[Quantum Compilation](pages/quantum-compilation.md)** - Mapping to hardware
 
 ## Quantum Algorithms
 
@@ -66,51 +66,51 @@ Quantum Computing leverages quantum mechanical phenomena such as superposition, 
 
 | Algorithm | Problem | Speedup | Qubits | Best For |
 |-----------|---------|---------|--------|----------|
-| **[Deutsch-Jozsa](deutsch-jozsa.md)** | Function property | Exponential | n+1 | Constant vs balanced |
-| **[Bernstein-Vazirani](bernstein-vazirani.md)** | Hidden string | Exponential | n+1 | Linear function |
-| **[Simon's](simons-algorithm.md)** | Period finding | Exponential | 2n | XOR periodicity |
-| **[QFT](qft.md)** | Basis transform | Exponential | n | Phase estimation |
+| **[Deutsch-Jozsa](pages/deutsch-jozsa.md)** | Function property | Exponential | n+1 | Constant vs balanced |
+| **[Bernstein-Vazirani](pages/bernstein-vazirani.md)** | Hidden string | Exponential | n+1 | Linear function |
+| **[Simon's](pages/simons-algorithm.md)** | Period finding | Exponential | 2n | XOR periodicity |
+| **[QFT](pages/qft.md)** | Basis transform | Exponential | n | Phase estimation |
 
 ### Major Quantum Algorithms
 
 | Algorithm | Problem | Speedup | Complexity | Impact |
 |-----------|---------|---------|------------|--------|
-| **[Shor's](shors-algorithm.md)** | Integer factorization | Exponential | O(log³N) | Cryptography |
-| **[Grover's](grovers-algorithm.md)** | Unstructured search | Quadratic | O(√N) | Database search |
-| **[QPE](qpe.md)** | Eigenvalue estimation | Exponential | O(1/ε) | Chemistry, physics |
-| **[HHL](hhl-algorithm.md)** | Linear systems | Exponential | O(log N) | ML, optimization |
+| **[Shor's](pages/shors-algorithm.md)** | Integer factorization | Exponential | O(log³N) | Cryptography |
+| **[Grover's](pages/grovers-algorithm.md)** | Unstructured search | Quadratic | O(√N) | Database search |
+| **[QPE](pages/qpe.md)** | Eigenvalue estimation | Exponential | O(1/ε) | Chemistry, physics |
+| **[HHL](pages/hhl-algorithm.md)** | Linear systems | Exponential | O(log N) | ML, optimization |
 
 ### Optimization Algorithms
 
 | Algorithm | Type | Hardware | Convergence | Best For |
 |-----------|------|----------|-------------|----------|
-| **[QAOA](qaoa.md)** | Variational | Gate-based | Heuristic | Combinatorial optimization |
-| **[VQE](vqe.md)** | Variational | Gate-based | Iterative | Ground state energy |
-| **[Quantum Annealing](quantum-annealing.md)** | Adiabatic | Annealer | Probabilistic | QUBO problems |
-| **[Quantum Walk](quantum-walk.md)** | Algorithmic | Gate-based | Varies | Graph problems |
+| **[QAOA](pages/qaoa.md)** | Variational | Gate-based | Heuristic | Combinatorial optimization |
+| **[VQE](pages/vqe.md)** | Variational | Gate-based | Iterative | Ground state energy |
+| **[Quantum Annealing](pages/quantum-annealing.md)** | Adiabatic | Annealer | Probabilistic | QUBO problems |
+| **[Quantum Walk](pages/quantum-walk.md)** | Algorithmic | Gate-based | Varies | Graph problems |
 
 ## Quantum Machine Learning
 
 ### Quantum-Enhanced ML
 
-- **[Quantum Neural Networks](quantum-neural-networks.md)** - Parameterized quantum circuits
-- **[Quantum Kernels](quantum-kernels.md)** - Quantum feature maps
-- **[Quantum Sampling](quantum-sampling.md)** - Generating quantum distributions
-- **[Quantum Generative Models](quantum-generative.md)** - QGANs, QBMs
+- **[Quantum Neural Networks](pages/quantum-neural-networks.md)** - Parameterized quantum circuits
+- **[Quantum Kernels](pages/quantum-kernels.md)** - Quantum feature maps
+- **[Quantum Sampling](pages/quantum-sampling.md)** - Generating quantum distributions
+- **[Quantum Generative Models](pages/quantum-generative.md)** - QGANs, QBMs
 
 ### Hybrid Quantum-Classical
 
-- **[Variational Algorithms](variational-algorithms.md)** - Classical optimization of quantum circuits
-- **[Quantum Transfer Learning](quantum-transfer-learning.md)** - Pre-trained quantum models
-- **[Quantum Feature Extraction](quantum-features.md)** - Quantum preprocessing
-- **[Classical Post-Processing](classical-postprocessing.md)** - Interpreting quantum results
+- **[Variational Algorithms](pages/variational-algorithms.md)** - Classical optimization of quantum circuits
+- **[Quantum Transfer Learning](pages/quantum-transfer-learning.md)** - Pre-trained quantum models
+- **[Quantum Feature Extraction](pages/quantum-features.md)** - Quantum preprocessing
+- **[Classical Post-Processing](pages/classical-postprocessing.md)** - Interpreting quantum results
 
 ### Applications
 
-- **[Quantum Classification](quantum-classification.md)** - Supervised learning
-- **[Quantum Clustering](quantum-clustering.md)** - Unsupervised learning
-- **[Quantum Reinforcement Learning](quantum-rl.md)** - Decision making
-- **[Quantum Optimization](quantum-optimization.md)** - Combinatorial problems
+- **[Quantum Classification](pages/quantum-classification.md)** - Supervised learning
+- **[Quantum Clustering](pages/quantum-clustering.md)** - Unsupervised learning
+- **[Quantum Reinforcement Learning](pages/quantum-rl.md)** - Decision making
+- **[Quantum Optimization](pages/quantum-optimization.md)** - Combinatorial problems
 
 ## Quantum Hardware
 
@@ -118,144 +118,156 @@ Quantum Computing leverages quantum mechanical phenomena such as superposition, 
 
 ![Qubit Types](diagrams/qubit-technologies.png)
 
-- **[Superconducting Qubits](superconducting-qubits.md)** - IBM, Google, Rigetti
-- **[Trapped Ions](trapped-ions.md)** - IonQ, Honeywell
-- **[Photonic Qubits](photonic-qubits.md)** - Xanadu, PsiQuantum
-- **[Topological Qubits](topological-qubits.md)** - Microsoft
-- **[Neutral Atoms](neutral-atoms.md)** - QuEra, Pasqal
-- **[Silicon Spin Qubits](silicon-qubits.md)** - Intel, SiQure
+- **[Superconducting Qubits](pages/superconducting-qubits.md)** - IBM, Google, Rigetti
+- **[Trapped Ions](pages/trapped-ions.md)** - IonQ, Honeywell
+- **[Photonic Qubits](pages/photonic-qubits.md)** - Xanadu, PsiQuantum
+- **[Topological Qubits](pages/topological-qubits.md)** - Microsoft
+- **[Neutral Atoms](pages/neutral-atoms.md)** - QuEra, Pasqal
+- **[Silicon Spin Qubits](pages/silicon-qubits.md)** - Intel, SiQure
 
 ### Hardware Challenges
 
-- **[Decoherence](decoherence.md)** - Loss of quantum information
-- **[Gate Fidelity](gate-fidelity.md)** - Error rates in operations
-- **[Connectivity](qubit-connectivity.md)** - Physical qubit layout constraints
-- **[Scalability](quantum-scalability.md)** - Building larger systems
-- **[Cryogenics](cryogenics.md)** - Ultra-low temperature requirements
+- **[Decoherence](pages/decoherence.md)** - Loss of quantum information
+- **[Gate Fidelity](pages/gate-fidelity.md)** - Error rates in operations
+- **[Connectivity](pages/qubit-connectivity.md)** - Physical qubit layout constraints
+- **[Scalability](pages/quantum-scalability.md)** - Building larger systems
+- **[Cryogenics](pages/cryogenics.md)** - Ultra-low temperature requirements
 
 ## Quantum Error Correction
 
 ### Error Types
 
-- **[Bit Flip Errors](bit-flip-errors.md)** - X errors
-- **[Phase Flip Errors](phase-flip-errors.md)** - Z errors
-- **[Depolarizing Errors](depolarizing-errors.md)** - Random errors
-- **[Measurement Errors](measurement-errors.md)** - Readout errors
+- **[Bit Flip Errors](pages/bit-flip-errors.md)** - X errors
+- **[Phase Flip Errors](pages/phase-flip-errors.md)** - Z errors
+- **[Depolarizing Errors](pages/depolarizing-errors.md)** - Random errors
+- **[Measurement Errors](pages/measurement-errors.md)** - Readout errors
 
 ### Error Correction Codes
 
-- **[Repetition Code](repetition-code.md)** - Simple redundancy
-- **[Shor Code](shor-code.md)** - 9-qubit code
-- **[Steane Code](steane-code.md)** - 7-qubit CSS code
-- **[Surface Code](surface-code.md)** - 2D topological code
-- **[Color Code](color-code.md)** - Alternative topological code
+- **[Repetition Code](pages/repetition-code.md)** - Simple redundancy
+- **[Shor Code](pages/shor-code.md)** - 9-qubit code
+- **[Steane Code](pages/steane-code.md)** - 7-qubit CSS code
+- **[Surface Code](pages/surface-code.md)** - 2D topological code
+- **[Color Code](pages/color-code.md)** - Alternative topological code
 
 ### Fault-Tolerant Computing
 
-- **[Logical Qubits](logical-qubits.md)** - Error-corrected qubits
-- **[Fault-Tolerant Gates](fault-tolerant-gates.md)** - Protected operations
-- **[Magic State Distillation](magic-state-distillation.md)** - Creating high-fidelity states
-- **[Threshold Theorem](threshold-theorem.md)** - Error correction viability
+| Concept | Purpose | Overhead | Maturity | Critical For |
+|---------|---------|----------|----------|--------------|
+| **[Logical Qubits](pages/logical-qubits.md)** | Error-corrected qubits | 100-1000x | Research | Scalable quantum computing |
+| **[Fault-Tolerant Gates](pages/fault-tolerant-gates.md)** | Protected operations | High | Research | Reliable computation |
+| **[Magic State Distillation](pages/magic-state-distillation.md)** | High-fidelity states | Very High | Research | Universal gate set |
+| **[Threshold Theorem](pages/threshold-theorem.md)** | Error correction viability | N/A | Theoretical | Feasibility proof |
 
 ## Quantum Programming
 
 ### Quantum Programming Languages
 
-- **[Qiskit](qiskit.md)** - IBM's quantum framework (Python)
-- **[Cirq](cirq.md)** - Google's quantum framework (Python)
-- **[PennyLane](pennylane.md)** - Quantum ML library (Python)
-- **[Q#](qsharp.md)** - Microsoft's quantum language
-- **[Silq](silq.md)** - High-level quantum language
+| Language | Provider | Language | Maturity | Best For |
+|----------|----------|----------|----------|----------|
+| **[Qiskit](pages/qiskit.md)** | IBM | Python | Mature | IBM hardware, education |
+| **[Cirq](pages/cirq.md)** | Google | Python | Mature | Google hardware, NISQ |
+| **[PennyLane](pages/pennylane.md)** | Xanadu | Python | Mature | Quantum ML, hybrid |
+| **[Q#](pages/qsharp.md)** | Microsoft | Domain-specific | Mature | Azure Quantum |
+| **[Silq](pages/silq.md)** | Academic | High-level | Research | Intuitive programming |
 
 ### Development Tools
 
-- **[Quantum Simulators](quantum-simulators.md)** - Classical simulation of quantum systems
-- **[Quantum Debuggers](quantum-debuggers.md)** - Debugging quantum programs
-- **[Visualization Tools](quantum-visualization.md)** - Circuit and state visualization
-- **[Benchmarking](quantum-benchmarking.md)** - Performance evaluation
+| Tool | Purpose | Complexity | Accuracy | Best For |
+|------|---------|------------|----------|----------|
+| **[Quantum Simulators](pages/quantum-simulators.md)** | Classical simulation | Low | Exact (small systems) | Development, testing |
+| **[Quantum Debuggers](pages/quantum-debuggers.md)** | Program debugging | Medium | N/A | Finding bugs |
+| **[Visualization Tools](pages/quantum-visualization.md)** | Circuit/state display | Low | N/A | Understanding, teaching |
+| **[Benchmarking](pages/quantum-benchmarking.md)** | Performance evaluation | Medium | Varies | Hardware comparison |
 
 ### Programming Paradigms
 
-- **[Gate-Based Programming](gate-based-programming.md)** - Circuit model
-- **[Measurement-Based Computing](measurement-based.md)** - One-way quantum computing
-- **[Adiabatic Computing](adiabatic-computing.md)** - Continuous evolution
-- **[Topological Computing](topological-computing.md)** - Braiding anyons
+| Paradigm | Model | Hardware | Maturity | Best For |
+|----------|-------|----------|----------|----------|
+| **[Gate-Based Programming](pages/gate-based-programming.md)** | Circuit | Universal | Mature | General algorithms |
+| **[Measurement-Based Computing](pages/measurement-based.md)** | One-way | Photonic | Research | Specific architectures |
+| **[Adiabatic Computing](pages/adiabatic-computing.md)** | Continuous evolution | Annealer | Commercial | Optimization |
+| **[Topological Computing](pages/topological-computing.md)** | Braiding | Topological | Research | Fault tolerance |
 
 ## Applications
 
 ### Cryptography
 
-- **[Quantum Key Distribution](qkd.md)** - Secure communication (BB84, E91)
-- **[Post-Quantum Cryptography](post-quantum-crypto.md)** - Quantum-resistant algorithms
-- **[Quantum Random Number Generation](qrng.md)** - True randomness
+- **[Quantum Key Distribution](pages/qkd.md)** - Secure communication (BB84, E91)
+- **[Post-Quantum Cryptography](pages/post-quantum-crypto.md)** - Quantum-resistant algorithms
+- **[Quantum Random Number Generation](pages/qrng.md)** - True randomness
 
 ### Chemistry and Materials
 
-- **[Molecular Simulation](molecular-simulation.md)** - Electronic structure
-- **[Drug Discovery](quantum-drug-discovery.md)** - Molecular interactions
-- **[Materials Design](materials-design.md)** - Novel material properties
-- **[Catalysis](quantum-catalysis.md)** - Reaction mechanisms
+- **[Molecular Simulation](pages/molecular-simulation.md)** - Electronic structure
+- **[Drug Discovery](pages/quantum-drug-discovery.md)** - Molecular interactions
+- **[Materials Design](pages/materials-design.md)** - Novel material properties
+- **[Catalysis](pages/quantum-catalysis.md)** - Reaction mechanisms
 
 ### Optimization
 
-- **[Portfolio Optimization](portfolio-optimization.md)** - Financial applications
-- **[Supply Chain](supply-chain-quantum.md)** - Logistics optimization
-- **[Scheduling](quantum-scheduling.md)** - Resource allocation
-- **[Traffic Flow](traffic-optimization.md)** - Route optimization
+- **[Portfolio Optimization](pages/portfolio-optimization.md)** - Financial applications
+- **[Supply Chain](pages/supply-chain-quantum.md)** - Logistics optimization
+- **[Scheduling](pages/quantum-scheduling.md)** - Resource allocation
+- **[Traffic Flow](pages/traffic-optimization.md)** - Route optimization
 
 ### Machine Learning
 
-- **[Quantum Data Encoding](quantum-encoding.md)** - Classical to quantum data
-- **[Quantum Feature Maps](feature-maps.md)** - Kernel methods
-- **[Quantum Training](quantum-training.md)** - Parameter optimization
-- **[Quantum Inference](quantum-inference.md)** - Making predictions
+- **[Quantum Data Encoding](pages/quantum-encoding.md)** - Classical to quantum data
+- **[Quantum Feature Maps](pages/feature-maps.md)** - Kernel methods
+- **[Quantum Training](pages/quantum-training.md)** - Parameter optimization
+- **[Quantum Inference](pages/quantum-inference.md)** - Making predictions
 
 ## Quantum Advantage
 
 ### Demonstrating Quantum Supremacy
 
-- **[Google's Sycamore](sycamore.md)** - Random circuit sampling (2019)
-- **[Quantum Advantage Experiments](quantum-advantage-experiments.md)** - Various demonstrations
-- **[Practical Quantum Advantage](practical-advantage.md)** - Real-world applications
+- **[Google's Sycamore](pages/sycamore.md)** - Random circuit sampling (2019)
+- **[Quantum Advantage Experiments](pages/quantum-advantage-experiments.md)** - Various demonstrations
+- **[Practical Quantum Advantage](pages/practical-advantage.md)** - Real-world applications
 
 ### Complexity Theory
 
-- **[BQP Complexity Class](bqp.md)** - Bounded-error quantum polynomial time
-- **[Quantum vs Classical](quantum-vs-classical.md)** - Computational power comparison
-- **[Oracle Separation](oracle-separation.md)** - Theoretical speedups
+- **[BQP Complexity Class](pages/bqp.md)** - Bounded-error quantum polynomial time
+- **[Quantum vs Classical](pages/quantum-vs-classical.md)** - Computational power comparison
+- **[Oracle Separation](pages/oracle-separation.md)** - Theoretical speedups
 
 ## Quantum Networking
 
-- **[Quantum Internet](quantum-internet.md)** - Distributed quantum computing
-- **[Quantum Repeaters](quantum-repeaters.md)** - Long-distance entanglement
-- **[Quantum Teleportation](quantum-teleportation.md)** - State transfer
-- **[Distributed Quantum Computing](distributed-quantum.md)** - Multi-node computation
+- **[Quantum Internet](pages/quantum-internet.md)** - Distributed quantum computing
+- **[Quantum Repeaters](pages/quantum-repeaters.md)** - Long-distance entanglement
+- **[Quantum Teleportation](pages/quantum-teleportation.md)** - State transfer
+- **[Distributed Quantum Computing](pages/distributed-quantum.md)** - Multi-node computation
 
 ## Current Limitations
 
 ### Technical Challenges
 
-- **Noise and Errors** - High error rates in current hardware
-- **Limited Qubits** - Small system sizes (50-1000 qubits)
-- **Short Coherence Times** - Rapid decoherence
-- **Connectivity Constraints** - Limited qubit interactions
-- **Calibration** - Frequent recalibration needed
+| Challenge | Current State | Impact | Timeline to Solve |
+|-----------|---------------|--------|-------------------|
+| **Noise and Errors** | 0.1-1% error rates | High | 5-10 years |
+| **Limited Qubits** | 50-1000 qubits | High | 3-5 years |
+| **Short Coherence Times** | Microseconds-milliseconds | High | 5-10 years |
+| **Connectivity Constraints** | Limited topology | Medium | 3-5 years |
+| **Calibration** | Daily recalibration | Medium | 2-5 years |
 
 ### Practical Challenges
 
-- **Cost** - Expensive infrastructure
-- **Expertise** - Specialized knowledge required
-- **Algorithm Development** - Few practical quantum algorithms
-- **Verification** - Difficulty validating quantum results
-- **Integration** - Combining with classical systems
+| Challenge | Impact | Difficulty | Mitigation |
+|-----------|--------|------------|------------|
+| **Cost** | Very High | High | Cloud access, shared resources |
+| **Expertise** | High | Very High | Education, tools, abstractions |
+| **Algorithm Development** | High | Very High | Research, hybrid approaches |
+| **Verification** | Medium | High | Classical simulation, benchmarks |
+| **Integration** | Medium | Medium | Hybrid frameworks, APIs |
 
 ## Future Directions
 
-- **[Fault-Tolerant Quantum Computing](ftqc.md)** - Error-corrected systems
-- **[Quantum Cloud Services](quantum-cloud.md)** - Accessible quantum computing
-- **[Hybrid Algorithms](hybrid-algorithms.md)** - Quantum-classical synergy
-- **[Quantum Sensors](quantum-sensors.md)** - Precision measurement
-- **[Quantum Communication](quantum-communication.md)** - Secure networks
+- **[Fault-Tolerant Quantum Computing](pages/ftqc.md)** - Error-corrected systems
+- **[Quantum Cloud Services](pages/quantum-cloud.md)** - Accessible quantum computing
+- **[Hybrid Algorithms](pages/hybrid-algorithms.md)** - Quantum-classical synergy
+- **[Quantum Sensors](pages/quantum-sensors.md)** - Precision measurement
+- **[Quantum Communication](pages/quantum-communication.md)** - Secure networks
 
 ## Related Topics
 

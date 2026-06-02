@@ -36,14 +36,14 @@ Choosing the right machine learning algorithm depends on your problem type, data
 
 | Model | Task | Regularization | Interpretability | Speed | Best For |
 |-------|------|----------------|------------------|-------|----------|
-| **[Linear Regression](linear-regression.md)** | Regression | None (OLS) | High | Very Fast | Baseline, linear relationships |
-| **[Ridge](ridge-regression.md)** | Regression | L2 (shrinkage) | High | Very Fast | Multicollinearity, many features |
-| **[Lasso](lasso-regression.md)** | Regression | L1 (sparsity) | High | Fast | Feature selection, sparse models |
-| **[Elastic Net](elastic-net.md)** | Regression | L1 + L2 | High | Fast | Grouped features, balance |
-| **[Logistic Regression](logistic-regression.md)** | Classification | Optional L1/L2 | High | Very Fast | Binary/multi-class, baseline |
-| **[Linear SVM](linear-svm.md)** | Classification | L2 (margin) | Medium | Fast | Large datasets, linear separation |
-| **[Kernel SVM](kernel-svm.md)** | Classification | L2 (margin) | Low | Slow | Non-linear, small-medium data |
-| **[SVR](svr.md)** | Regression | Epsilon-insensitive | Medium | Medium | Non-linear regression |
+| **[Linear Regression](pages/linear-regression.md)** | Regression | None (OLS) | High | Very Fast | Baseline, linear relationships |
+| **[Ridge](pages/ridge-regression.md)** | Regression | L2 (shrinkage) | High | Very Fast | Multicollinearity, many features |
+| **[Lasso](pages/lasso-regression.md)** | Regression | L1 (sparsity) | High | Fast | Feature selection, sparse models |
+| **[Elastic Net](pages/elastic-net.md)** | Regression | L1 + L2 | High | Fast | Grouped features, balance |
+| **[Logistic Regression](pages/logistic-regression.md)** | Classification | Optional L1/L2 | High | Very Fast | Binary/multi-class, baseline |
+| **[Linear SVM](pages/linear-svm.md)** | Classification | L2 (margin) | Medium | Fast | Large datasets, linear separation |
+| **[Kernel SVM](pages/kernel-svm.md)** | Classification | L2 (margin) | Low | Slow | Non-linear, small-medium data |
+| **[SVR](pages/svr.md)** | Regression | Epsilon-insensitive | Medium | Medium | Non-linear regression |
 
 **Regularization Comparison**:
 - **L1 (Lasso)**: Sparse solutions, feature selection, some coefficients → 0
@@ -54,19 +54,19 @@ Choosing the right machine learning algorithm depends on your problem type, data
 
 **Core Concept**: Predictions based on similarity/distance metrics
 
-- **[K-Nearest Neighbors (KNN)](knn.md)** - Instance-based learning
+- **[K-Nearest Neighbors (KNN)](pages/knn.md)** - Instance-based learning
   - Classification (majority vote)
   - Regression (average)
   - Distance metrics (Euclidean, Manhattan, Minkowski)
   - Weighted KNN
 
-- **[K-Means Clustering](k-means.md)** - Centroid-based clustering
+- **[K-Means Clustering](pages/k-means.md)** - Centroid-based clustering
   - Standard K-means
   - K-means++
   - Mini-batch K-means
   - Elbow method for K selection
 
-- **[KD-Tree](kd-tree.md)** - Space-partitioning data structure
+- **[KD-Tree](pages/kd-tree.md)** - Space-partitioning data structure
   - Efficient nearest neighbor search
   - Range queries
   - Construction and traversal
@@ -80,12 +80,12 @@ Choosing the right machine learning algorithm depends on your problem type, data
 
 | Model | Type | Ensemble | Speed | Overfitting Risk | Handles Categorical | Best For |
 |-------|------|----------|-------|-----------------|---------------------|----------|
-| **[Decision Tree](decision-trees.md)** | Single | No | Fast | High | Yes | Interpretability, baseline |
-| **[Random Forest](random-forests.md)** | Bagging | Yes (parallel) | Medium | Low | Yes | General purpose, robust |
-| **[XGBoost](xgboost.md)** | Boosting | Yes (sequential) | Fast | Medium | With encoding | Competitions, performance |
-| **[LightGBM](lightgbm.md)** | Boosting | Yes (sequential) | Very Fast | Medium | With encoding | Large datasets, speed |
-| **[CatBoost](catboost.md)** | Boosting | Yes (sequential) | Medium | Low | Native support | Categorical features |
-| **[AdaBoost](adaboost.md)** | Boosting | Yes (sequential) | Medium | Medium | Yes | Weak learners, simple |
+| **[Decision Tree](pages/decision-trees.md)** | Single | No | Fast | High | Yes | Interpretability, baseline |
+| **[Random Forest](pages/random-forests.md)** | Bagging | Yes (parallel) | Medium | Low | Yes | General purpose, robust |
+| **[XGBoost](pages/xgboost.md)** | Boosting | Yes (sequential) | Fast | Medium | With encoding | Competitions, performance |
+| **[LightGBM](pages/lightgbm.md)** | Boosting | Yes (sequential) | Very Fast | Medium | With encoding | Large datasets, speed |
+| **[CatBoost](pages/catboost.md)** | Boosting | Yes (sequential) | Medium | Low | Native support | Categorical features |
+| **[AdaBoost](pages/adaboost.md)** | Boosting | Yes (sequential) | Medium | Medium | Yes | Weak learners, simple |
 
 **Gradient Boosting Comparison**:
 
@@ -103,18 +103,18 @@ Choosing the right machine learning algorithm depends on your problem type, data
 
 **Core Concept**: Modeling probability distributions
 
-- **[Naive Bayes](naive-bayes.md)** - Probabilistic classifier
+- **[Naive Bayes](pages/naive-bayes.md)** - Probabilistic classifier
   - Gaussian Naive Bayes
   - Multinomial Naive Bayes
   - Bernoulli Naive Bayes
   - Feature independence assumption
 
-- **[Gaussian Mixture Models (GMM)](gmm.md)** - Soft clustering
+- **[Gaussian Mixture Models (GMM)](pages/gmm.md)** - Soft clustering
   - Expectation-Maximization (EM) algorithm
   - Covariance types (full, tied, diagonal, spherical)
   - Model selection (BIC, AIC)
 
-- **[Hidden Markov Models (HMM)](hmm.md)** - Sequential probabilistic models
+- **[Hidden Markov Models (HMM)](pages/hmm.md)** - Sequential probabilistic models
   - Forward-backward algorithm
   - Viterbi algorithm
   - Baum-Welch training
@@ -160,14 +160,14 @@ The key difference is illustrated when clustering non-spherical data:
 
 | Model | Shape Flexibility | Needs K | Handles Noise | Speed | Scalability | Best For |
 |-------|------------------|---------|---------------|-------|-------------|----------|
-| **[K-Means](k-means.md)** | Spherical only | Yes | No | Very Fast | Excellent | Large data, spherical clusters |
-| **[Hierarchical](hierarchical-clustering.md)** | Any | No | No | Slow | Poor | Small data, dendrogram |
-| **[DBSCAN](dbscan.md)** | Arbitrary | No | Yes | Medium | Good | Arbitrary shapes, noise |
-| **[HDBSCAN](hdbscan.md)** | Arbitrary | No | Yes | Medium | Good | Varying density, noise |
-| **[Mean Shift](mean-shift.md)** | Arbitrary | No | Partial | Slow | Poor | Mode finding, few clusters |
-| **[Spectral](spectral-clustering.md)** | Non-convex | Yes | No | Slow | Poor | Graph data, non-convex |
-| **[GMM](gmm.md)** | Elliptical | Yes | Partial | Medium | Good | Soft clustering, probabilistic |
-| **[OPTICS](optics.md)** | Arbitrary | No | Yes | Slow | Medium | Varying density |
+| **[K-Means](pages/k-means.md)** | Spherical only | Yes | No | Very Fast | Excellent | Large data, spherical clusters |
+| **[Hierarchical](pages/hierarchical-clustering.md)** | Any | No | No | Slow | Poor | Small data, dendrogram |
+| **[DBSCAN](pages/dbscan.md)** | Arbitrary | No | Yes | Medium | Good | Arbitrary shapes, noise |
+| **[HDBSCAN](pages/hdbscan.md)** | Arbitrary | No | Yes | Medium | Good | Varying density, noise |
+| **[Mean Shift](pages/mean-shift.md)** | Arbitrary | No | Partial | Slow | Poor | Mode finding, few clusters |
+| **[Spectral](pages/spectral-clustering.md)** | Non-convex | Yes | No | Slow | Poor | Graph data, non-convex |
+| **[GMM](pages/gmm.md)** | Elliptical | Yes | Partial | Medium | Good | Soft clustering, probabilistic |
+| **[OPTICS](pages/optics.md)** | Arbitrary | No | Yes | Slow | Medium | Varying density |
 
 **Linkage Methods** (Hierarchical):
 - **Single**: Minimum distance between clusters (chaining effect)

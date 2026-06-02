@@ -11,48 +11,48 @@ Symbolic AI, also known as "Good Old-Fashioned AI" (GOFAI), represents the class
 ### Knowledge Representation
 How information and relationships are formally encoded for computational reasoning.
 
-- **[Semantic Networks](semantic-networks.md)** - Graph-based knowledge structures
-- **[Frames and Scripts](frames-and-scripts.md)** - Structured knowledge templates
-- **[Ontologies](ontologies.md)** - Formal specifications of conceptual domains
-- **[Logic Systems](logic-systems.md)** - Propositional, first-order, and higher-order logic
+- **[Semantic Networks](pages/semantic-networks.md)** - Graph-based knowledge structures
+- **[Frames and Scripts](pages/frames-and-scripts.md)** - Structured knowledge templates
+- **[Ontologies](pages/ontologies.md)** - Formal specifications of conceptual domains
+- **[Logic Systems](pages/logic-systems.md)** - Propositional, first-order, and higher-order logic
 
 ### Reasoning Systems
 
 ![Reasoning Architecture](diagrams/reasoning-architecture.png)
 
-- **[Forward Chaining](forward-chaining.md)** - Data-driven inference
-- **[Backward Chaining](backward-chaining.md)** - Goal-driven inference
-- **[Resolution](resolution.md)** - Automated theorem proving
-- **[Non-monotonic Reasoning](non-monotonic-reasoning.md)** - Reasoning with incomplete information
+- **[Forward Chaining](pages/forward-chaining.md)** - Data-driven inference
+- **[Backward Chaining](pages/backward-chaining.md)** - Goal-driven inference
+- **[Resolution](pages/resolution.md)** - Automated theorem proving
+- **[Non-monotonic Reasoning](pages/non-monotonic-reasoning.md)** - Reasoning with incomplete information
 
 ### Search Algorithms
 
 | Algorithm Type | Strategy | Completeness | Optimality | Complexity | Best For |
 |----------------|----------|--------------|------------|------------|----------|
-| **[BFS](uninformed-search.md)** | Breadth-first | Yes | Yes (unit cost) | O(b^d) | Shortest path |
-| **[DFS](uninformed-search.md)** | Depth-first | No | No | O(b^m) | Memory-limited |
-| **[Uniform-Cost](uninformed-search.md)** | Lowest cost | Yes | Yes | O(b^(C*/ε)) | Weighted graphs |
-| **[A*](informed-search.md)** | Best-first + heuristic | Yes | Yes (admissible h) | O(b^d) | Optimal path |
-| **[Greedy Best-First](informed-search.md)** | Heuristic only | No | No | O(b^m) | Fast solutions |
-| **[Minimax](adversarial-search.md)** | Game tree | Yes | Yes | O(b^m) | Two-player games |
-| **[Alpha-Beta](adversarial-search.md)** | Pruned minimax | Yes | Yes | O(b^(m/2)) | Game optimization |
+| **[BFS](pages/uninformed-search.md)** | Breadth-first | Yes | Yes (unit cost) | O(b^d) | Shortest path |
+| **[DFS](pages/uninformed-search.md)** | Depth-first | No | No | O(b^m) | Memory-limited |
+| **[Uniform-Cost](pages/uninformed-search.md)** | Lowest cost | Yes | Yes | O(b^(C*/ε)) | Weighted graphs |
+| **[A*](pages/informed-search.md)** | Best-first + heuristic | Yes | Yes (admissible h) | O(b^d) | Optimal path |
+| **[Greedy Best-First](pages/informed-search.md)** | Heuristic only | No | No | O(b^m) | Fast solutions |
+| **[Minimax](pages/adversarial-search.md)** | Game tree | Yes | Yes | O(b^m) | Two-player games |
+| **[Alpha-Beta](pages/adversarial-search.md)** | Pruned minimax | Yes | Yes | O(b^(m/2)) | Game optimization |
 
 ### Planning Approaches
 
 | Approach | Representation | Uncertainty | Complexity | Best For |
 |----------|----------------|-------------|------------|----------|
-| **[STRIPS](classical-planning.md)** | State-space | None | PSPACE-complete | Deterministic domains |
-| **[HTN](hierarchical-planning.md)** | Task hierarchy | None | Varies | Structured problems |
-| **[Temporal](temporal-planning.md)** | Time constraints | None | EXPTIME | Scheduling |
-| **[Probabilistic](probabilistic-planning.md)** | MDPs, POMDPs | Yes | PSPACE-complete | Stochastic domains |
+| **[STRIPS](pages/classical-planning.md)** | State-space | None | PSPACE-complete | Deterministic domains |
+| **[HTN](pages/hierarchical-planning.md)** | Task hierarchy | None | Varies | Structured problems |
+| **[Temporal](pages/temporal-planning.md)** | Time constraints | None | EXPTIME | Scheduling |
+| **[Probabilistic](pages/probabilistic-planning.md)** | MDPs, POMDPs | Yes | PSPACE-complete | Stochastic domains |
 
 ### Expert Systems
 
 ![Expert System Architecture](diagrams/expert-system-architecture.png)
 
-- **[Rule-Based Systems](rule-based-systems.md)** - Production rules and inference engines
-- **[Fuzzy Logic Systems](fuzzy-logic.md)** - Reasoning with imprecise information
-- **[Blackboard Systems](blackboard-systems.md)** - Collaborative problem-solving architecture
+- **[Rule-Based Systems](pages/rule-based-systems.md)** - Production rules and inference engines
+- **[Fuzzy Logic Systems](pages/fuzzy-logic.md)** - Reasoning with imprecise information
+- **[Blackboard Systems](pages/blackboard-systems.md)** - Collaborative problem-solving architecture
 
 ## Historical Context
 
