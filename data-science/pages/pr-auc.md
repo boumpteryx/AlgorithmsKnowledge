@@ -16,7 +16,7 @@ Detailed information about PR-AUC will be added here, including:
 
 ## Related Topics
 
-- [Back to Data Science](README.md)
+- [Back to Data Science](../README.md)
 
 ---
 

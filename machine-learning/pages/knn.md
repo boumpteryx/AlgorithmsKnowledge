@@ -16,7 +16,7 @@ Detailed information about K-Nearest Neighbors (KNN) will be added here, includi
 
 ## Related Topics
 
-- [Back to Machine Learning](README.md)
+- [Back to Machine Learning](../README.md)
 
 ---
 

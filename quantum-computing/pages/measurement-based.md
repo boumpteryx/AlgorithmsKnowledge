@@ -16,7 +16,7 @@ Detailed information about Measurement-Based Computing will be added here, inclu
 
 ## Related Topics
 
-- [Back to Quantum Computing](README.md)
+- [Back to Quantum Computing](../README.md)
 
 ---
 

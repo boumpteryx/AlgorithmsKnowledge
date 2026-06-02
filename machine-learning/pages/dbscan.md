@@ -20,7 +20,7 @@ Detailed information about DBSCAN will be added here, including:
 
 ## Related Topics
 
-- [Back to Machine Learning](README.md)
+- [Back to Machine Learning](../README.md)
 - [K-Means](k-means.md) - Centroid-based clustering alternative
 
 ---

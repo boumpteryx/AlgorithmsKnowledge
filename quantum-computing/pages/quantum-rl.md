@@ -16,7 +16,7 @@ Detailed information about Quantum Reinforcement Learning will be added here, in
 
 ## Related Topics
 
-- [Back to Quantum Computing](README.md)
+- [Back to Quantum Computing](../README.md)
 
 ---
 

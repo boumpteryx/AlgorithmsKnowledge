@@ -16,7 +16,7 @@ Detailed information about Non-monotonic Reasoning will be added here, including
 
 ## Related Topics
 
-- [Back to Symbolic AI](README.md)
+- [Back to Symbolic AI](../README.md)
 
 ---
 

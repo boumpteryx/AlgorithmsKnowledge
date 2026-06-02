@@ -16,7 +16,7 @@ Detailed information about Mish will be added here, including:
 
 ## Related Topics
 
-- [Back to Deep Learning](README.md)
+- [Back to Deep Learning](../README.md)
 
 ---
 

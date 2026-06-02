@@ -16,7 +16,7 @@ Detailed information about Backward Chaining will be added here, including:
 
 ## Related Topics
 
-- [Back to Symbolic AI](README.md)
+- [Back to Symbolic AI](../README.md)
 
 ---
 

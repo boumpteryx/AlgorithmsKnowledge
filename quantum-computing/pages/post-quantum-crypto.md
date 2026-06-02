@@ -16,7 +16,7 @@ Detailed information about Post-Quantum Cryptography will be added here, includi
 
 ## Related Topics
 
-- [Back to Quantum Computing](README.md)
+- [Back to Quantum Computing](../README.md)
 
 ---
 

@@ -16,7 +16,7 @@ Detailed information about Deep Feedforward Networks will be added here, includi
 
 ## Related Topics
 
-- [Back to Deep Learning](README.md)
+- [Back to Deep Learning](../README.md)
 
 ---
 

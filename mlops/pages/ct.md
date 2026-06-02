@@ -16,7 +16,7 @@ Detailed information about Continuous Training will be added here, including:
 
 ## Related Topics
 
-- [Back to MLOps](README.md)
+- [Back to MLOps](../README.md)
 
 ---
 

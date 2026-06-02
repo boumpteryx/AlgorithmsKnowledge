@@ -16,7 +16,7 @@ Detailed information about Lasso will be added here, including:
 
 ## Related Topics
 
-- [Back to Machine Learning](README.md)
+- [Back to Machine Learning](../README.md)
 
 ---
 

@@ -16,7 +16,7 @@ Detailed information about Quantum Random Number Generation will be added here, 
 
 ## Related Topics
 
-- [Back to Quantum Computing](README.md)
+- [Back to Quantum Computing](../README.md)
 
 ---
 

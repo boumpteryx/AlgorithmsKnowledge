@@ -16,7 +16,7 @@ Detailed information about Jaeger will be added here, including:
 
 ## Related Topics
 
-- [Back to Distributed Systems](README.md)
+- [Back to Distributed Systems](../README.md)
 
 ---
 

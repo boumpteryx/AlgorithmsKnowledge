@@ -16,7 +16,7 @@ Detailed information about Fault-Tolerant Quantum Computing will be added here, 
 
 ## Related Topics
 
-- [Back to Quantum Computing](README.md)
+- [Back to Quantum Computing](../README.md)
 
 ---
 

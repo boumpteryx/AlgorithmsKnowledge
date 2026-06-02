@@ -18,7 +18,7 @@ Detailed information about 0, ∞) | 0 or 1 | Hidden layers (default) | Dying Re
 
 ## Related Topics
 
-- [Back to Deep Learning](README.md)
+- [Back to Deep Learning](../README.md)
 
 ---
 

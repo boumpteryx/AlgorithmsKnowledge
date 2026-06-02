@@ -16,7 +16,7 @@ Detailed information about State Space Models (SSM) will be added here, includin
 
 ## Related Topics
 
-- [Back to Deep Learning](README.md)
+- [Back to Deep Learning](../README.md)
 
 ---
 

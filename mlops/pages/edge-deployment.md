@@ -16,7 +16,7 @@ Detailed information about Edge Deployment will be added here, including:
 
 ## Related Topics
 
-- [Back to MLOps](README.md)
+- [Back to MLOps](../README.md)
 
 ---
 

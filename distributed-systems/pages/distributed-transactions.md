@@ -16,7 +16,7 @@ Detailed information about Distributed Transactions will be added here, includin
 
 ## Related Topics
 
-- [Back to Distributed Systems](README.md)
+- [Back to Distributed Systems](../README.md)
 
 ---
 

@@ -16,7 +16,7 @@ Detailed information about Quantum Feature Extraction will be added here, includ
 
 ## Related Topics
 
-- [Back to Quantum Computing](README.md)
+- [Back to Quantum Computing](../README.md)
 
 ---
 

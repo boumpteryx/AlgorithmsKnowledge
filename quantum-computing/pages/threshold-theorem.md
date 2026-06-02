@@ -16,7 +16,7 @@ Detailed information about Threshold Theorem will be added here, including:
 
 ## Related Topics
 
-- [Back to Quantum Computing](README.md)
+- [Back to Quantum Computing](../README.md)
 
 ---
 

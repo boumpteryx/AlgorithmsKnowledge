@@ -16,7 +16,7 @@ Detailed information about Event-Driven Architecture will be added here, includi
 
 ## Related Topics
 
-- [Back to Distributed Systems](README.md)
+- [Back to Distributed Systems](../README.md)
 
 ---
 

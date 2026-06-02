@@ -16,7 +16,7 @@ Detailed information about Bernstein-Vazirani will be added here, including:
 
 ## Related Topics
 
-- [Back to Quantum Computing](README.md)
+- [Back to Quantum Computing](../README.md)
 
 ---
 

@@ -16,7 +16,7 @@ Detailed information about Reproducible Environments will be added here, includi
 
 ## Related Topics
 
-- [Back to MLOps](README.md)
+- [Back to MLOps](../README.md)
 
 ---
 

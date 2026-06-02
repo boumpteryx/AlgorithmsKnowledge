@@ -16,7 +16,7 @@ Detailed information about Quantum Advantage Experiments will be added here, inc
 
 ## Related Topics
 
-- [Back to Quantum Computing](README.md)
+- [Back to Quantum Computing](../README.md)
 
 ---
 

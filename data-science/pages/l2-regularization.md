@@ -16,7 +16,7 @@ Detailed information about L2 (Ridge) will be added here, including:
 
 ## Related Topics
 
-- [Back to Data Science](README.md)
+- [Back to Data Science](../README.md)
 
 ---
 

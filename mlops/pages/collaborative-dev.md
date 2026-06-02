@@ -16,7 +16,7 @@ Detailed information about Collaborative Development will be added here, includi
 
 ## Related Topics
 
-- [Back to MLOps](README.md)
+- [Back to MLOps](../README.md)
 
 ---
 

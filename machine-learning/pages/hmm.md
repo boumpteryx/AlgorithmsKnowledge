@@ -16,7 +16,7 @@ Detailed information about Hidden Markov Models (HMM) will be added here, includ
 
 ## Related Topics
 
-- [Back to Machine Learning](README.md)
+- [Back to Machine Learning](../README.md)
 
 ---
 

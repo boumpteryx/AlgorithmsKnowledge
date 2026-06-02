@@ -16,7 +16,7 @@ Detailed information about Gaussian Mixture Models (GMM) will be added here, inc
 
 ## Related Topics
 
-- [Back to Machine Learning](README.md)
+- [Back to Machine Learning](../README.md)
 
 ---
 

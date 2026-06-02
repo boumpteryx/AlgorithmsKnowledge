@@ -16,7 +16,7 @@ Detailed information about Quantum Key Distribution will be added here, includin
 
 ## Related Topics
 
-- [Back to Quantum Computing](README.md)
+- [Back to Quantum Computing](../README.md)
 
 ---
 
