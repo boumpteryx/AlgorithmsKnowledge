@@ -8,93 +8,90 @@ Distributed Systems are collections of independent computers that appear to user
 
 ## System Design Decision Flowchart
 
-Designing a distributed system requires making key architectural decisions based on scale, consistency needs, and workload type. Use this flowchart to guide your design:
+Designing a distributed system requires making key architectural decisions based on scale, consistency needs, and workload type. Use these flowcharts to guide your design:
+
+### Part 1: Scale and Architecture Selection
 
 ```mermaid
 graph TD
-    Start([Design Distributed System]) --> Scale{Expected<br/>Scale?}
+    Start([Design Distributed System]) --> Scale{Expected Scale?}
     
-    Scale -->|Small <1K users| SmallQ{Complexity?}
-    Scale -->|Medium 1K-100K| MediumQ{Consistency<br/>needs?}
-    Scale -->|Large >100K| LargeQ{Geographic<br/>distribution?}
+    Scale -->|Small: <1K users| SmallQ{Complexity?}
+    Scale -->|Medium: 1K-100K| MediumQ{Consistency needs?}
+    Scale -->|Large: >100K| LargeQ{Geographic distribution?}
     
-    subgraph Small["🏠 Small Scale"]
-        SmallQ -->|Simple| Monolith[Monolithic App<br/>Single server<br/>PostgreSQL]
-        SmallQ -->|Moderate| SimpleDistrib[Simple Distributed<br/>App + DB + Cache<br/>Load balancer]
-    end
+    SmallQ -->|Simple| Monolith[Monolithic App<br/>Single server + PostgreSQL]
+    SmallQ -->|Moderate| SimpleDistrib[Simple Distributed<br/>App + DB + Cache + LB]
     
-    subgraph Medium["🏢 Medium Scale"]
-        MediumQ -->|Strong| StrongConsist[Strong Consistency<br/>• RDBMS with replication<br/>• Raft/Paxos consensus<br/>• Synchronous updates]
-        MediumQ -->|Eventual| EventualConsist[Eventual Consistency<br/>• NoSQL databases<br/>• Event-driven architecture<br/>• Async messaging]
-        
-        StrongConsist --> MedArch{Architecture?}
-        EventualConsist --> MedArch
-        
-        MedArch -->|Coupled| Microservices[Microservices<br/>• Service mesh<br/>• API gateway<br/>• Container orchestration]
-        MedArch -->|Decoupled| EventDriven[Event-Driven<br/>• Message queues<br/>• Pub/Sub<br/>• CQRS pattern]
-    end
+    MediumQ -->|Strong| StrongConsist[Strong Consistency<br/>RDBMS + Raft/Paxos]
+    MediumQ -->|Eventual| EventualConsist[Eventual Consistency<br/>NoSQL + Event-driven]
     
-    subgraph Large["🌍 Large Scale"]
-        LargeQ -->|Yes| MultiRegion[Multi-Region Setup<br/>• CDN for static content<br/>• Regional data centers<br/>• Global load balancing]
-        LargeQ -->|No| SingleRegion[Single Region<br/>• Multiple availability zones<br/>• Auto-scaling<br/>• Distributed caching]
-        
-        MultiRegion --> DataStrategy{Data<br/>Strategy?}
-        SingleRegion --> DataStrategy
-        
-        DataStrategy -->|Centralized| CentralData[Centralized Data<br/>• Data lakes<br/>• Distributed databases<br/>• Replication]
-        DataStrategy -->|Partitioned| ShardedData[Sharded Data<br/>• Horizontal partitioning<br/>• Consistent hashing<br/>• Regional data]
-    end
+    StrongConsist --> MedArch{Architecture?}
+    EventualConsist --> MedArch
     
-    subgraph MLWorkloads["🤖 ML-Specific Considerations"]
-        MLQ{ML<br/>Workload?}
-        
-        MLQ -->|Training| TrainingArch{Training<br/>Type?}
-        MLQ -->|Inference| InferenceArch{Latency<br/>Requirements?}
-        
-        TrainingArch -->|Small models| SingleGPU[Single GPU<br/>• Local training<br/>• Simple setup]
-        TrainingArch -->|Large models| DistribTrain[Distributed Training<br/>• Data parallelism<br/>• Model parallelism<br/>• Parameter servers]
-        
-        InferenceArch -->|Low latency| EdgeInfer[Edge Deployment<br/>• Model optimization<br/>• Local inference<br/>• Quantization]
-        InferenceArch -->|High throughput| CloudInfer[Cloud Inference<br/>• Batch processing<br/>• Auto-scaling<br/>• Load balancing]
-    end
+    MedArch -->|Coupled| Microservices[Microservices<br/>Service mesh + K8s]
+    MedArch -->|Decoupled| EventDriven[Event-Driven<br/>Message queues + Pub/Sub]
     
-    Monolith --> MLQ
-    SimpleDistrib --> MLQ
-    Microservices --> MLQ
-    EventDriven --> MLQ
-    CentralData --> MLQ
-    ShardedData --> MLQ
+    LargeQ -->|Yes| MultiRegion[Multi-Region<br/>CDN + Global LB]
+    LargeQ -->|No| SingleRegion[Single Region<br/>Multi-AZ + Auto-scaling]
+    
+    MultiRegion --> DataStrategy{Data Strategy?}
+    SingleRegion --> DataStrategy
+    
+    DataStrategy -->|Centralized| CentralData[Centralized<br/>Data lakes + Replication]
+    DataStrategy -->|Partitioned| ShardedData[Sharded<br/>Horizontal partitioning]
+    
+    Monolith --> Next[Continue to ML Considerations]
+    SimpleDistrib --> Next
+    Microservices --> Next
+    EventDriven --> Next
+    CentralData --> Next
+    ShardedData --> Next
+    
+    style Start fill:#e1f5ff
+    style Monolith fill:#90EE90
+    style Next fill:#FFD700
+```
+
+### Part 2: ML Workloads and Reliability
+
+```mermaid
+graph TD
+    Start([From Architecture Selection]) --> MLQ{ML Workload?}
+    
+    MLQ -->|Training| TrainingArch{Training Type?}
+    MLQ -->|Inference| InferenceArch{Latency Requirements?}
+    MLQ -->|None| Monitor[Implement Monitoring]
+    
+    TrainingArch -->|Small models| SingleGPU[Single GPU<br/>Local training]
+    TrainingArch -->|Large models| DistribTrain[Distributed Training<br/>Data/Model parallelism]
+    
+    InferenceArch -->|Low latency| EdgeInfer[Edge Deployment<br/>Model optimization]
+    InferenceArch -->|High throughput| CloudInfer[Cloud Inference<br/>Batch + Auto-scaling]
     
     SingleGPU --> Monitor
     DistribTrain --> Monitor
     EdgeInfer --> Monitor
     CloudInfer --> Monitor
     
-    subgraph Monitoring["📊 Monitoring & Observability"]
-        Monitor[Implement Monitoring]
-        Monitor --> Metrics[Metrics<br/>Prometheus, Grafana]
-        Monitor --> Logs[Logging<br/>ELK Stack]
-        Monitor --> Traces[Tracing<br/>Jaeger, Zipkin]
-        
-        Metrics --> Alerts
-        Logs --> Alerts
-        Traces --> Alerts[Set Up Alerts]
-    end
+    Monitor --> Observability[Set Up Observability]
+    Observability --> Metrics[Metrics: Prometheus]
+    Observability --> Logs[Logs: ELK Stack]
+    Observability --> Traces[Traces: Jaeger]
     
-    subgraph Reliability["🛡️ Reliability Patterns"]
-        Alerts --> Reliability{Add<br/>Reliability?}
-        
-        Reliability -->|Yes| RelPatterns[Implement Patterns:<br/>• Circuit breakers<br/>• Retry with backoff<br/>• Bulkheads<br/>• Rate limiting<br/>• Chaos engineering]
-        Reliability -->|Basic| BasicRel[Basic Reliability:<br/>• Health checks<br/>• Graceful shutdown<br/>• Timeouts]
-        
-        RelPatterns --> Deploy
-        BasicRel --> Deploy
-    end
+    Metrics --> Alerts[Configure Alerts]
+    Logs --> Alerts
+    Traces --> Alerts
     
-    Deploy[Deploy & Iterate]
+    Alerts --> Reliability{Add Reliability?}
+    
+    Reliability -->|Yes| RelPatterns[Advanced Patterns<br/>Circuit breakers<br/>Chaos engineering]
+    Reliability -->|Basic| BasicRel[Basic Reliability<br/>Health checks<br/>Timeouts]
+    
+    RelPatterns --> Deploy[Deploy & Iterate]
+    BasicRel --> Deploy
     
     style Start fill:#e1f5ff
-    style Monolith fill:#90EE90
     style Deploy fill:#90EE90
     style RelPatterns fill:#FFD700
 ```
