@@ -156,8 +156,6 @@ For additional guidance, see the [Scikit-learn Algorithm Cheat-Sheet](https://sc
 
 ### Tree-Based Models
 
-![Tree Models](diagrams/tree-models.png)
-
 **Core Concept**: Hierarchical decision rules
 
 | Model | Type | Ensemble | Speed | Overfitting Risk | Handles Categorical | Best For |
@@ -202,8 +200,6 @@ For additional guidance, see the [Scikit-learn Algorithm Cheat-Sheet](https://sc
   - Baum-Welch training
 
 ### Clustering Models
-
-![Clustering Methods](diagrams/clustering-methods.png)
 
 **Core Concept**: Grouping similar data points without labels
 

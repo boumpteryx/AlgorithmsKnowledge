@@ -136,8 +136,6 @@ The flowchart guides you from initial requirements through architecture selectio
 
 ### Parallel Processing
 
-![Parallel Computing](diagrams/parallel-computing.png)
-
 | Pattern | Description | Use Case | Efficiency |
 |---------|-------------|----------|------------|
 | **[Data Parallelism](pages/data-parallelism.md)** | Same operation on different data | Training with large datasets | High |
@@ -166,8 +164,6 @@ The flowchart guides you from initial requirements through architecture selectio
 - **[Dask](pages/dask.md)** - Parallel computing in Python
 
 ### Data Storage
-
-![Distributed Storage](diagrams/distributed-storage.png)
 
 - **[HDFS](pages/hdfs.md)** - Hadoop Distributed File System
 - **[Object Storage](pages/object-storage.md)** - S3, Azure Blob, GCS
