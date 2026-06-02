@@ -105,6 +105,12 @@ For additional guidance, see the [Scikit-learn Algorithm Cheat-Sheet](https://sc
 | **[Lasso](pages/lasso-regression.md)** | Regression | L1 (sparsity) | High | Fast | Feature selection, sparse models |
 | **[Elastic Net](pages/elastic-net.md)** | Regression | L1 + L2 | High | Fast | Grouped features, balance |
 | **[Logistic Regression](pages/logistic-regression.md)** | Classification | Optional L1/L2 | High | Very Fast | Binary/multi-class, baseline |
+
+**Classification Metrics - Precision, Recall, and F1 Score**:
+
+![Precision Recall F1 Visualization](https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Precisionrecall.svg/800px-Precisionrecall.svg.png)
+*Understanding classification metrics: **Precision** = How many retrieved items are relevant? (TP / (TP + FP)). **Recall** = How many relevant items are retrieved? (TP / (TP + FN)). **F1 Score** = Harmonic mean of Precision and Recall (2 × (Precision × Recall) / (Precision + Recall)). The diagram shows true positives (green, inside circle), false positives (red, inside circle), false negatives (green, outside circle), and true negatives (gray, outside).*
+
 | **[Linear SVM](pages/linear-svm.md)** | Classification | L2 (margin) | Medium | Fast | Large datasets, linear separation |
 | **[Kernel SVM](pages/kernel-svm.md)** | Classification | L2 (margin) | Low | Slow | Non-linear, small-medium data |
 | **[SVR](pages/svr.md)** | Regression | Epsilon-insensitive | Medium | Medium | Non-linear regression |

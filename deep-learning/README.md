@@ -134,6 +134,13 @@ The flowchart guides you through dataset size, task requirements, and performanc
   - Non-linear activation functions
   - Universal approximation theorem
 
+- **[Backpropagation](pages/backpropagation.md)** - Training algorithm
+  - Gradient computation via chain rule
+  - Forward pass: compute predictions
+  - Backward pass: compute gradients
+  - Weight updates via gradient descent
+  - 🎥 [Visual Explanation](https://makeagif.com/gif/what-is-backpropagation-really-doing-chapter-3-deep-learning-fmeACk) - Animated tutorial
+
 - **[Activation Functions](pages/activation-functions.md)** - Non-linearity
 
 | Function | Formula | Range | Gradient | Best For | Issues |
@@ -439,6 +446,7 @@ The flowchart guides you through dataset size, task requirements, and performanc
   - DropConnect
   - Variational dropout
   - Dropout scheduling
+  - 📚 [Kaggle Tutorial: Dropout & Batch Normalization](https://www.kaggle.com/code/ryanholbrook/dropout-and-batch-normalization) - Practical guide
 
 - **[Batch Normalization](pages/batch-normalization.md)** - Normalizing activations
   - Internal covariate shift
