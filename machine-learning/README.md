@@ -14,7 +14,73 @@ Machine Learning encompasses classical algorithms that learn patterns from data 
 
 Choosing the right machine learning algorithm depends on your problem type, data size, and requirements. Use this interactive decision flowchart:
 
-![ML Method Selection Flowchart](diagrams/ml-method-selection.png)
+```mermaid
+graph TD
+    Start([Start: I have a dataset]) --> Question1{What's my goal?}
+    
+    Question1 -->|Predict a category| Classification
+    Question1 -->|Predict a number| Regression
+    Question1 -->|Find groups| Clustering
+    Question1 -->|Reduce dimensions| DimReduction
+    
+    Classification --> ClassQ1{How much data?}
+    ClassQ1 -->|Small <1K| NaiveBayes[Naive Bayes<br/>Fast, simple baseline]
+    ClassQ1 -->|Medium 1K-100K| ClassQ2{Linear separable?}
+    ClassQ1 -->|Large >100K| ClassQ3{Need interpretability?}
+    
+    ClassQ2 -->|Yes| LogReg[Logistic Regression<br/>Fast, interpretable]
+    ClassQ2 -->|No| ClassQ3
+    
+    ClassQ3 -->|Yes| RandomForest[Random Forest<br/>Good balance]
+    ClassQ3 -->|No| XGBoost[XGBoost/LightGBM<br/>Best performance]
+    
+    Regression --> RegQ1{How much data?}
+    RegQ1 -->|Small <1K| LinearReg[Linear Regression<br/>Simple baseline]
+    RegQ1 -->|Medium 1K-100K| RegQ2{Linear relationship?}
+    RegQ1 -->|Large >100K| RegQ3{Need interpretability?}
+    
+    RegQ2 -->|Yes| Ridge[Ridge/Lasso<br/>Regularized linear]
+    RegQ2 -->|No| RegQ3
+    
+    RegQ3 -->|Yes| RF_Reg[Random Forest<br/>Non-linear, interpretable]
+    RegQ3 -->|No| XGB_Reg[XGBoost<br/>Best performance]
+    
+    Clustering --> ClustQ1{Know number of clusters?}
+    ClustQ1 -->|Yes| ClustQ2{Cluster shape?}
+    ClustQ1 -->|No| ClustQ3{Have outliers?}
+    
+    ClustQ2 -->|Spherical| KMeans[K-Means<br/>Fast, scalable]
+    ClustQ2 -->|Arbitrary| Spectral[Spectral Clustering<br/>Non-convex shapes]
+    
+    ClustQ3 -->|Yes| DBSCAN[DBSCAN/HDBSCAN<br/>Handles noise well]
+    ClustQ3 -->|No| Hierarchical[Hierarchical<br/>Explore dendrograms]
+    
+    DimReduction --> DimQ1{Purpose?}
+    DimQ1 -->|Visualization| DimQ2{Preserve what?}
+    DimQ1 -->|Preprocessing| PCA[PCA<br/>Fast, linear]
+    DimQ1 -->|Supervised| LDA_DR[LDA<br/>Maximize separation]
+    
+    DimQ2 -->|Local structure| TSNE[t-SNE<br/>2D/3D viz only]
+    DimQ2 -->|Both local & global| UMAP[UMAP<br/>Fast, scalable]
+    
+    style Start fill:#e1f5ff
+    style NaiveBayes fill:#90EE90
+    style LogReg fill:#90EE90
+    style RandomForest fill:#FFD700
+    style XGBoost fill:#FFD700
+    style LinearReg fill:#90EE90
+    style Ridge fill:#90EE90
+    style RF_Reg fill:#FFD700
+    style XGB_Reg fill:#FFD700
+    style KMeans fill:#90EE90
+    style DBSCAN fill:#FFD700
+    style Hierarchical fill:#90EE90
+    style Spectral fill:#FFD700
+    style PCA fill:#90EE90
+    style TSNE fill:#FFD700
+    style UMAP fill:#FFD700
+    style LDA_DR fill:#90EE90
+```
 
 This flowchart guides you through:
 - **Classification tasks**: From Naive Bayes (small data) to XGBoost (large data)

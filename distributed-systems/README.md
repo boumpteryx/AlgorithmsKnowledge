@@ -10,7 +10,94 @@ Distributed Systems are collections of independent computers that appear to user
 
 Designing a distributed system requires making key architectural decisions based on scale, consistency needs, and workload type. Use this flowchart to guide your design:
 
-![Distributed System Design Flowchart](diagrams/system-design-flowchart.png)
+```mermaid
+graph TD
+    Start([Design Distributed System]) --> Scale{Expected<br/>Scale?}
+    
+    Scale -->|Small <1K users| SmallQ{Complexity?}
+    Scale -->|Medium 1K-100K| MediumQ{Consistency<br/>needs?}
+    Scale -->|Large >100K| LargeQ{Geographic<br/>distribution?}
+    
+    subgraph Small["🏠 Small Scale"]
+        SmallQ -->|Simple| Monolith[Monolithic App<br/>Single server<br/>PostgreSQL]
+        SmallQ -->|Moderate| SimpleDistrib[Simple Distributed<br/>App + DB + Cache<br/>Load balancer]
+    end
+    
+    subgraph Medium["🏢 Medium Scale"]
+        MediumQ -->|Strong| StrongConsist[Strong Consistency<br/>• RDBMS with replication<br/>• Raft/Paxos consensus<br/>• Synchronous updates]
+        MediumQ -->|Eventual| EventualConsist[Eventual Consistency<br/>• NoSQL databases<br/>• Event-driven architecture<br/>• Async messaging]
+        
+        StrongConsist --> MedArch{Architecture?}
+        EventualConsist --> MedArch
+        
+        MedArch -->|Coupled| Microservices[Microservices<br/>• Service mesh<br/>• API gateway<br/>• Container orchestration]
+        MedArch -->|Decoupled| EventDriven[Event-Driven<br/>• Message queues<br/>• Pub/Sub<br/>• CQRS pattern]
+    end
+    
+    subgraph Large["🌍 Large Scale"]
+        LargeQ -->|Yes| MultiRegion[Multi-Region Setup<br/>• CDN for static content<br/>• Regional data centers<br/>• Global load balancing]
+        LargeQ -->|No| SingleRegion[Single Region<br/>• Multiple availability zones<br/>• Auto-scaling<br/>• Distributed caching]
+        
+        MultiRegion --> DataStrategy{Data<br/>Strategy?}
+        SingleRegion --> DataStrategy
+        
+        DataStrategy -->|Centralized| CentralData[Centralized Data<br/>• Data lakes<br/>• Distributed databases<br/>• Replication]
+        DataStrategy -->|Partitioned| ShardedData[Sharded Data<br/>• Horizontal partitioning<br/>• Consistent hashing<br/>• Regional data]
+    end
+    
+    subgraph MLWorkloads["🤖 ML-Specific Considerations"]
+        MLQ{ML<br/>Workload?}
+        
+        MLQ -->|Training| TrainingArch{Training<br/>Type?}
+        MLQ -->|Inference| InferenceArch{Latency<br/>Requirements?}
+        
+        TrainingArch -->|Small models| SingleGPU[Single GPU<br/>• Local training<br/>• Simple setup]
+        TrainingArch -->|Large models| DistribTrain[Distributed Training<br/>• Data parallelism<br/>• Model parallelism<br/>• Parameter servers]
+        
+        InferenceArch -->|Low latency| EdgeInfer[Edge Deployment<br/>• Model optimization<br/>• Local inference<br/>• Quantization]
+        InferenceArch -->|High throughput| CloudInfer[Cloud Inference<br/>• Batch processing<br/>• Auto-scaling<br/>• Load balancing]
+    end
+    
+    Monolith --> MLQ
+    SimpleDistrib --> MLQ
+    Microservices --> MLQ
+    EventDriven --> MLQ
+    CentralData --> MLQ
+    ShardedData --> MLQ
+    
+    SingleGPU --> Monitor
+    DistribTrain --> Monitor
+    EdgeInfer --> Monitor
+    CloudInfer --> Monitor
+    
+    subgraph Monitoring["📊 Monitoring & Observability"]
+        Monitor[Implement Monitoring]
+        Monitor --> Metrics[Metrics<br/>Prometheus, Grafana]
+        Monitor --> Logs[Logging<br/>ELK Stack]
+        Monitor --> Traces[Tracing<br/>Jaeger, Zipkin]
+        
+        Metrics --> Alerts
+        Logs --> Alerts
+        Traces --> Alerts[Set Up Alerts]
+    end
+    
+    subgraph Reliability["🛡️ Reliability Patterns"]
+        Alerts --> Reliability{Add<br/>Reliability?}
+        
+        Reliability -->|Yes| RelPatterns[Implement Patterns:<br/>• Circuit breakers<br/>• Retry with backoff<br/>• Bulkheads<br/>• Rate limiting<br/>• Chaos engineering]
+        Reliability -->|Basic| BasicRel[Basic Reliability:<br/>• Health checks<br/>• Graceful shutdown<br/>• Timeouts]
+        
+        RelPatterns --> Deploy
+        BasicRel --> Deploy
+    end
+    
+    Deploy[Deploy & Iterate]
+    
+    style Start fill:#e1f5ff
+    style Monolith fill:#90EE90
+    style Deploy fill:#90EE90
+    style RelPatterns fill:#FFD700
+```
 
 **Decision Factors**:
 - **Scale**: Small (<1K users), Medium (1K-100K), Large (>100K)
@@ -26,20 +113,24 @@ The flowchart guides you from initial requirements through architecture selectio
 
 ### Fundamental Principles
 
-- **[Scalability](pages/scalability.md)** - Horizontal and vertical scaling
-- **[Fault Tolerance](pages/fault-tolerance.md)** - Handling failures gracefully
-- **[Consistency](pages/consistency.md)** - Data consistency models
-- **[Availability](pages/availability.md)** - System uptime and reliability
-- **[Partition Tolerance](pages/partition-tolerance.md)** - Operating despite network splits
-- **[CAP Theorem](pages/cap-theorem.md)** - Consistency, Availability, Partition tolerance tradeoffs
+| Principle | Description | Key Challenge | Tradeoff |
+|-----------|-------------|---------------|----------|
+| **[Scalability](pages/scalability.md)** | Horizontal and vertical scaling | Resource coordination | Cost vs performance |
+| **[Fault Tolerance](pages/fault-tolerance.md)** | Handling failures gracefully | Detecting and recovering | Complexity vs reliability |
+| **[Consistency](pages/consistency.md)** | Data consistency models | Synchronization overhead | Strong vs eventual |
+| **[Availability](pages/availability.md)** | System uptime and reliability | Redundancy management | Cost vs uptime |
+| **[Partition Tolerance](pages/partition-tolerance.md)** | Operating despite network splits | Split-brain scenarios | CAP theorem limits |
+| **[CAP Theorem](pages/cap-theorem.md)** | C-A-P tradeoffs | Cannot have all three | Choose 2 of 3 |
 
 ### System Properties
 
-- **[Transparency](pages/transparency.md)** - Hiding distribution complexity
-- **[Concurrency](pages/concurrency.md)** - Simultaneous operations
-- **[Replication](pages/replication.md)** - Data redundancy
-- **[Load Balancing](pages/load-balancing.md)** - Distributing workload
-- **[Latency](pages/latency.md)** - Communication delays
+| Property | Description | Implementation | Complexity |
+|----------|-------------|----------------|------------|
+| **[Transparency](pages/transparency.md)** | Hiding distribution complexity | Abstraction layers, middleware | Medium |
+| **[Concurrency](pages/concurrency.md)** | Simultaneous operations | Locks, transactions, coordination | High |
+| **[Replication](pages/replication.md)** | Data redundancy | Master-slave, multi-master | Medium |
+| **[Load Balancing](pages/load-balancing.md)** | Distributing workload | Round-robin, least-conn, consistent hashing | Medium |
+| **[Latency](pages/latency.md)** | Communication delays | Caching, CDNs, edge computing | Low-Medium |
 
 ## Distributed Computing Models
 
@@ -47,18 +138,22 @@ The flowchart guides you from initial requirements through architecture selectio
 
 ![Parallel Computing](diagrams/parallel-computing.png)
 
-- **[Data Parallelism](pages/data-parallelism.md)** - Same operation on different data
-- **[Model Parallelism](pages/model-parallelism.md)** - Different parts of model on different devices
-- **[Pipeline Parallelism](pages/pipeline-parallelism.md)** - Sequential stage processing
-- **[Task Parallelism](pages/task-parallelism.md)** - Different operations simultaneously
+| Pattern | Description | Use Case | Efficiency |
+|---------|-------------|----------|------------|
+| **[Data Parallelism](pages/data-parallelism.md)** | Same operation on different data | Training with large datasets | High |
+| **[Model Parallelism](pages/model-parallelism.md)** | Different model parts on different devices | Large models (GPT, BERT) | Medium |
+| **[Pipeline Parallelism](pages/pipeline-parallelism.md)** | Sequential stage processing | Deep networks, ETL pipelines | Medium-High |
+| **[Task Parallelism](pages/task-parallelism.md)** | Different operations simultaneously | Heterogeneous workloads | Varies |
 
 ### Communication Patterns
 
-- **[Point-to-Point](pages/point-to-point.md)** - Direct communication
-- **[Broadcast](pages/broadcast.md)** - One-to-all communication
-- **[Reduce](pages/reduce.md)** - All-to-one aggregation
-- **[All-Reduce](pages/all-reduce.md)** - Collective aggregation
-- **[Scatter/Gather](pages/scatter-gather.md)** - Distribution and collection
+| Pattern | Direction | Complexity | Best For |
+|---------|-----------|------------|----------|
+| **[Point-to-Point](pages/point-to-point.md)** | One-to-one | O(1) | Direct messaging |
+| **[Broadcast](pages/broadcast.md)** | One-to-all | O(n) | Parameter updates |
+| **[Reduce](pages/reduce.md)** | All-to-one | O(log n) | Gradient aggregation |
+| **[All-Reduce](pages/all-reduce.md)** | All-to-all | O(log n) | Distributed training |
+| **[Scatter/Gather](pages/scatter-gather.md)** | Distribution + collection | O(n) | MapReduce operations |
 
 ## Distributed Data Processing
 

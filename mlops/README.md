@@ -10,7 +10,98 @@ MLOps (Machine Learning Operations) is the practice of deploying, monitoring, an
 
 Understanding the end-to-end MLOps workflow is essential for successful ML deployment. This diagram shows how all components work together:
 
-![MLOps Complete Workflow](diagrams/mlops-workflow.png)
+```mermaid
+graph TB
+    subgraph Development["👨‍💻 Development Phase"]
+        Problem[Define Problem] --> Data[Collect Data]
+        Data --> EDA[Exploratory Analysis]
+        EDA --> Features[Feature Engineering]
+        Features --> Experiment[Experiment Tracking<br/>MLflow, W&B]
+        Experiment --> Models[Train Multiple Models]
+        Models --> Compare[Compare & Select Best]
+    end
+    
+    subgraph Validation["✅ Validation Phase"]
+        Compare --> Validate{Validation<br/>Checks}
+        Validate -->|Performance| PerfTest[Performance Tests<br/>Accuracy, Latency]
+        Validate -->|Fairness| FairTest[Fairness Tests<br/>Bias Detection]
+        Validate -->|Robustness| RobustTest[Robustness Tests<br/>Edge Cases]
+        
+        PerfTest --> AllPass{All tests<br/>pass?}
+        FairTest --> AllPass
+        RobustTest --> AllPass
+        
+        AllPass -->|No| Iterate[Iterate on Model]
+        AllPass -->|Yes| Package[Package Model]
+        
+        Iterate -.->|Back to| Features
+    end
+    
+    subgraph Deployment["🚀 Deployment Phase"]
+        Package --> Registry[Model Registry<br/>Version Control]
+        Registry --> Strategy{Deployment<br/>Strategy}
+        
+        Strategy -->|Safe| Canary[Canary Deployment<br/>5% → 50% → 100%]
+        Strategy -->|Compare| AB[A/B Testing<br/>Split traffic]
+        Strategy -->|Fast| BlueGreen[Blue-Green<br/>Instant switch]
+        
+        Canary --> Serve
+        AB --> Serve
+        BlueGreen --> Serve[Model Serving<br/>REST API, gRPC]
+    end
+    
+    subgraph Monitoring["📊 Monitoring Phase"]
+        Serve --> Monitor{Monitor<br/>What?}
+        
+        Monitor -->|Performance| PerfMon[Performance Metrics<br/>Latency, Throughput]
+        Monitor -->|Quality| QualMon[Model Quality<br/>Accuracy, F1]
+        Monitor -->|Data| DataMon[Data Drift<br/>Input Distribution]
+        Monitor -->|Concept| ConceptMon[Concept Drift<br/>Target Distribution]
+        
+        PerfMon --> Alert{Issues<br/>detected?}
+        QualMon --> Alert
+        DataMon --> Alert
+        ConceptMon --> Alert
+        
+        Alert -->|Yes| Investigate[Investigate Issue]
+        Alert -->|No| Continue[Continue Monitoring]
+        
+        Continue -.->|Loop| Monitor
+    end
+    
+    subgraph Maintenance["🔧 Maintenance Phase"]
+        Investigate --> Root{Root<br/>Cause?}
+        
+        Root -->|Data drift| Retrain[Retrain Model<br/>New data]
+        Root -->|Concept drift| Redesign[Redesign Model<br/>New features]
+        Root -->|Performance| Optimize[Optimize Model<br/>Quantization, Pruning]
+        Root -->|Infrastructure| Scale[Scale Infrastructure<br/>More resources]
+        
+        Retrain --> AutoPipeline[Automated Pipeline<br/>CI/CD for ML]
+        Redesign --> AutoPipeline
+        Optimize --> AutoPipeline
+        Scale --> Serve
+        
+        AutoPipeline -.->|New version| Registry
+    end
+    
+    subgraph Governance["🛡️ Governance Layer"]
+        Gov1[Data Governance<br/>Privacy, Security]
+        Gov2[Model Governance<br/>Approval, Audit]
+        Gov3[Compliance<br/>Regulations]
+        
+        Gov1 -.->|Applies to| Data
+        Gov2 -.->|Applies to| Registry
+        Gov3 -.->|Applies to| Serve
+    end
+    
+    style Problem fill:#e1f5ff
+    style Package fill:#90EE90
+    style Serve fill:#90EE90
+    style Alert fill:#FFD700
+    style Iterate fill:#ffcccc
+    style AutoPipeline fill:#90EE90
+```
 
 **Workflow Phases**:
 1. **👨‍💻 Development**: Experiment tracking, model training, and selection
@@ -39,53 +130,65 @@ The workflow emphasizes automation, continuous monitoring, and iterative improve
 
 ### 1. Data Management
 
-- **[Data Versioning](pages/data-versioning.md)** - DVC, Git LFS, data lineage
-- **[Data Quality](pages/data-quality.md)** - Validation, profiling, monitoring
-- **[Feature Stores](pages/feature-stores.md)** - Centralized feature management
-- **[Data Pipelines](pages/data-pipelines.md)** - ETL/ELT workflows
-- **[Data Governance](pages/data-governance.md)** - Privacy, security, compliance
+| Component | Description | Key Technologies |
+|-----------|-------------|------------------|
+| **[Data Versioning](pages/data-versioning.md)** | Track data changes over time | DVC, Git LFS, data lineage |
+| **[Data Quality](pages/data-quality.md)** | Ensure data reliability | Validation, profiling, monitoring |
+| **[Feature Stores](pages/feature-stores.md)** | Centralized feature management | Feast, Tecton, SageMaker |
+| **[Data Pipelines](pages/data-pipelines.md)** | Automated data workflows | ETL/ELT, Airflow, Prefect |
+| **[Data Governance](pages/data-governance.md)** | Data policies and compliance | Privacy, security, regulations |
 
 ### 2. Model Development
 
-- **[Experiment Tracking](pages/experiment-tracking.md)** - MLflow, Weights & Biases
-- **[Model Versioning](pages/model-versioning.md)** - Model registry, lineage
-- **[Hyperparameter Tuning](pages/hyperparameter-tuning.md)** - Automated optimization
-- **[Reproducible Environments](pages/reproducible-environments.md)** - Docker, conda
-- **[Collaborative Development](pages/collaborative-dev.md)** - Code review, notebooks
+| Component | Description | Key Technologies |
+|-----------|-------------|------------------|
+| **[Experiment Tracking](pages/experiment-tracking.md)** | Log and compare experiments | MLflow, Weights & Biases, Neptune |
+| **[Model Versioning](pages/model-versioning.md)** | Track model iterations | Model registry, lineage tracking |
+| **[Hyperparameter Tuning](pages/hyperparameter-tuning.md)** | Optimize model parameters | Optuna, Ray Tune, Hyperopt |
+| **[Reproducible Environments](pages/reproducible-environments.md)** | Consistent execution environments | Docker, conda, virtual environments |
+| **[Collaborative Development](pages/collaborative-dev.md)** | Team coordination | Code review, shared notebooks, Git |
 
 ### 3. Model Training
 
-- **[Training Pipelines](pages/training-pipelines.md)** - Automated training workflows
-- **[Distributed Training](pages/distributed-training.md)** - Multi-GPU, multi-node
-- **[Resource Management](pages/resource-management.md)** - GPU scheduling, cost optimization
-- **[Training Monitoring](pages/training-monitoring.md)** - Metrics, logs, alerts
-- **[Model Validation](pages/model-validation.md)** - Performance testing
+| Component | Description | Key Technologies |
+|-----------|-------------|------------------|
+| **[Training Pipelines](pages/training-pipelines.md)** | Automated training workflows | Kubeflow, Airflow, custom pipelines |
+| **[Distributed Training](pages/distributed-training.md)** | Scale training across resources | Multi-GPU, multi-node, Ray |
+| **[Resource Management](pages/resource-management.md)** | Optimize compute usage | GPU scheduling, cost optimization |
+| **[Training Monitoring](pages/training-monitoring.md)** | Track training progress | Metrics, logs, alerts, TensorBoard |
+| **[Model Validation](pages/model-validation.md)** | Verify model quality | Performance testing, validation sets |
 
 ### 4. Model Deployment
 
-- **[Deployment Strategies](pages/deployment-strategies.md)** - Blue-green, canary, A/B testing
-- **[Model Serving](pages/model-serving.md)** - REST APIs, gRPC, batch inference
-- **[Containerization](pages/containerization.md)** - Docker, Kubernetes
-- **[Model Optimization](pages/model-optimization.md)** - Quantization, pruning, distillation
-- **[Edge Deployment](pages/edge-deployment.md)** - Mobile, IoT devices
+| Component | Description | Key Technologies |
+|-----------|-------------|------------------|
+| **[Deployment Strategies](pages/deployment-strategies.md)** | Safe rollout approaches | Blue-green, canary, A/B testing |
+| **[Model Serving](pages/model-serving.md)** | Expose models for inference | REST APIs, gRPC, batch inference |
+| **[Containerization](pages/containerization.md)** | Package models with dependencies | Docker, Kubernetes, containers |
+| **[Model Optimization](pages/model-optimization.md)** | Improve inference performance | Quantization, pruning, distillation |
+| **[Edge Deployment](pages/edge-deployment.md)** | Deploy to edge devices | Mobile, IoT, embedded systems |
 
 ### 5. Monitoring and Maintenance
 
 ![Monitoring Architecture](diagrams/monitoring-architecture.png)
 
-- **[Model Monitoring](pages/model-monitoring.md)** - Performance metrics, drift detection
-- **[Data Drift Detection](pages/data-drift.md)** - Input distribution changes
-- **[Concept Drift Detection](pages/concept-drift.md)** - Target distribution changes
-- **[Alerting](pages/alerting.md)** - Automated notifications
-- **[Model Retraining](pages/model-retraining.md)** - Automated retraining triggers
+| Component | Description | Key Metrics |
+|-----------|-------------|-------------|
+| **[Model Monitoring](pages/model-monitoring.md)** | Track model performance | Accuracy, latency, throughput |
+| **[Data Drift Detection](pages/data-drift.md)** | Detect input distribution changes | KL divergence, PSI, KS test |
+| **[Concept Drift Detection](pages/concept-drift.md)** | Detect target distribution changes | Performance degradation, label shift |
+| **[Alerting](pages/alerting.md)** | Automated issue notifications | Thresholds, escalation, runbooks |
+| **[Model Retraining](pages/model-retraining.md)** | Automated model updates | Triggers, schedules, CI/CD |
 
 ### 6. Governance and Compliance
 
-- **[Model Governance](pages/model-governance.md)** - Policies, approval workflows
-- **[Audit Trails](pages/audit-trails.md)** - Tracking changes and decisions
-- **[Explainability](pages/explainability.md)** - Model interpretability
-- **[Bias Detection](pages/bias-detection.md)** - Fairness monitoring
-- **[Regulatory Compliance](pages/compliance.md)** - GDPR, CCPA, industry standards
+| Component | Description | Key Aspects |
+|-----------|-------------|-------------|
+| **[Model Governance](pages/model-governance.md)** | Control model lifecycle | Policies, approval workflows, reviews |
+| **[Audit Trails](pages/audit-trails.md)** | Track all changes | Logging, versioning, documentation |
+| **[Explainability](pages/explainability.md)** | Understand model decisions | SHAP, LIME, interpretability |
+| **[Bias Detection](pages/bias-detection.md)** | Ensure fairness | Fairness metrics, bias mitigation |
+| **[Regulatory Compliance](pages/compliance.md)** | Meet legal requirements | GDPR, CCPA, industry standards |
 
 ## MLOps Architecture
 
@@ -174,10 +277,12 @@ The workflow emphasizes automation, continuous monitoring, and iterative improve
 
 ### Data Versioning
 
-- **DVC** - Data Version Control
-- **Pachyderm** - Data versioning and pipelines
-- **LakeFS** - Git-like version control for data lakes
-- **Delta Lake** - Storage layer with ACID transactions
+| Tool | Type | Key Features | Best For |
+|------|------|--------------|----------|
+| **DVC** | Open-source | Git-like versioning, pipeline tracking | Small to medium teams |
+| **Pachyderm** | Open-source/Enterprise | Data versioning, pipeline automation | Data-centric workflows |
+| **LakeFS** | Open-source | Git-like operations for data lakes | Large-scale data lakes |
+| **Delta Lake** | Open-source | ACID transactions, time travel | Lakehouse architectures |
 
 ## Best Practices
 
@@ -261,77 +366,99 @@ The workflow emphasizes automation, continuous monitoring, and iterative improve
 
 ## MLOps Maturity Model
 
-### Level 0: Manual Process
-- Manual model training
-- Manual deployment
-- No automation
-- Limited monitoring
+| Level | Name | Training | Deployment | Monitoring | Automation | Best For |
+|-------|------|----------|------------|------------|------------|----------|
+| **0** | Manual Process | Manual | Manual | Limited | None | Proof of concept |
+| **1** | ML Pipeline Automation | Automated | Manual | Basic | Training only | Early production |
+| **2** | CI/CD Pipeline Automation | Automated | Automated | Comprehensive | Training + deployment | Production systems |
+| **3** | Full MLOps Automation | Automated | Automated | Advanced | End-to-end + self-healing | Enterprise scale |
 
-### Level 1: ML Pipeline Automation
-- Automated training pipeline
-- Experiment tracking
-- Model registry
-- Basic monitoring
+**Level 0: Manual Process**
+- Manual model training and deployment
+- No automation or version control
+- Limited monitoring capabilities
 
-### Level 2: CI/CD Pipeline Automation
-- Automated testing
-- Continuous training
-- Automated deployment
-- Comprehensive monitoring
+**Level 1: ML Pipeline Automation**
+- Automated training pipelines
+- Experiment tracking and model registry
+- Basic performance monitoring
 
-### Level 3: Full MLOps Automation
-- Automated feature engineering
-- Automated model selection
-- Self-healing systems
-- Advanced governance
+**Level 2: CI/CD Pipeline Automation**
+- Automated testing and validation
+- Continuous training and deployment
+- Comprehensive monitoring and alerting
+
+**Level 3: Full MLOps Automation**
+- Automated feature engineering and model selection
+- Self-healing systems with auto-remediation
+- Advanced governance and compliance
 
 ## Cloud Platforms
 
-### AWS
-- **SageMaker** - End-to-end ML platform
-- **Lambda** - Serverless inference
-- **ECS/EKS** - Container orchestration
-- **S3** - Data storage
+| Platform | ML Service | Serverless | Containers | Storage | Best For |
+|----------|------------|------------|------------|---------|----------|
+| **AWS** | SageMaker | Lambda | ECS/EKS | S3 | Mature ecosystem, flexibility |
+| **Google Cloud** | Vertex AI | Cloud Functions | GKE | BigQuery | Data analytics, AI/ML |
+| **Azure** | Azure ML | Azure Functions | AKS | Blob Storage | Enterprise integration |
 
-### Google Cloud
-- **Vertex AI** - Unified ML platform
-- **Cloud Functions** - Serverless compute
-- **GKE** - Kubernetes engine
-- **BigQuery** - Data warehouse
+### Platform Details
 
-### Azure
-- **Azure ML** - ML platform
-- **Azure Functions** - Serverless
-- **AKS** - Kubernetes service
-- **Blob Storage** - Object storage
+**AWS**
+- **SageMaker**: End-to-end ML platform with built-in algorithms
+- **Lambda**: Serverless inference for lightweight models
+- **ECS/EKS**: Container orchestration for scalable deployments
+- **S3**: Scalable object storage for data and models
+
+**Google Cloud**
+- **Vertex AI**: Unified ML platform with AutoML capabilities
+- **Cloud Functions**: Serverless compute for event-driven inference
+- **GKE**: Managed Kubernetes for containerized workloads
+- **BigQuery**: Data warehouse for large-scale analytics
+
+**Azure**
+- **Azure ML**: Comprehensive ML platform with MLOps features
+- **Azure Functions**: Serverless compute with enterprise integration
+- **AKS**: Managed Kubernetes service
+- **Blob Storage**: Object storage with tiered access
 
 ## Security Considerations
 
-- **[Model Security](pages/model-security.md)** - Protecting model IP
-- **[Data Privacy](pages/data-privacy.md)** - PII handling, encryption
-- **[Access Control](pages/access-control.md)** - RBAC, authentication
-- **[Adversarial Robustness](pages/adversarial-robustness.md)** - Defending against attacks
-- **[Compliance](pages/compliance-security.md)** - Meeting regulatory requirements
+| Aspect | Description | Key Techniques | Priority |
+|--------|-------------|----------------|----------|
+| **[Model Security](pages/model-security.md)** | Protecting model IP | Encryption, access control, watermarking | High |
+| **[Data Privacy](pages/data-privacy.md)** | Protecting sensitive data | PII handling, encryption, anonymization | Critical |
+| **[Access Control](pages/access-control.md)** | Managing permissions | RBAC, authentication, authorization | High |
+| **[Adversarial Robustness](pages/adversarial-robustness.md)** | Defending against attacks | Input validation, adversarial training | Medium |
+| **[Compliance](pages/compliance-security.md)** | Meeting regulations | GDPR, CCPA, audit trails | Critical |
 
 ## Metrics and KPIs
 
 ### Model Performance
-- Accuracy, precision, recall, F1
-- Inference latency (p50, p95, p99)
-- Throughput (requests/second)
-- Error rates
+
+| Metric | Description | Target | Monitoring |
+|--------|-------------|--------|------------|
+| **Accuracy/F1** | Model prediction quality | >95% (varies) | Real-time |
+| **Inference Latency** | Response time (p50, p95, p99) | <100ms (varies) | Real-time |
+| **Throughput** | Requests per second | >1000 (varies) | Real-time |
+| **Error Rate** | Failed predictions | <1% | Real-time |
 
 ### System Performance
-- CPU/GPU utilization
-- Memory usage
-- Network bandwidth
-- Storage costs
+
+| Metric | Description | Target | Monitoring |
+|--------|-------------|--------|------------|
+| **CPU/GPU Utilization** | Compute resource usage | 60-80% | Real-time |
+| **Memory Usage** | RAM consumption | <80% capacity | Real-time |
+| **Network Bandwidth** | Data transfer rate | <80% capacity | Real-time |
+| **Storage Costs** | Data storage expenses | Budget-dependent | Daily |
 
 ### Business Metrics
-- Model impact on KPIs
-- Cost per prediction
-- Time to deployment
-- Model refresh frequency
+
+| Metric | Description | Target | Monitoring |
+|--------|-------------|--------|------------|
+| **Model Impact** | Effect on business KPIs | Positive ROI | Weekly |
+| **Cost per Prediction** | Inference cost efficiency | Minimize | Daily |
+| **Time to Deployment** | Model release cycle | <1 week | Per release |
+| **Model Refresh Frequency** | Retraining cadence | Weekly/Monthly | Tracked |
 
 ## Related Topics
 

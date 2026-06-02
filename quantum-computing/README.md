@@ -12,19 +12,23 @@ Quantum Computing leverages quantum mechanical phenomena such as superposition, 
 
 ### Core Principles
 
-- **[Superposition](pages/superposition.md)** - Qubits existing in multiple states simultaneously
-- **[Entanglement](pages/entanglement.md)** - Quantum correlation between qubits
-- **[Interference](pages/interference.md)** - Amplifying correct answers, canceling wrong ones
-- **[Measurement](pages/measurement.md)** - Collapsing quantum states to classical outcomes
-- **[No-Cloning Theorem](pages/no-cloning.md)** - Impossibility of copying quantum states
+| Principle | Description | Key Property | Impact |
+|-----------|-------------|--------------|--------|
+| **[Superposition](pages/superposition.md)** | Qubits in multiple states simultaneously | Exponential state space | Parallel computation |
+| **[Entanglement](pages/entanglement.md)** | Quantum correlation between qubits | Non-local correlations | Quantum advantage |
+| **[Interference](pages/interference.md)** | Amplify correct, cancel wrong answers | Constructive/destructive | Algorithm design |
+| **[Measurement](pages/measurement.md)** | Collapse to classical outcomes | Probabilistic results | Information extraction |
+| **[No-Cloning Theorem](pages/no-cloning.md)** | Cannot copy quantum states | Fundamental limit | Quantum security |
 
 ### Mathematical Framework
 
-- **[Quantum States](pages/quantum-states.md)** - Ket notation, Bloch sphere
-- **[Quantum Gates](pages/quantum-gates.md)** - Unitary operations on qubits
-- **[Quantum Circuits](pages/quantum-circuits.md)** - Sequences of quantum gates
-- **[Density Matrices](pages/density-matrices.md)** - Mixed state representation
-- **[Tensor Products](pages/tensor-products.md)** - Multi-qubit systems
+| Concept | Description | Notation | Complexity |
+|---------|-------------|----------|------------|
+| **[Quantum States](pages/quantum-states.md)** | State representation | Ket notation \|ψ⟩, Bloch sphere | Basic |
+| **[Quantum Gates](pages/quantum-gates.md)** | Unitary operations | Matrix representation | Medium |
+| **[Quantum Circuits](pages/quantum-circuits.md)** | Gate sequences | Circuit diagrams | Medium |
+| **[Density Matrices](pages/density-matrices.md)** | Mixed state representation | ρ = Σ pᵢ\|ψᵢ⟩⟨ψᵢ\| | Advanced |
+| **[Tensor Products](pages/tensor-products.md)** | Multi-qubit systems | \|ψ⟩ ⊗ \|φ⟩ | Medium |
 
 ## Quantum Gates and Circuits
 
@@ -53,10 +57,12 @@ Quantum Computing leverages quantum mechanical phenomena such as superposition, 
 
 ### Circuit Design
 
-- **[Circuit Composition](pages/circuit-composition.md)** - Building complex circuits
-- **[Circuit Optimization](pages/circuit-optimization.md)** - Reducing gate count
-- **[Circuit Depth](pages/circuit-depth.md)** - Minimizing sequential operations
-- **[Quantum Compilation](pages/quantum-compilation.md)** - Mapping to hardware
+| Aspect | Description | Goal | Techniques |
+|--------|-------------|------|------------|
+| **[Circuit Composition](pages/circuit-composition.md)** | Building complex circuits | Modularity | Subroutines, decomposition |
+| **[Circuit Optimization](pages/circuit-optimization.md)** | Reducing gate count | Efficiency | Gate cancellation, synthesis |
+| **[Circuit Depth](pages/circuit-depth.md)** | Minimizing sequential operations | Speed | Parallelization, scheduling |
+| **[Quantum Compilation](pages/quantum-compilation.md)** | Mapping to hardware | Fidelity | Transpilation, routing |
 
 ## Quantum Algorithms
 

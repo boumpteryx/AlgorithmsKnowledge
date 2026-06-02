@@ -11,19 +11,23 @@ Symbolic AI, also known as "Good Old-Fashioned AI" (GOFAI), represents the class
 ### Knowledge Representation
 How information and relationships are formally encoded for computational reasoning.
 
-- **[Semantic Networks](pages/semantic-networks.md)** - Graph-based knowledge structures
-- **[Frames and Scripts](pages/frames-and-scripts.md)** - Structured knowledge templates
-- **[Ontologies](pages/ontologies.md)** - Formal specifications of conceptual domains
-- **[Logic Systems](pages/logic-systems.md)** - Propositional, first-order, and higher-order logic
+| Approach | Description | Structure | Best For |
+|----------|-------------|-----------|----------|
+| **[Semantic Networks](pages/semantic-networks.md)** | Graph-based knowledge structures | Nodes + edges | Relationships, hierarchies |
+| **[Frames and Scripts](pages/frames-and-scripts.md)** | Structured knowledge templates | Slots + fillers | Stereotypical situations |
+| **[Ontologies](pages/ontologies.md)** | Formal conceptual specifications | Classes + properties | Domain modeling |
+| **[Logic Systems](pages/logic-systems.md)** | Formal logical reasoning | Propositions + rules | Theorem proving |
 
 ### Reasoning Systems
 
 ![Reasoning Architecture](diagrams/reasoning-architecture.png)
 
-- **[Forward Chaining](pages/forward-chaining.md)** - Data-driven inference
-- **[Backward Chaining](pages/backward-chaining.md)** - Goal-driven inference
-- **[Resolution](pages/resolution.md)** - Automated theorem proving
-- **[Non-monotonic Reasoning](pages/non-monotonic-reasoning.md)** - Reasoning with incomplete information
+| Method | Direction | Strategy | Complexity | Best For |
+|--------|-----------|----------|------------|----------|
+| **[Forward Chaining](pages/forward-chaining.md)** | Data → Goal | Data-driven inference | O(n×m) | Reactive systems |
+| **[Backward Chaining](pages/backward-chaining.md)** | Goal → Data | Goal-driven inference | O(b^d) | Query answering |
+| **[Resolution](pages/resolution.md)** | Bidirectional | Automated theorem proving | Exponential | Logic proofs |
+| **[Non-monotonic Reasoning](pages/non-monotonic-reasoning.md)** | Context-dependent | Defeasible inference | Varies | Incomplete info |
 
 ### Search Algorithms
 
@@ -50,9 +54,11 @@ How information and relationships are formally encoded for computational reasoni
 
 ![Expert System Architecture](diagrams/expert-system-architecture.png)
 
-- **[Rule-Based Systems](pages/rule-based-systems.md)** - Production rules and inference engines
-- **[Fuzzy Logic Systems](pages/fuzzy-logic.md)** - Reasoning with imprecise information
-- **[Blackboard Systems](pages/blackboard-systems.md)** - Collaborative problem-solving architecture
+| Type | Approach | Uncertainty Handling | Best For |
+|------|----------|---------------------|----------|
+| **[Rule-Based Systems](pages/rule-based-systems.md)** | IF-THEN production rules | None (deterministic) | Well-defined domains |
+| **[Fuzzy Logic Systems](pages/fuzzy-logic.md)** | Fuzzy sets and rules | Degrees of truth | Imprecise information |
+| **[Blackboard Systems](pages/blackboard-systems.md)** | Shared knowledge space | Collaborative | Complex problems |
 
 ## Historical Context
 
