@@ -43,6 +43,12 @@ For additional guidance, see the [Scikit-learn Algorithm Cheat-Sheet](https://sc
 | **[Kernel SVM](pages/kernel-svm.md)** | Classification | L2 (margin) | Low | Slow | Non-linear, small-medium data |
 | **[SVR](pages/svr.md)** | Regression | Epsilon-insensitive | Medium | Medium | Non-linear regression |
 
+**SVM Kernel Trick - Visual Explanation**:
+
+![SVM with Polynomial Kernel](https://i.makeagif.com/media/10-26-2015/kL5RYf.gif)
+*The Kernel Trick: Data that is not linearly separable in the original space (left) can be transformed to a higher-dimensional space where it becomes linearly separable (right). The polynomial kernel implicitly performs this transformation without explicitly computing the high-dimensional coordinates, making it computationally efficient.*
+*Image source: [SVM with Polynomial Kernel Visualization](https://makeagif.com/gif/svm-with-polynomial-kernel-visualization-kL5RYf)*
+
 **Regularization Comparison**:
 - **L1 (Lasso)**: Sparse solutions, feature selection, some coefficients → 0
 - **L2 (Ridge)**: Shrinks all coefficients, handles multicollinearity, no feature selection
@@ -65,10 +71,16 @@ For additional guidance, see the [Scikit-learn Algorithm Cheat-Sheet](https://sc
   - Elbow method for K selection
 
 - **[KD-Tree](pages/kd-tree.md)** - Space-partitioning data structure
-  - Efficient nearest neighbor search
-  - Range queries
-  - Construction and traversal
-  - Ball trees as alternative
+
+![KD-Tree Construction Animation](https://upload.wikimedia.org/wikipedia/commons/b/b6/Kdtree_animation.gif)
+*KD-Tree (K-Dimensional Tree) construction: Recursively partitions space by alternating between dimensions. Each node represents a splitting hyperplane, creating a binary tree structure that enables efficient nearest neighbor search in O(log n) average time.*
+*Image source: [Wikimedia Commons - KD-Tree Animation](https://commons.wikimedia.org/wiki/File:Kdtree_animation.gif)*
+
+**Key Features**:
+  - Efficient nearest neighbor search (O(log n) average)
+  - Range queries for spatial data
+  - Recursive construction by alternating dimensions
+  - Ball trees as alternative for high dimensions
 
 ### Tree-Based Models
 

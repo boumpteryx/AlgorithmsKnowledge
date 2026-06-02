@@ -35,6 +35,12 @@ Each stage connects to specific techniques detailed below. Use this workflow to 
 *PCA finds the directions (eigenvectors) of maximum variance in the data. The first principal component captures the most variance, the second captures the next most, and so on. This allows dimensionality reduction while preserving the most important information.*
 *Image source: [Eigenvalues and Eigenvectors Explained](https://medium.com/data-science/eigenvalues-and-eigenvectors-378e851bf372)*
 
+**How UMAP Works - Visual Explanation**:
+
+![UMAP Algorithm Process](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*sZfKPLbFUhG_EfhXDggRBQ.png)
+*UMAP (Uniform Manifold Approximation and Projection) constructs a high-dimensional graph representation of the data, then optimizes a low-dimensional graph to be as structurally similar as possible. Unlike t-SNE, UMAP preserves both local and global structure, making it faster and more suitable for general-purpose dimensionality reduction.*
+*Image source: [Dimensionality Reduction using UMAP](https://adanayak.medium.com/dimensionality-reduction-using-uniform-manifold-approximation-and-projection-umap-4aa4cef43fed)*
+
 **Approaches**: Matrix-based (linear algebra) vs Graph-based (manifold learning)
 
 | Method | Type | Linear | Preserves | Speed | Best For | Limitations |
@@ -49,11 +55,12 @@ Each stage connects to specific techniques detailed below. Use this workflow to 
 | **[Autoencoder](pages/autoencoder-dr.md)** | Neural | No | Learned features | Medium | Complex patterns | Needs training data |
 
 **Selection Guide**:
-- **Visualization**: t-SNE, UMAP
+- **Visualization**: t-SNE (local focus), UMAP (balanced)
 - **Preprocessing**: PCA, ICA
 - **Supervised**: LDA
 - **Large datasets**: UMAP, PCA
-- **Non-linear patterns**: UMAP, Autoencoder, Kernel PCA
+- **Non-linear patterns**: UMAP (fast), Autoencoder (flexible), Kernel PCA
+- **Preserve global structure**: UMAP, PCA
 
 ### Data Imputation
 
