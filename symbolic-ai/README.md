@@ -64,153 +64,120 @@ How information and relationships are formally encoded for computational reasoni
 
 Operations Research (OR) is a discipline that uses mathematical modeling, optimization, and analytical methods to make better decisions. It's a key component of symbolic AI, providing systematic approaches to complex decision-making problems.
 
-### Operations Research Mind Map
+### Operations Research Mind Maps
 
-The following mind map shows how different OR techniques relate to each other:
+The following mind maps show how different OR techniques relate to each other:
+
+#### Part 1: Exact Methods and Mathematical Programming
 
 ```mermaid
 mindmap
-  root((Operations Research))
+  root((OR: Exact Methods))
     Mathematical Programming
       Linear Programming
         Simplex Method
-        Interior Point Methods
-        Dual Simplex
-        Applications
-          Resource Allocation
-          Production Planning
-          Transportation
+        Interior Point
+        Apps: Resource Allocation
       Integer Programming
         Branch and Bound
         Cutting Planes
-        Branch and Cut
-        Applications
-          Scheduling
-          Facility Location
-          Network Design
-      Mixed Integer Programming
+        Apps: Scheduling
+      Mixed Integer
         MILP Solvers
-        Gurobi, CPLEX
-        Applications
-          Supply Chain
-          Portfolio Optimization
-      Nonlinear Programming
+        Gurobi CPLEX
+        Apps: Supply Chain
+      Nonlinear
         Convex Optimization
-        Gradient Descent
-        Newton Methods
-        Applications
-          Machine Learning
-          Engineering Design
+        Gradient Methods
+        Apps: ML Engineering
       Dynamic Programming
         Bellman Equation
-        Value Iteration
-        Policy Iteration
-        Applications
-          Shortest Path
-          Inventory Control
+        Value/Policy Iteration
+        Apps: Shortest Path
     Constraint Programming
-      Constraint Satisfaction
+      Satisfaction
         Arc Consistency
         Backtracking
-        Forward Checking
       Global Constraints
         AllDifferent
         Cumulative
-        Table Constraints
-      Propagation Techniques
+      Propagation
         Domain Reduction
-        Constraint Propagation
-      Applications
-        Scheduling
-        Rostering
-        Configuration
+      Apps: Scheduling
+    Network Optimization
+      Graph Algorithms
+        Shortest Path
+        Spanning Tree
+        Max Flow
+      Network Design
+        Steiner Trees
+        Connectivity
+      Apps: Transportation
+    Combinatorial
+      Exact Methods
+        Branch and Bound
+        Dynamic Programming
+      Problem Classes
+        TSP VRP
+        Knapsack
+        Bin Packing
+      Complexity
+        P vs NP
+        NP-Complete
+```
+
+#### Part 2: Heuristics and Stochastic Methods
+
+```mermaid
+mindmap
+  root((OR: Heuristics))
     Meta-heuristics
       Local Search
         Hill Climbing
         Simulated Annealing
         Tabu Search
-        Variable Neighborhood
       Population-based
         Genetic Algorithms
-        Evolution Strategies
         Particle Swarm
         Ant Colony
       Hybrid Methods
         Memetic Algorithms
         Matheuristics
-        Large Neighborhood
-      Applications
-        Vehicle Routing
-        Job Shop Scheduling
-        Combinatorial Optimization
+      Apps: Vehicle Routing
     Stochastic Optimization
       Stochastic Programming
         Two-stage Models
         Chance Constraints
         Scenario Analysis
       Robust Optimization
-        Worst-case Analysis
+        Worst-case
         Uncertainty Sets
-      Markov Decision Processes
+      MDP
         Value Iteration
-        Policy Iteration
         Q-Learning
-      Applications
-        Inventory Management
-        Financial Planning
-        Resource Allocation
-    Network Optimization
-      Graph Algorithms
-        Shortest Path
-        Dijkstra, A*
-        Minimum Spanning Tree
-        Kruskal, Prim
-        Maximum Flow
-        Ford-Fulkerson
-        Min-Cost Flow
-      Network Design
-        Steiner Trees
-        Network Flows
-        Connectivity
-      Applications
-        Transportation
-        Telecommunications
-        Supply Chain
-    Combinatorial Optimization
-      Exact Methods
-        Branch and Bound
-        Dynamic Programming
-        Integer Programming
-      Approximation Algorithms
-        Greedy Algorithms
-        Primal-Dual
-        Randomized Rounding
-      Problem Classes
-        TSP, VRP
-        Knapsack
-        Bin Packing
-        Graph Coloring
-      Complexity
-        P vs NP
-        NP-Complete
-        NP-Hard
-    Multi-objective Optimization
+      Apps: Inventory
+    Multi-objective
       Pareto Optimality
         Pareto Front
-        Dominated Solutions
         Trade-offs
       Solution Methods
         Weighted Sum
         Epsilon Constraint
         Goal Programming
-      Evolutionary Approaches
+      Evolutionary
         NSGA-II
         MOEA/D
         SPEA2
-      Applications
-        Engineering Design
-        Portfolio Selection
-        Resource Planning
+      Apps: Engineering Design
+    Approximation
+      Algorithms
+        Greedy
+        Primal-Dual
+        Randomized
+      Performance
+        Approximation Ratio
+        Worst-case Bounds
+      Apps: NP-Hard Problems
 ```
 
 ### OR Technique Comparison
