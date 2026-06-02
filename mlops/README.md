@@ -132,41 +132,41 @@ The workflow emphasizes automation, continuous monitoring, and iterative improve
 
 | Component | Description | Key Technologies |
 |-----------|-------------|------------------|
-| **[Data Versioning](pages/data-versioning.md)** | Track data changes over time | DVC, Git LFS, data lineage |
-| **[Data Quality](pages/data-quality.md)** | Ensure data reliability | Validation, profiling, monitoring |
-| **[Feature Stores](pages/feature-stores.md)** | Centralized feature management | Feast, Tecton, SageMaker |
-| **[Data Pipelines](pages/data-pipelines.md)** | Automated data workflows | ETL/ELT, Airflow, Prefect |
-| **[Data Governance](pages/data-governance.md)** | Data policies and compliance | Privacy, security, regulations |
+| **Data Versioning** | Track data changes over time | DVC, Git LFS, data lineage |
+| **Data Quality** | Ensure data reliability | Validation, profiling, monitoring |
+| **Feature Stores** | Centralized feature management | Feast, Tecton, SageMaker |
+| **Data Pipelines** | Automated data workflows | ETL/ELT, Airflow, Prefect |
+| **Data Governance** | Data policies and compliance | Privacy, security, regulations |
 
 ### 2. Model Development
 
 | Component | Description | Key Technologies |
 |-----------|-------------|------------------|
-| **[Experiment Tracking](pages/experiment-tracking.md)** | Log and compare experiments | MLflow, Weights & Biases, Neptune |
-| **[Model Versioning](pages/model-versioning.md)** | Track model iterations | Model registry, lineage tracking |
-| **[Hyperparameter Tuning](pages/hyperparameter-tuning.md)** | Optimize model parameters | Optuna, Ray Tune, Hyperopt |
-| **[Reproducible Environments](pages/reproducible-environments.md)** | Consistent execution environments | Docker, conda, virtual environments |
-| **[Collaborative Development](pages/collaborative-dev.md)** | Team coordination | Code review, shared notebooks, Git |
+| **Experiment Tracking** | Log and compare experiments | MLflow, Weights & Biases, Neptune |
+| **Model Versioning** | Track model iterations | Model registry, lineage tracking |
+| **Hyperparameter Tuning** | Optimize model parameters | Optuna, Ray Tune, Hyperopt |
+| **Reproducible Environments** | Consistent execution environments | Docker, conda, virtual environments |
+| **Collaborative Development** | Team coordination | Code review, shared notebooks, Git |
 
 ### 3. Model Training
 
 | Component | Description | Key Technologies |
 |-----------|-------------|------------------|
-| **[Training Pipelines](pages/training-pipelines.md)** | Automated training workflows | Kubeflow, Airflow, custom pipelines |
-| **[Distributed Training](pages/distributed-training.md)** | Scale training across resources | Multi-GPU, multi-node, Ray |
-| **[Resource Management](pages/resource-management.md)** | Optimize compute usage | GPU scheduling, cost optimization |
-| **[Training Monitoring](pages/training-monitoring.md)** | Track training progress | Metrics, logs, alerts, TensorBoard |
-| **[Model Validation](pages/model-validation.md)** | Verify model quality | Performance testing, validation sets |
+| **Training Pipelines** | Automated training workflows | Kubeflow, Airflow, custom pipelines |
+| **Distributed Training** | Scale training across resources | Multi-GPU, multi-node, Ray |
+| **Resource Management** | Optimize compute usage | GPU scheduling, cost optimization |
+| **Training Monitoring** | Track training progress | Metrics, logs, alerts, TensorBoard |
+| **Model Validation** | Verify model quality | Performance testing, validation sets |
 
 ### 4. Model Deployment
 
 | Component | Description | Key Technologies |
 |-----------|-------------|------------------|
-| **[Deployment Strategies](pages/deployment-strategies.md)** | Safe rollout approaches | Blue-green, canary, A/B testing |
-| **[Model Serving](pages/model-serving.md)** | Expose models for inference | REST APIs, gRPC, batch inference |
-| **[Containerization](pages/containerization.md)** | Package models with dependencies | Docker, Kubernetes, containers |
-| **[Model Optimization](pages/model-optimization.md)** | Improve inference performance | Quantization, pruning, distillation |
-| **[Edge Deployment](pages/edge-deployment.md)** | Deploy to edge devices | Mobile, IoT, embedded systems |
+| **Deployment Strategies** | Safe rollout approaches | Blue-green, canary, A/B testing |
+| **Model Serving** | Expose models for inference | REST APIs, gRPC, batch inference |
+| **Containerization** | Package models with dependencies | Docker, Kubernetes, containers |
+| **Model Optimization** | Improve inference performance | Quantization, pruning, distillation |
+| **Edge Deployment** | Deploy to edge devices | Mobile, IoT, embedded systems |
 
 ### 5. Monitoring and Maintenance
 
@@ -174,21 +174,21 @@ The workflow emphasizes automation, continuous monitoring, and iterative improve
 
 | Component | Description | Key Metrics |
 |-----------|-------------|-------------|
-| **[Model Monitoring](pages/model-monitoring.md)** | Track model performance | Accuracy, latency, throughput |
-| **[Data Drift Detection](pages/data-drift.md)** | Detect input distribution changes | KL divergence, PSI, KS test |
-| **[Concept Drift Detection](pages/concept-drift.md)** | Detect target distribution changes | Performance degradation, label shift |
-| **[Alerting](pages/alerting.md)** | Automated issue notifications | Thresholds, escalation, runbooks |
-| **[Model Retraining](pages/model-retraining.md)** | Automated model updates | Triggers, schedules, CI/CD |
+| **Model Monitoring** | Track model performance | Accuracy, latency, throughput |
+| **Data Drift Detection** | Detect input distribution changes | KL divergence, PSI, KS test |
+| **Concept Drift Detection** | Detect target distribution changes | Performance degradation, label shift |
+| **Alerting** | Automated issue notifications | Thresholds, escalation, runbooks |
+| **Model Retraining** | Automated model updates | Triggers, schedules, CI/CD |
 
 ### 6. Governance and Compliance
 
 | Component | Description | Key Aspects |
 |-----------|-------------|-------------|
-| **[Model Governance](pages/model-governance.md)** | Control model lifecycle | Policies, approval workflows, reviews |
-| **[Audit Trails](pages/audit-trails.md)** | Track all changes | Logging, versioning, documentation |
-| **[Explainability](pages/explainability.md)** | Understand model decisions | SHAP, LIME, interpretability |
-| **[Bias Detection](pages/bias-detection.md)** | Ensure fairness | Fairness metrics, bias mitigation |
-| **[Regulatory Compliance](pages/compliance.md)** | Meet legal requirements | GDPR, CCPA, industry standards |
+| **Model Governance** | Control model lifecycle | Policies, approval workflows, reviews |
+| **Audit Trails** | Track all changes | Logging, versioning, documentation |
+| **Explainability** | Understand model decisions | SHAP, LIME, interpretability |
+| **Bias Detection** | Ensure fairness | Fairness metrics, bias mitigation |
+| **Regulatory Compliance** | Meet legal requirements | GDPR, CCPA, industry standards |
 
 ## MLOps Architecture
 
@@ -217,11 +217,11 @@ The workflow emphasizes automation, continuous monitoring, and iterative improve
 
 ### CI/CD for ML
 
-- **[Continuous Integration](pages/ci-ml.md)** - Automated testing, validation
-- **[Continuous Training](pages/ct.md)** - Automated model retraining
-- **[Continuous Deployment](pages/cd-ml.md)** - Automated model deployment
-- **[Testing Strategies](pages/testing-ml.md)** - Unit, integration, model tests
-- **[Pipeline Automation](pages/pipeline-automation.md)** - End-to-end automation
+- **Continuous Integration** - Automated testing, validation
+- **Continuous Training** - Automated model retraining
+- **Continuous Deployment** - Automated model deployment
+- **Testing Strategies** - Unit, integration, model tests
+- **Pipeline Automation** - End-to-end automation
 
 ## Tools and Technologies
 
@@ -350,19 +350,19 @@ The workflow emphasizes automation, continuous monitoring, and iterative improve
 
 ### Technical Challenges
 
-- **[Model Drift](pages/model-drift.md)** - Performance degradation over time
-- **[Scalability](pages/scalability.md)** - Handling increased load
-- **[Latency](pages/latency.md)** - Meeting response time requirements
-- **[Resource Costs](pages/cost-optimization.md)** - Managing infrastructure expenses
-- **[Debugging](pages/debugging-production.md)** - Troubleshooting production issues
+- **Model Drift** - Performance degradation over time
+- **Scalability** - Handling increased load
+- **Latency** - Meeting response time requirements
+- **Resource Costs** - Managing infrastructure expenses
+- **Debugging** - Troubleshooting production issues
 
 ### Organizational Challenges
 
-- **[Team Collaboration](pages/team-collaboration.md)** - Data scientists and engineers
-- **[Skill Gaps](pages/skill-gaps.md)** - MLOps expertise requirements
-- **[Tool Proliferation](pages/tool-management.md)** - Managing multiple tools
-- **[Change Management](pages/change-management.md)** - Adopting MLOps practices
-- **[Governance](pages/governance-challenges.md)** - Balancing speed and control
+- **Team Collaboration** - Data scientists and engineers
+- **Skill Gaps** - MLOps expertise requirements
+- **Tool Proliferation** - Managing multiple tools
+- **Change Management** - Adopting MLOps practices
+- **Governance** - Balancing speed and control
 
 ## MLOps Maturity Model
 
@@ -425,11 +425,11 @@ The workflow emphasizes automation, continuous monitoring, and iterative improve
 
 | Aspect | Description | Key Techniques | Priority |
 |--------|-------------|----------------|----------|
-| **[Model Security](pages/model-security.md)** | Protecting model IP | Encryption, access control, watermarking | High |
-| **[Data Privacy](pages/data-privacy.md)** | Protecting sensitive data | PII handling, encryption, anonymization | Critical |
-| **[Access Control](pages/access-control.md)** | Managing permissions | RBAC, authentication, authorization | High |
-| **[Adversarial Robustness](pages/adversarial-robustness.md)** | Defending against attacks | Input validation, adversarial training | Medium |
-| **[Compliance](pages/compliance-security.md)** | Meeting regulations | GDPR, CCPA, audit trails | Critical |
+| **Model Security** | Protecting model IP | Encryption, access control, watermarking | High |
+| **Data Privacy** | Protecting sensitive data | PII handling, encryption, anonymization | Critical |
+| **Access Control** | Managing permissions | RBAC, authentication, authorization | High |
+| **Adversarial Robustness** | Defending against attacks | Input validation, adversarial training | Medium |
+| **Compliance** | Meeting regulations | GDPR, CCPA, audit trails | Critical |
 
 ## Metrics and KPIs
 

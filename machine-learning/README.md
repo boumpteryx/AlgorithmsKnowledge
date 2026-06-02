@@ -100,20 +100,20 @@ For additional guidance, see the [Scikit-learn Algorithm Cheat-Sheet](https://sc
 
 | Model | Task | Regularization | Interpretability | Speed | Best For |
 |-------|------|----------------|------------------|-------|----------|
-| **[Linear Regression](pages/linear-regression.md)** | Regression | None (OLS) | High | Very Fast | Baseline, linear relationships |
-| **[Ridge](pages/ridge-regression.md)** | Regression | L2 (shrinkage) | High | Very Fast | Multicollinearity, many features |
-| **[Lasso](pages/lasso-regression.md)** | Regression | L1 (sparsity) | High | Fast | Feature selection, sparse models |
-| **[Elastic Net](pages/elastic-net.md)** | Regression | L1 + L2 | High | Fast | Grouped features, balance |
-| **[Logistic Regression](pages/logistic-regression.md)** | Classification | Optional L1/L2 | High | Very Fast | Binary/multi-class, baseline |
+| **Linear Regression** | Regression | None (OLS) | High | Very Fast | Baseline, linear relationships |
+| **Ridge** | Regression | L2 (shrinkage) | High | Very Fast | Multicollinearity, many features |
+| **Lasso** | Regression | L1 (sparsity) | High | Fast | Feature selection, sparse models |
+| **Elastic Net** | Regression | L1 + L2 | High | Fast | Grouped features, balance |
+| **Logistic Regression** | Classification | Optional L1/L2 | High | Very Fast | Binary/multi-class, baseline |
 
 **Classification Metrics - Precision, Recall, and F1 Score**:
 
 ![Precision Recall F1 Visualization](https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Precisionrecall.svg/800px-Precisionrecall.svg.png)
 *Understanding classification metrics: **Precision** = How many retrieved items are relevant? (TP / (TP + FP)). **Recall** = How many relevant items are retrieved? (TP / (TP + FN)). **F1 Score** = Harmonic mean of Precision and Recall (2 × (Precision × Recall) / (Precision + Recall)). The diagram shows true positives (green, inside circle), false positives (red, inside circle), false negatives (green, outside circle), and true negatives (gray, outside).*
 
-| **[Linear SVM](pages/linear-svm.md)** | Classification | L2 (margin) | Medium | Fast | Large datasets, linear separation |
-| **[Kernel SVM](pages/kernel-svm.md)** | Classification | L2 (margin) | Low | Slow | Non-linear, small-medium data |
-| **[SVR](pages/svr.md)** | Regression | Epsilon-insensitive | Medium | Medium | Non-linear regression |
+| **Linear SVM** | Classification | L2 (margin) | Medium | Fast | Large datasets, linear separation |
+| **Kernel SVM** | Classification | L2 (margin) | Low | Slow | Non-linear, small-medium data |
+| **SVR** | Regression | Epsilon-insensitive | Medium | Medium | Non-linear regression |
 
 **SVM Kernel Trick - Visual Explanation**:
 
@@ -130,19 +130,19 @@ For additional guidance, see the [Scikit-learn Algorithm Cheat-Sheet](https://sc
 
 **Core Concept**: Predictions based on similarity/distance metrics
 
-- **[K-Nearest Neighbors (KNN)](pages/knn.md)** - Instance-based learning
+- **K-Nearest Neighbors (KNN)** - Instance-based learning
   - Classification (majority vote)
   - Regression (average)
   - Distance metrics (Euclidean, Manhattan, Minkowski)
   - Weighted KNN
 
-- **[K-Means Clustering](pages/k-means.md)** - Centroid-based clustering
+- **K-Means Clustering** - Centroid-based clustering
   - Standard K-means
   - K-means++
   - Mini-batch K-means
   - Elbow method for K selection
 
-- **[KD-Tree](pages/kd-tree.md)** - Space-partitioning data structure
+- **KD-Tree** - Space-partitioning data structure
 
 ![KD-Tree Construction Animation](https://upload.wikimedia.org/wikipedia/commons/b/b6/Kdtree_animation.gif)
 *KD-Tree (K-Dimensional Tree) construction: Recursively partitions space by alternating between dimensions. Each node represents a splitting hyperplane, creating a binary tree structure that enables efficient nearest neighbor search in O(log n) average time.*
@@ -160,12 +160,12 @@ For additional guidance, see the [Scikit-learn Algorithm Cheat-Sheet](https://sc
 
 | Model | Type | Ensemble | Speed | Overfitting Risk | Handles Categorical | Best For |
 |-------|------|----------|-------|-----------------|---------------------|----------|
-| **[Decision Tree](pages/decision-trees.md)** | Single | No | Fast | High | Yes | Interpretability, baseline |
-| **[Random Forest](pages/random-forests.md)** | Bagging | Yes (parallel) | Medium | Low | Yes | General purpose, robust |
-| **[XGBoost](pages/xgboost.md)** | Boosting | Yes (sequential) | Fast | Medium | With encoding | Competitions, performance |
-| **[LightGBM](pages/lightgbm.md)** | Boosting | Yes (sequential) | Very Fast | Medium | With encoding | Large datasets, speed |
-| **[CatBoost](pages/catboost.md)** | Boosting | Yes (sequential) | Medium | Low | Native support | Categorical features |
-| **[AdaBoost](pages/adaboost.md)** | Boosting | Yes (sequential) | Medium | Medium | Yes | Weak learners, simple |
+| **Decision Tree** | Single | No | Fast | High | Yes | Interpretability, baseline |
+| **Random Forest** | Bagging | Yes (parallel) | Medium | Low | Yes | General purpose, robust |
+| **XGBoost** | Boosting | Yes (sequential) | Fast | Medium | With encoding | Competitions, performance |
+| **LightGBM** | Boosting | Yes (sequential) | Very Fast | Medium | With encoding | Large datasets, speed |
+| **CatBoost** | Boosting | Yes (sequential) | Medium | Low | Native support | Categorical features |
+| **AdaBoost** | Boosting | Yes (sequential) | Medium | Medium | Yes | Weak learners, simple |
 
 **Gradient Boosting Comparison**:
 
@@ -183,18 +183,18 @@ For additional guidance, see the [Scikit-learn Algorithm Cheat-Sheet](https://sc
 
 **Core Concept**: Modeling probability distributions
 
-- **[Naive Bayes](pages/naive-bayes.md)** - Probabilistic classifier
+- **Naive Bayes** - Probabilistic classifier
   - Gaussian Naive Bayes
   - Multinomial Naive Bayes
   - Bernoulli Naive Bayes
   - Feature independence assumption
 
-- **[Gaussian Mixture Models (GMM)](pages/gmm.md)** - Soft clustering
+- **Gaussian Mixture Models (GMM)** - Soft clustering
   - Expectation-Maximization (EM) algorithm
   - Covariance types (full, tied, diagonal, spherical)
   - Model selection (BIC, AIC)
 
-- **[Hidden Markov Models (HMM)](pages/hmm.md)** - Sequential probabilistic models
+- **Hidden Markov Models (HMM)** - Sequential probabilistic models
   - Forward-backward algorithm
   - Viterbi algorithm
   - Baum-Welch training
@@ -250,14 +250,14 @@ The key difference between centroid-based and density-based clustering is illust
 
 | Model | Shape Flexibility | Needs K | Handles Noise | Speed | Scalability | Best For |
 |-------|------------------|---------|---------------|-------|-------------|----------|
-| **[K-Means](pages/k-means.md)** | Spherical only | Yes | No | Very Fast | Excellent | Large data, spherical clusters |
-| **[Hierarchical](pages/hierarchical-clustering.md)** | Any | No | No | Slow | Poor | Small data, dendrogram |
-| **[DBSCAN](pages/dbscan.md)** | Arbitrary | No | Yes | Medium | Good | Arbitrary shapes, noise |
-| **[HDBSCAN](pages/hdbscan.md)** | Arbitrary | No | Yes | Medium | Good | Varying density, noise |
-| **[Mean Shift](pages/mean-shift.md)** | Arbitrary | No | Partial | Slow | Poor | Mode finding, few clusters |
-| **[Spectral](pages/spectral-clustering.md)** | Non-convex | Yes | No | Slow | Poor | Graph data, non-convex |
-| **[GMM](pages/gmm.md)** | Elliptical | Yes | Partial | Medium | Good | Soft clustering, probabilistic |
-| **[OPTICS](pages/optics.md)** | Arbitrary | No | Yes | Slow | Medium | Varying density |
+| **K-Means** | Spherical only | Yes | No | Very Fast | Excellent | Large data, spherical clusters |
+| **Hierarchical** | Any | No | No | Slow | Poor | Small data, dendrogram |
+| **DBSCAN** | Arbitrary | No | Yes | Medium | Good | Arbitrary shapes, noise |
+| **HDBSCAN** | Arbitrary | No | Yes | Medium | Good | Varying density, noise |
+| **Mean Shift** | Arbitrary | No | Partial | Slow | Poor | Mode finding, few clusters |
+| **Spectral** | Non-convex | Yes | No | Slow | Poor | Graph data, non-convex |
+| **GMM** | Elliptical | Yes | Partial | Medium | Good | Soft clustering, probabilistic |
+| **OPTICS** | Arbitrary | No | Yes | Slow | Medium | Varying density |
 
 **Linkage Methods** (Hierarchical):
 - **Single**: Minimum distance between clusters (chaining effect)

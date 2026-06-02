@@ -128,33 +128,33 @@ The flowchart guides you through dataset size, task requirements, and performanc
 
 **Core Concept**: Fully connected feedforward neural networks
 
-- **[Basic MLP](pages/mlp-basics.md)** - Foundational architecture
+- **Basic MLP** - Foundational architecture
   - Input layer, hidden layers, output layer
   - Fully connected (dense) layers
   - Non-linear activation functions
   - Universal approximation theorem
 
-- **[Backpropagation](pages/backpropagation.md)** - Training algorithm
+- **Backpropagation** - Training algorithm
   - Gradient computation via chain rule
   - Forward pass: compute predictions
   - Backward pass: compute gradients
   - Weight updates via gradient descent
   - 🎥 [Visual Explanation](https://makeagif.com/gif/what-is-backpropagation-really-doing-chapter-3-deep-learning-fmeACk) - Animated tutorial
 
-- **[Activation Functions](pages/activation-functions.md)** - Non-linearity
+- **Activation Functions** - Non-linearity
 
 | Function | Formula | Range | Gradient | Best For | Issues |
 |----------|---------|-------|----------|----------|--------|
-| **[ReLU](pages/relu.md)** | max(0, x) | [0, ∞) | 0 or 1 | Hidden layers (default) | Dying ReLU |
-| **[Leaky ReLU](pages/leaky-relu.md)** | max(αx, x) | (-∞, ∞) | α or 1 | Avoid dying ReLU | Hyperparameter α |
-| **[PReLU](pages/prelu.md)** | max(αx, x) | (-∞, ∞) | Learned | Learn negative slope | More parameters |
-| **[ELU](pages/elu.md)** | x if x>0 else α(e^x-1) | (-α, ∞) | Smooth | Faster convergence | Exponential cost |
-| **[GELU](pages/gelu.md)** | x·Φ(x) | (-∞, ∞) | Smooth | Transformers, NLP | Slower than ReLU |
-| **[Swish](pages/swish.md)** | x·σ(βx) | (-∞, ∞) | Smooth | Deep networks | Slower than ReLU |
-| **[Mish](pages/mish.md)** | x·tanh(softplus(x)) | (-∞, ∞) | Smooth | Better than Swish | Slowest |
-| **[Sigmoid](pages/sigmoid.md)** | 1/(1+e^-x) | (0, 1) | Vanishing | Output (binary) | Vanishing gradient |
-| **[Tanh](pages/tanh.md)** | (e^x-e^-x)/(e^x+e^-x) | (-1, 1) | Vanishing | RNN (legacy) | Vanishing gradient |
-| **[Softmax](pages/softmax.md)** | e^xi/Σe^xj | (0, 1), Σ=1 | Varies | Output (multi-class) | Numerical stability |
+| **ReLU** | max(0, x) | [0, ∞) | 0 or 1 | Hidden layers (default) | Dying ReLU |
+| **Leaky ReLU** | max(αx, x) | (-∞, ∞) | α or 1 | Avoid dying ReLU | Hyperparameter α |
+| **PReLU** | max(αx, x) | (-∞, ∞) | Learned | Learn negative slope | More parameters |
+| **ELU** | x if x>0 else α(e^x-1) | (-α, ∞) | Smooth | Faster convergence | Exponential cost |
+| **GELU** | x·Φ(x) | (-∞, ∞) | Smooth | Transformers, NLP | Slower than ReLU |
+| **Swish** | x·σ(βx) | (-∞, ∞) | Smooth | Deep networks | Slower than ReLU |
+| **Mish** | x·tanh(softplus(x)) | (-∞, ∞) | Smooth | Better than Swish | Slowest |
+| **Sigmoid** | 1/(1+e^-x) | (0, 1) | Vanishing | Output (binary) | Vanishing gradient |
+| **Tanh** | (e^x-e^-x)/(e^x+e^-x) | (-1, 1) | Vanishing | RNN (legacy) | Vanishing gradient |
+| **Softmax** | e^xi/Σe^xj | (0, 1), Σ=1 | Varies | Output (multi-class) | Numerical stability |
 
 **Selection Guide**:
 - **Default**: ReLU (fast, works well)
@@ -163,7 +163,7 @@ The flowchart guides you through dataset size, task requirements, and performanc
 - **Deep networks**: Swish, Mish
 - **Output layer**: Sigmoid (binary), Softmax (multi-class)
 
-- **[Deep Feedforward Networks](pages/deep-feedforward.md)** - Many-layered MLPs
+- **Deep Feedforward Networks** - Many-layered MLPs
   - Depth vs width tradeoffs
   - Skip connections
   - Residual connections
@@ -177,13 +177,13 @@ The flowchart guides you through dataset size, task requirements, and performanc
 
 | Mechanism | Complexity | Memory | Parallelizable | Best For | Limitations |
 |-----------|------------|--------|----------------|----------|-------------|
-| **[Self-Attention](pages/self-attention.md)** | O(n²) | O(n²) | Yes | Short sequences | Quadratic cost |
-| **[Multi-Head](pages/multi-head-attention.md)** | O(n²) | O(n²) | Yes | Rich representations | More parameters |
-| **[Cross-Attention](pages/cross-attention.md)** | O(nm) | O(nm) | Yes | Seq2seq, multimodal | Two sequences needed |
-| **[Local Attention](pages/local-attention.md)** | O(nw) | O(nw) | Yes | Long sequences | Limited context |
-| **[Sparse Attention](pages/sparse-attention.md)** | O(n√n) | O(n√n) | Partial | Very long sequences | Pattern design |
-| **[Flash Attention](pages/flash-attention.md)** | O(n²) | O(n) | Yes | Memory-bound | Hardware-specific |
-| **[Linear Attention](pages/linear-attention.md)** | O(n) | O(n) | Yes | Very long sequences | Approximation |
+| **Self-Attention** | O(n²) | O(n²) | Yes | Short sequences | Quadratic cost |
+| **Multi-Head** | O(n²) | O(n²) | Yes | Rich representations | More parameters |
+| **Cross-Attention** | O(nm) | O(nm) | Yes | Seq2seq, multimodal | Two sequences needed |
+| **Local Attention** | O(nw) | O(nw) | Yes | Long sequences | Limited context |
+| **Sparse Attention** | O(n√n) | O(n√n) | Partial | Very long sequences | Pattern design |
+| **Flash Attention** | O(n²) | O(n) | Yes | Memory-bound | Hardware-specific |
+| **Linear Attention** | O(n) | O(n) | Yes | Very long sequences | Approximation |
 
 **Attention Variants Comparison**:
 
@@ -200,19 +200,19 @@ The flowchart guides you through dataset size, task requirements, and performanc
 
 **Core Concept**: Efficient sequence modeling alternative to attention
 
-- **[State Space Models (SSM)](pages/state-space-models.md)** - Linear recurrence
+- **State Space Models (SSM)** - Linear recurrence
   - Continuous-time formulation
   - Discretization methods
   - Structured matrices
   - Linear time complexity O(n)
 
-- **[Mamba Architecture](pages/mamba.md)** - Selective SSM
+- **Mamba Architecture** - Selective SSM
   - Input-dependent parameters
   - Selective scan algorithm
   - Hardware-aware implementation
   - Competitive with Transformers
 
-- **[Mamba vs Attention](pages/mamba-vs-attention.md)** - Comparison
+- **Mamba vs Attention** - Comparison
   - Computational efficiency
   - Long-range dependencies
   - Training dynamics
@@ -224,27 +224,27 @@ The flowchart guides you through dataset size, task requirements, and performanc
 
 | Architecture | Direction | Training | Examples | Best For |
 |--------------|-----------|----------|----------|----------|
-| **[Encoder-Only](pages/encoder-only.md)** | Bidirectional | Masked LM | BERT, RoBERTa | Classification, NER |
-| **[Decoder-Only](pages/decoder-only.md)** | Causal | Next token | GPT family | Text generation |
-| **[Encoder-Decoder](pages/encoder-decoder-models.md)** | Both | Seq2seq | T5, BART | Translation, summarization |
+| **Encoder-Only** | Bidirectional | Masked LM | BERT, RoBERTa | Classification, NER |
+| **Decoder-Only** | Causal | Next token | GPT family | Text generation |
+| **Encoder-Decoder** | Both | Seq2seq | T5, BART | Translation, summarization |
 
 ### Convolutional Architectures
 
 | Architecture | Innovation | Parameters | Depth | Best For |
 |--------------|-----------|------------|-------|----------|
-| **[CNN Basics](pages/cnn-basics.md)** | Local connectivity | Low | Shallow | Image features |
-| **[ResNet](pages/modern-cnns.md)** | Residual connections | Medium | Very deep (50-152) | Image classification |
-| **[DenseNet](pages/modern-cnns.md)** | Dense connections | High | Deep (121-201) | Feature reuse |
-| **[EfficientNet](pages/modern-cnns.md)** | Compound scaling | Optimized | Varies | Efficiency |
-| **[ConvNeXt](pages/modern-cnns.md)** | Modernized design | Medium | Deep | Competitive with ViT |
+| **CNN Basics** | Local connectivity | Low | Shallow | Image features |
+| **ResNet** | Residual connections | Medium | Very deep (50-152) | Image classification |
+| **DenseNet** | Dense connections | High | Deep (121-201) | Feature reuse |
+| **EfficientNet** | Compound scaling | Optimized | Varies | Efficiency |
+| **ConvNeXt** | Modernized design | Medium | Deep | Competitive with ViT |
 
 ### Recurrent Architectures
 
 | Architecture | Gates | Parameters | Memory | Best For | Limitations |
 |--------------|-------|------------|--------|----------|-------------|
-| **[Vanilla RNN](pages/rnn-basics.md)** | None | Low | Short-term | Simple sequences | Vanishing gradients |
-| **[LSTM](pages/lstm.md)** | 3 (forget, input, output) | High | Long-term | Long sequences | Slow training |
-| **[GRU](pages/gru.md)** | 2 (reset, update) | Medium | Long-term | Efficient sequences | Less expressive |
+| **Vanilla RNN** | None | Low | Short-term | Simple sequences | Vanishing gradients |
+| **LSTM** | 3 (forget, input, output) | High | Long-term | Long sequences | Slow training |
+| **GRU** | 2 (reset, update) | Medium | Long-term | Efficient sequences | Less expressive |
 
 ## Generative Models
 
@@ -254,22 +254,22 @@ The flowchart guides you through dataset size, task requirements, and performanc
 
 | Variant | Innovation | Latent Space | Training | Best For |
 |---------|-----------|--------------|----------|----------|
-| **[Vanilla VAE](pages/vae-fundamentals.md)** | ELBO optimization | Continuous Gaussian | Stable | General generation |
-| **[β-VAE](pages/vae-variants.md)** | Weighted KL | Disentangled | Stable | Interpretable factors |
-| **[CVAE](pages/vae-variants.md)** | Conditional | Conditional | Stable | Controlled generation |
-| **[VQ-VAE](pages/vae-variants.md)** | Vector quantization | Discrete codebook | Complex | High-quality images |
-| **[Hierarchical VAE](pages/vae-variants.md)** | Multi-level | Hierarchical | Complex | Complex distributions |
+| **Vanilla VAE** | ELBO optimization | Continuous Gaussian | Stable | General generation |
+| **β-VAE** | Weighted KL | Disentangled | Stable | Interpretable factors |
+| **CVAE** | Conditional | Conditional | Stable | Controlled generation |
+| **VQ-VAE** | Vector quantization | Discrete codebook | Complex | High-quality images |
+| **Hierarchical VAE** | Multi-level | Hierarchical | Complex | Complex distributions |
 
 ### Generative Adversarial Networks (GAN)
 
 | Variant | Innovation | Stability | Quality | Best For |
 |---------|-----------|-----------|---------|----------|
-| **[Vanilla GAN](pages/gan-fundamentals.md)** | Adversarial training | Low | Medium | Proof of concept |
-| **[DCGAN](pages/gan-variants.md)** | Convolutional | Medium | Good | Image generation |
-| **[StyleGAN](pages/gan-variants.md)** | Style-based | High | Excellent | High-res faces |
-| **[CycleGAN](pages/gan-variants.md)** | Cycle consistency | Medium | Good | Unpaired translation |
-| **[Progressive GAN](pages/gan-variants.md)** | Progressive growing | High | Excellent | High-resolution |
-| **[BigGAN](pages/gan-variants.md)** | Large-scale | Medium | Excellent | ImageNet scale |
+| **Vanilla GAN** | Adversarial training | Low | Medium | Proof of concept |
+| **DCGAN** | Convolutional | Medium | Good | Image generation |
+| **StyleGAN** | Style-based | High | Excellent | High-res faces |
+| **CycleGAN** | Cycle consistency | Medium | Good | Unpaired translation |
+| **Progressive GAN** | Progressive growing | High | Excellent | High-resolution |
+| **BigGAN** | Large-scale | Medium | Excellent | ImageNet scale |
 
 **GAN Training Challenges**:
 
@@ -284,10 +284,10 @@ The flowchart guides you through dataset size, task requirements, and performanc
 
 | Model | Approach | Quality | Speed | Memory | Best For |
 |-------|----------|---------|-------|--------|----------|
-| **[Diffusion Fundamentals](pages/diffusion-fundamentals.md)** | Iterative denoising | High | Slow | Medium | Understanding basics |
-| **[DDPM](pages/ddpm.md)** | Markov chain | High | Very Slow | Medium | High-quality generation |
-| **[Latent Diffusion](pages/latent-diffusion.md)** | VAE + diffusion | High | Medium | Low | Efficient generation (Stable Diffusion) |
-| **[Diffusion Variants](pages/diffusion-variants.md)** | Advanced techniques | High | Varies | Varies | Specialized applications |
+| **Diffusion Fundamentals** | Iterative denoising | High | Slow | Medium | Understanding basics |
+| **DDPM** | Markov chain | High | Very Slow | Medium | High-quality generation |
+| **Latent Diffusion** | VAE + diffusion | High | Medium | Low | Efficient generation (Stable Diffusion) |
+| **Diffusion Variants** | Advanced techniques | High | Varies | Varies | Specialized applications |
 
 **Diffusion Process Components**:
 - **Forward diffusion**: Gradual noise addition to data
@@ -299,8 +299,8 @@ The flowchart guides you through dataset size, task requirements, and performanc
 
 | Model Type | Likelihood | Invertible | Speed | Quality | Best For |
 |------------|------------|------------|-------|---------|----------|
-| **[Normalizing Flows](pages/normalizing-flows.md)** | Exact | Yes | Fast | Good | Exact likelihood needed |
-| **[Autoregressive Models](pages/autoregressive-models.md)** | Exact | No | Slow | Excellent | Sequential data, text |
+| **Normalizing Flows** | Exact | Yes | Fast | Good | Exact likelihood needed |
+| **Autoregressive Models** | Exact | No | Slow | Excellent | Sequential data, text |
 
 **Model Characteristics**:
 - **Normalizing Flows**: Bijective transformations, exact likelihood computation
@@ -312,12 +312,12 @@ The flowchart guides you through dataset size, task requirements, and performanc
 
 | Approach | Parameters Updated | Memory | Training Time | Best For | Risk |
 |----------|-------------------|--------|---------------|----------|------|
-| **[Full Fine-Tuning](pages/fine-tuning-strategies.md)** | All | High | Long | Maximum adaptation | Catastrophic forgetting |
-| **[Layer Freezing](pages/fine-tuning-strategies.md)** | Partial | Medium | Medium | Limited data | Underfitting |
-| **[LoRA](pages/peft.md)** | Low-rank matrices | Low | Fast | Efficient adaptation | Limited expressiveness |
-| **[Adapter Layers](pages/peft.md)** | Small modules | Low | Fast | Multi-task | Architecture change |
-| **[Prefix Tuning](pages/peft.md)** | Soft prompts | Very low | Very fast | Prompt-based tasks | Task-specific |
-| **[Prompt Tuning](pages/peft.md)** | Input embeddings | Minimal | Very fast | Few parameters | Limited control |
+| **Full Fine-Tuning** | All | High | Long | Maximum adaptation | Catastrophic forgetting |
+| **Layer Freezing** | Partial | Medium | Medium | Limited data | Underfitting |
+| **LoRA** | Low-rank matrices | Low | Fast | Efficient adaptation | Limited expressiveness |
+| **Adapter Layers** | Small modules | Low | Fast | Multi-task | Architecture change |
+| **Prefix Tuning** | Soft prompts | Very low | Very fast | Prompt-based tasks | Task-specific |
+| **Prompt Tuning** | Input embeddings | Minimal | Very fast | Few parameters | Limited control |
 
 **Instruction Tuning Benefits**:
 - Multi-task generalization across diverse instructions
@@ -329,11 +329,11 @@ The flowchart guides you through dataset size, task requirements, and performanc
 
 | Method | Complexity | Reward Model | Training Stability | Best For | Limitations |
 |--------|------------|--------------|-------------------|----------|-------------|
-| **[RLHF](pages/rlhf.md)** | High | Yes (trained) | Medium | Human alignment | Complex pipeline |
-| **[DPO](pages/dpo.md)** | Medium | No (implicit) | High | Simplified alignment | Preference pairs needed |
-| **[REINFORCE](pages/policy-gradient.md)** | Medium | Yes | Low | General RL | High variance |
-| **[Actor-Critic](pages/policy-gradient.md)** | High | Yes (critic) | Medium | Stable training | More complex |
-| **[PPO](pages/rlhf.md)** | High | Yes | High | Stable policy updates | Hyperparameter sensitive |
+| **RLHF** | High | Yes (trained) | Medium | Human alignment | Complex pipeline |
+| **DPO** | Medium | No (implicit) | High | Simplified alignment | Preference pairs needed |
+| **REINFORCE** | Medium | Yes | Low | General RL | High variance |
+| **Actor-Critic** | High | Yes (critic) | Medium | Stable training | More complex |
+| **PPO** | High | Yes | High | Stable policy updates | Hyperparameter sensitive |
 
 **RL Training Considerations**:
 - **Reward modeling**: Quality of human feedback critical
@@ -347,11 +347,11 @@ The flowchart guides you through dataset size, task requirements, and performanc
 
 | Technique | Compression Ratio | Accuracy Loss | Training Required | Best For | Limitations |
 |-----------|------------------|---------------|-------------------|----------|-------------|
-| **[Quantization](pages/quantization.md)** | 2-4x | Low | Optional (QAT) | Inference speed | Hardware support needed |
-| **[Knowledge Distillation](pages/knowledge-distillation.md)** | Flexible | Low-Medium | Yes (student) | Model size reduction | Requires teacher model |
-| **[Pruning](pages/pruning.md)** | 2-10x | Low-Medium | Optional | Sparse models | May need retraining |
-| **[Low-Rank Factorization](pages/low-rank.md)** | 2-3x | Low | Optional | Memory reduction | Limited compression |
-| **[Weight Sharing](pages/weight-sharing.md)** | 2-4x | Low | Yes | Parameter reduction | Architecture constraints |
+| **Quantization** | 2-4x | Low | Optional (QAT) | Inference speed | Hardware support needed |
+| **Knowledge Distillation** | Flexible | Low-Medium | Yes (student) | Model size reduction | Requires teacher model |
+| **Pruning** | 2-10x | Low-Medium | Optional | Sparse models | May need retraining |
+| **Low-Rank Factorization** | 2-3x | Low | Optional | Memory reduction | Limited compression |
+| **Weight Sharing** | 2-4x | Low | Yes | Parameter reduction | Architecture constraints |
 
 **Quantization Methods**:
 
@@ -374,19 +374,19 @@ The flowchart guides you through dataset size, task requirements, and performanc
 
 ### Training Dynamics
 
-- **[Grokking](pages/grokking.md)** - Delayed generalization
+- **Grokking** - Delayed generalization
   - Memorization to generalization transition
   - Extended training benefits
   - Weight decay effects
   - Phase transitions
 
-- **[Double Descent](pages/double-descent.md)** - Non-monotonic risk
+- **Double Descent** - Non-monotonic risk
   - Classical bias-variance tradeoff
   - Modern overparameterized regime
   - Interpolation threshold
   - Sample-wise double descent
 
-- **[Neural Tangent Kernel](pages/ntk.md)** - Infinite width limit
+- **Neural Tangent Kernel** - Infinite width limit
   - Kernel regime
   - Lazy training
   - Feature learning
@@ -394,19 +394,19 @@ The flowchart guides you through dataset size, task requirements, and performanc
 
 ### Physics-Informed Neural Networks
 
-- **[PINN Fundamentals](pages/pinn-fundamentals.md)** - Physics constraints
+- **PINN Fundamentals** - Physics constraints
   - PDE residuals in loss
   - Boundary conditions
   - Initial conditions
   - Automatic differentiation
 
-- **[PINN Architectures](pages/pinn-architectures.md)** - Specialized designs
+- **PINN Architectures** - Specialized designs
   - Fourier feature networks
   - Multi-scale architectures
   - Adaptive activation functions
   - Domain decomposition
 
-- **[PINN Applications](pages/pinn-applications.md)** - Scientific computing
+- **PINN Applications** - Scientific computing
   - Fluid dynamics
   - Heat transfer
   - Quantum mechanics
@@ -418,17 +418,17 @@ The flowchart guides you through dataset size, task requirements, and performanc
 
 | Optimizer | Learning Rate | Momentum | Adaptive | Memory | Best For | Limitations |
 |-----------|--------------|----------|----------|--------|----------|-------------|
-| **[SGD](pages/sgd.md)** | Fixed/Scheduled | No | No | Low | Simple problems | Slow convergence |
-| **[SGD + Momentum](pages/sgd-momentum.md)** | Fixed/Scheduled | Yes | No | Low | General purpose | Hyperparameter tuning |
-| **[Nesterov](pages/nesterov.md)** | Fixed/Scheduled | Yes (lookahead) | No | Low | Faster convergence | Similar to momentum |
-| **[Adagrad](pages/adagrad.md)** | Adaptive | No | Yes | Medium | Sparse data | Learning rate decay |
-| **[RMSprop](pages/rmsprop.md)** | Adaptive | No | Yes | Medium | RNNs | Not well-studied |
-| **[Adam](pages/adam.md)** | Adaptive | Yes | Yes | Medium | General purpose | May not converge |
-| **[AdamW](pages/adamw.md)** | Adaptive | Yes | Yes | Medium | Transformers, LLMs | Slightly slower |
-| **[NAdam](pages/nadam.md)** | Adaptive | Yes (Nesterov) | Yes | Medium | Faster than Adam | More hyperparameters |
-| **[RAdam](pages/radam.md)** | Adaptive (rectified) | Yes | Yes | Medium | Stable training | Slower initially |
-| **[AdaBound](pages/adabound.md)** | Adaptive→Fixed | Yes | Yes | Medium | Best of both worlds | Complex |
-| **[L-BFGS](pages/lbfgs.md)** | Line search | No | No (2nd order) | High | Small batches | Not for large-scale |
+| **SGD** | Fixed/Scheduled | No | No | Low | Simple problems | Slow convergence |
+| **SGD + Momentum** | Fixed/Scheduled | Yes | No | Low | General purpose | Hyperparameter tuning |
+| **Nesterov** | Fixed/Scheduled | Yes (lookahead) | No | Low | Faster convergence | Similar to momentum |
+| **Adagrad** | Adaptive | No | Yes | Medium | Sparse data | Learning rate decay |
+| **RMSprop** | Adaptive | No | Yes | Medium | RNNs | Not well-studied |
+| **Adam** | Adaptive | Yes | Yes | Medium | General purpose | May not converge |
+| **AdamW** | Adaptive | Yes | Yes | Medium | Transformers, LLMs | Slightly slower |
+| **NAdam** | Adaptive | Yes (Nesterov) | Yes | Medium | Faster than Adam | More hyperparameters |
+| **RAdam** | Adaptive (rectified) | Yes | Yes | Medium | Stable training | Slower initially |
+| **AdaBound** | Adaptive→Fixed | Yes | Yes | Medium | Best of both worlds | Complex |
+| **L-BFGS** | Line search | No | No (2nd order) | High | Small batches | Not for large-scale |
 
 **Selection Guide**:
 - **Default choice**: AdamW (most robust)
@@ -441,20 +441,20 @@ The flowchart guides you through dataset size, task requirements, and performanc
 
 ### Regularization
 
-- **[Dropout](pages/dropout.md)** - Random deactivation
+- **Dropout** - Random deactivation
   - Standard dropout
   - DropConnect
   - Variational dropout
   - Dropout scheduling
   - 📚 [Kaggle Tutorial: Dropout & Batch Normalization](https://www.kaggle.com/code/ryanholbrook/dropout-and-batch-normalization) - Practical guide
 
-- **[Batch Normalization](pages/batch-normalization.md)** - Normalizing activations
+- **Batch Normalization** - Normalizing activations
   - Internal covariate shift
   - Training vs inference mode
   - Batch size sensitivity
   - Alternatives (Layer Norm, Group Norm)
 
-- **[Data Augmentation](pages/data-augmentation.md)** - Expanding training data
+- **Data Augmentation** - Expanding training data
   - Image augmentation (crop, flip, color)
   - Text augmentation (back-translation, paraphrasing)
   - Mixup, CutMix
@@ -462,13 +462,13 @@ The flowchart guides you through dataset size, task requirements, and performanc
 
 ### Loss Functions
 
-- **[Classification Losses](pages/classification-losses.md)** - Discrete outputs
+- **Classification Losses** - Discrete outputs
   - Cross-entropy
   - Focal loss
   - Label smoothing
   - Contrastive loss
 
-- **[Regression Losses](pages/regression-losses.md)** - Continuous outputs
+- **Regression Losses** - Continuous outputs
   - MSE (Mean Squared Error)
   - MAE (Mean Absolute Error)
   - Huber loss

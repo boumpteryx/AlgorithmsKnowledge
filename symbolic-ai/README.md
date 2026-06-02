@@ -13,10 +13,10 @@ How information and relationships are formally encoded for computational reasoni
 
 | Approach | Description | Structure | Best For |
 |----------|-------------|-----------|----------|
-| **[Semantic Networks](pages/semantic-networks.md)** | Graph-based knowledge structures | Nodes + edges | Relationships, hierarchies |
-| **[Frames and Scripts](pages/frames-and-scripts.md)** | Structured knowledge templates | Slots + fillers | Stereotypical situations |
-| **[Ontologies](pages/ontologies.md)** | Formal conceptual specifications | Classes + properties | Domain modeling |
-| **[Logic Systems](pages/logic-systems.md)** | Formal logical reasoning | Propositions + rules | Theorem proving |
+| **Semantic Networks** | Graph-based knowledge structures | Nodes + edges | Relationships, hierarchies |
+| **Frames and Scripts** | Structured knowledge templates | Slots + fillers | Stereotypical situations |
+| **Ontologies** | Formal conceptual specifications | Classes + properties | Domain modeling |
+| **Logic Systems** | Formal logical reasoning | Propositions + rules | Theorem proving |
 
 ### Reasoning Systems
 
@@ -24,31 +24,31 @@ How information and relationships are formally encoded for computational reasoni
 
 | Method | Direction | Strategy | Complexity | Best For |
 |--------|-----------|----------|------------|----------|
-| **[Forward Chaining](pages/forward-chaining.md)** | Data → Goal | Data-driven inference | O(n×m) | Reactive systems |
-| **[Backward Chaining](pages/backward-chaining.md)** | Goal → Data | Goal-driven inference | O(b^d) | Query answering |
-| **[Resolution](pages/resolution.md)** | Bidirectional | Automated theorem proving | Exponential | Logic proofs |
-| **[Non-monotonic Reasoning](pages/non-monotonic-reasoning.md)** | Context-dependent | Defeasible inference | Varies | Incomplete info |
+| **Forward Chaining** | Data → Goal | Data-driven inference | O(n×m) | Reactive systems |
+| **Backward Chaining** | Goal → Data | Goal-driven inference | O(b^d) | Query answering |
+| **Resolution** | Bidirectional | Automated theorem proving | Exponential | Logic proofs |
+| **Non-monotonic Reasoning** | Context-dependent | Defeasible inference | Varies | Incomplete info |
 
 ### Search Algorithms
 
 | Algorithm Type | Strategy | Completeness | Optimality | Complexity | Best For |
 |----------------|----------|--------------|------------|------------|----------|
-| **[BFS](pages/uninformed-search.md)** | Breadth-first | Yes | Yes (unit cost) | O(b^d) | Shortest path |
-| **[DFS](pages/uninformed-search.md)** | Depth-first | No | No | O(b^m) | Memory-limited |
-| **[Uniform-Cost](pages/uninformed-search.md)** | Lowest cost | Yes | Yes | O(b^(C*/ε)) | Weighted graphs |
-| **[A*](pages/informed-search.md)** | Best-first + heuristic | Yes | Yes (admissible h) | O(b^d) | Optimal path |
-| **[Greedy Best-First](pages/informed-search.md)** | Heuristic only | No | No | O(b^m) | Fast solutions |
-| **[Minimax](pages/adversarial-search.md)** | Game tree | Yes | Yes | O(b^m) | Two-player games |
-| **[Alpha-Beta](pages/adversarial-search.md)** | Pruned minimax | Yes | Yes | O(b^(m/2)) | Game optimization |
+| **BFS** | Breadth-first | Yes | Yes (unit cost) | O(b^d) | Shortest path |
+| **DFS** | Depth-first | No | No | O(b^m) | Memory-limited |
+| **Uniform-Cost** | Lowest cost | Yes | Yes | O(b^(C*/ε)) | Weighted graphs |
+| **A*** | Best-first + heuristic | Yes | Yes (admissible h) | O(b^d) | Optimal path |
+| **Greedy Best-First** | Heuristic only | No | No | O(b^m) | Fast solutions |
+| **Minimax** | Game tree | Yes | Yes | O(b^m) | Two-player games |
+| **Alpha-Beta** | Pruned minimax | Yes | Yes | O(b^(m/2)) | Game optimization |
 
 ### Planning Approaches
 
 | Approach | Representation | Uncertainty | Complexity | Best For |
 |----------|----------------|-------------|------------|----------|
-| **[STRIPS](pages/classical-planning.md)** | State-space | None | PSPACE-complete | Deterministic domains |
-| **[HTN](pages/hierarchical-planning.md)** | Task hierarchy | None | Varies | Structured problems |
-| **[Temporal](pages/temporal-planning.md)** | Time constraints | None | EXPTIME | Scheduling |
-| **[Probabilistic](pages/probabilistic-planning.md)** | MDPs, POMDPs | Yes | PSPACE-complete | Stochastic domains |
+| **STRIPS** | State-space | None | PSPACE-complete | Deterministic domains |
+| **HTN** | Task hierarchy | None | Varies | Structured problems |
+| **Temporal** | Time constraints | None | EXPTIME | Scheduling |
+| **Probabilistic** | MDPs, POMDPs | Yes | PSPACE-complete | Stochastic domains |
 
 ### Expert Systems
 
@@ -56,9 +56,9 @@ How information and relationships are formally encoded for computational reasoni
 
 | Type | Approach | Uncertainty Handling | Best For |
 |------|----------|---------------------|----------|
-| **[Rule-Based Systems](pages/rule-based-systems.md)** | IF-THEN production rules | None (deterministic) | Well-defined domains |
-| **[Fuzzy Logic Systems](pages/fuzzy-logic.md)** | Fuzzy sets and rules | Degrees of truth | Imprecise information |
-| **[Blackboard Systems](pages/blackboard-systems.md)** | Shared knowledge space | Collaborative | Complex problems |
+| **Rule-Based Systems** | IF-THEN production rules | None (deterministic) | Well-defined domains |
+| **Fuzzy Logic Systems** | Fuzzy sets and rules | Degrees of truth | Imprecise information |
+| **Blackboard Systems** | Shared knowledge space | Collaborative | Complex problems |
 
 ## Operations Research
 
@@ -184,13 +184,13 @@ mindmap
 
 | Category | Approach | Optimality | Speed | Best For | Limitations |
 |----------|----------|------------|-------|----------|-------------|
-| **[Linear Programming](pages/linear-programming.md)** | Exact | Guaranteed | Fast | Continuous variables, linear constraints | Linear relationships only |
-| **[Integer Programming](pages/integer-programming.md)** | Exact | Guaranteed | Slow | Discrete decisions | Exponential complexity |
-| **[Constraint Programming](pages/constraint-programming.md)** | Exact/Heuristic | Varies | Medium | Complex constraints, scheduling | Scalability issues |
-| **[Meta-heuristics](pages/meta-heuristics.md)** | Heuristic | Approximate | Fast | Large-scale, NP-hard | No optimality guarantee |
-| **[Dynamic Programming](pages/dynamic-programming.md)** | Exact | Guaranteed | Medium | Sequential decisions | Curse of dimensionality |
-| **[Stochastic Optimization](pages/stochastic-optimization.md)** | Exact/Heuristic | Varies | Slow | Uncertainty | Computational cost |
-| **[Network Optimization](pages/network-optimization.md)** | Exact | Guaranteed | Fast | Graph problems | Specific structure needed |
+| **Linear Programming** | Exact | Guaranteed | Fast | Continuous variables, linear constraints | Linear relationships only |
+| **Integer Programming** | Exact | Guaranteed | Slow | Discrete decisions | Exponential complexity |
+| **Constraint Programming** | Exact/Heuristic | Varies | Medium | Complex constraints, scheduling | Scalability issues |
+| **Meta-heuristics** | Heuristic | Approximate | Fast | Large-scale, NP-hard | No optimality guarantee |
+| **Dynamic Programming** | Exact | Guaranteed | Medium | Sequential decisions | Curse of dimensionality |
+| **Stochastic Optimization** | Exact/Heuristic | Varies | Slow | Uncertainty | Computational cost |
+| **Network Optimization** | Exact | Guaranteed | Fast | Graph problems | Specific structure needed |
 
 ### Key Relationships
 
