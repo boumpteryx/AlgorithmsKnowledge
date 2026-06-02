@@ -10,6 +10,26 @@ Machine Learning encompasses classical algorithms that learn patterns from data 
 
 ![ML Paradigms](diagrams/ml-paradigms.png)
 
+### Algorithm Selection Guide
+
+Choosing the right machine learning algorithm depends on your problem type, data size, and requirements. Use this decision flowchart from scikit-learn:
+
+![Scikit-learn Algorithm Cheat-Sheet](https://scikit-learn.org/stable/_static/ml_map.png)
+*Source: [Scikit-learn Official Documentation](https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html)*
+
+**Quick Decision Path**:
+1. **Start** → Do you have >50 samples?
+   - If NO → Get more data
+   - If YES → Continue
+2. **Predicting a category?** → Classification
+3. **Predicting a quantity?** → Regression
+4. **Just looking?** → Dimensionality Reduction or Clustering
+5. Follow the flowchart based on:
+   - Sample size (<100K or >100K)
+   - Text data vs numerical data
+   - Feature importance requirements
+   - Whether algorithms are working or not
+
 ### Linear Models
 
 **Core Concept**: Model relationships as linear combinations of features
