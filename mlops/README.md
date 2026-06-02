@@ -6,6 +6,22 @@
 
 MLOps (Machine Learning Operations) is the practice of deploying, monitoring, and maintaining machine learning models in production environments. It combines ML system development with operations, applying DevOps principles to ML workflows to ensure reliable, scalable, and reproducible ML systems.
 
+## Complete MLOps Workflow
+
+Understanding the end-to-end MLOps workflow is essential for successful ML deployment. This diagram shows how all components work together:
+
+![MLOps Complete Workflow](diagrams/mlops-workflow.png)
+
+**Workflow Phases**:
+1. **👨‍💻 Development**: Experiment tracking, model training, and selection
+2. **✅ Validation**: Performance, fairness, and robustness testing
+3. **🚀 Deployment**: Canary, A/B testing, or blue-green strategies
+4. **📊 Monitoring**: Track performance, data drift, and concept drift
+5. **🔧 Maintenance**: Automated retraining and optimization
+6. **🛡️ Governance**: Data privacy, model approval, and compliance
+
+The workflow emphasizes automation, continuous monitoring, and iterative improvement.
+
 ## Core Principles
 
 ![MLOps Lifecycle](diagrams/mlops-lifecycle.png)

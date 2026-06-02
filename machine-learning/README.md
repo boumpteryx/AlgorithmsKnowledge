@@ -12,23 +12,21 @@ Machine Learning encompasses classical algorithms that learn patterns from data 
 
 ### Algorithm Selection Guide
 
-Choosing the right machine learning algorithm depends on your problem type, data size, and requirements. Use this decision flowchart from scikit-learn:
+Choosing the right machine learning algorithm depends on your problem type, data size, and requirements. Use this interactive decision flowchart:
 
-![Scikit-learn Algorithm Cheat-Sheet](https://scikit-learn.org/stable/_static/ml_map.png)
-*Source: [Scikit-learn Official Documentation](https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html)*
+![ML Method Selection Flowchart](diagrams/ml-method-selection.png)
 
-**Quick Decision Path**:
-1. **Start** → Do you have >50 samples?
-   - If NO → Get more data
-   - If YES → Continue
-2. **Predicting a category?** → Classification
-3. **Predicting a quantity?** → Regression
-4. **Just looking?** → Dimensionality Reduction or Clustering
-5. Follow the flowchart based on:
-   - Sample size (<100K or >100K)
-   - Text data vs numerical data
-   - Feature importance requirements
-   - Whether algorithms are working or not
+This flowchart guides you through:
+- **Classification tasks**: From Naive Bayes (small data) to XGBoost (large data)
+- **Regression tasks**: From Linear Regression to advanced ensemble methods
+- **Clustering**: K-Means for spherical clusters, DBSCAN for arbitrary shapes
+- **Dimensionality Reduction**: PCA for preprocessing, t-SNE/UMAP for visualization
+
+**Color coding**:
+- 🟢 Green: Simple, fast methods (good starting points)
+- 🟡 Yellow: Advanced methods (better performance, more complex)
+
+For additional guidance, see the [Scikit-learn Algorithm Cheat-Sheet](https://scikit-learn.org/stable/_static/ml_map.png) from the [official documentation](https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html).
 
 ### Linear Models
 
@@ -147,7 +145,19 @@ There are two main approaches to clustering, each with different strengths:
 
 **Visual Comparison**:
 
-The key difference is illustrated when clustering non-spherical data:
+Understanding how K-Means works helps explain its strengths and limitations:
+
+![K-Means Algorithm Illustration](https://sandipanweb.files.wordpress.com/2016/08/kmeans.gif?w=676)
+*K-Means iterative process: (1) Initialize centroids, (2) Assign points to nearest centroid, (3) Update centroids, (4) Repeat until convergence*
+*Image source: [Kernel K-Means and Cluster Evaluation](https://sandipanweb.wordpress.com/2016/08/29/kernel-k-means-and-cluster-evaluation/)*
+
+Understanding how DBSCAN works - it uses two key parameters:
+
+![DBSCAN Algorithm Illustration](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Aw-Pu_TtYJY_OMqJYRCXqA.png)
+*DBSCAN parameters: **ε (epsilon)** = radius to search for neighbors, **MinPts** = minimum points to form a dense region. Points are classified as: Core points (≥MinPts neighbors), Border points (in ε-neighborhood of core), Noise points (neither core nor border)*
+*Image source: [Understanding DBSCAN: A Practical Guide](https://medium.com/@jdseo/understanding-dbscan-a-practical-guide-for-beginners-with-business-applications-9458792d1df8)*
+
+The key difference between centroid-based and density-based clustering is illustrated when clustering non-spherical data:
 - **K-Means** (left): Splits the circular pattern incorrectly because it assumes spherical clusters
 - **DBSCAN** (right): Correctly identifies the circular pattern as a single cluster based on density
 

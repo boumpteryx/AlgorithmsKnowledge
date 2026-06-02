@@ -6,6 +6,21 @@
 
 Deep Learning focuses on neural network architectures and training techniques. This section covers DL-specific models (MLP, attention mechanisms, Mamba), architectural patterns (encoders/decoders), generative models (VAE, GANs, diffusion), and advanced training techniques (quantization, distillation, physics-informed learning).
 
+## Architecture Selection Guide
+
+Choosing the right deep learning architecture depends on your data type and task. Use this decision flowchart:
+
+![Deep Learning Architecture Selection](diagrams/architecture-selection.png)
+
+**Quick Navigation by Data Type**:
+- **🖼️ Images**: CNNs for classification, U-Net for segmentation, GANs/Diffusion for generation
+- **📝 Text**: BERT for classification, GPT for generation, T5 for translation
+- **📊 Tabular**: MLPs with proper regularization, TabNet for attention-based
+- **📈 Time Series**: LSTM/GRU for short sequences, Transformers/Mamba for long sequences
+- **🎵 Audio**: Wav2Vec2 for speech, WaveNet for generation
+
+The flowchart guides you through dataset size, task requirements, and performance needs to select the optimal architecture.
+
 ## Deep Learning Models
 
 ### Multi-Layer Perceptron (MLP)

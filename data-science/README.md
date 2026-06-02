@@ -6,6 +6,21 @@
 
 Data Science focuses on extracting insights from data through statistical analysis, visualization, and modeling. This section covers data manipulation techniques (dimensionality reduction, imputation, sampling, normalization, augmentation) and model analysis methods (fairness, complexity, explainability, metrics).
 
+## End-to-End Data Science Workflow
+
+Understanding how different techniques fit together is crucial. This flowchart shows the complete data science workflow from raw data to deployed model:
+
+![Data Science Method Relationships](diagrams/method-relationships.png)
+
+**Key Workflow Stages**:
+1. **📊 Data Preprocessing**: Handle missing values, outliers, and scaling
+2. **🔍 Exploratory Analysis**: Understand distributions, correlations, and patterns
+3. **⚙️ Feature Engineering**: Dimensionality reduction, resampling, encoding
+4. **🤖 Modeling**: Select and train appropriate algorithms
+5. **📈 Evaluation**: Assess performance and iterate
+
+Each stage connects to specific techniques detailed below. Use this workflow to understand when and why to apply each method.
+
 ## Data Techniques
 
 ### Dimensionality Reduction
@@ -13,6 +28,12 @@ Data Science focuses on extracting insights from data through statistical analys
 ![Data Science Workflow](diagrams/ds-workflow.png)
 
 **Core Concept**: Reducing feature space while preserving information
+
+**How PCA Works - Visual Explanation**:
+
+![PCA Eigenvalues and Eigenvectors](https://miro.medium.com/v2/resize:fit:1400/1*QinDfRawRskupf4mU5bYSA.png)
+*PCA finds the directions (eigenvectors) of maximum variance in the data. The first principal component captures the most variance, the second captures the next most, and so on. This allows dimensionality reduction while preserving the most important information.*
+*Image source: [Eigenvalues and Eigenvectors Explained](https://medium.com/data-science/eigenvalues-and-eigenvectors-378e851bf372)*
 
 **Approaches**: Matrix-based (linear algebra) vs Graph-based (manifold learning)
 

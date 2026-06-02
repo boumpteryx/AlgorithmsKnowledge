@@ -6,6 +6,20 @@
 
 Distributed Systems are collections of independent computers that appear to users as a single coherent system. They enable scalability, fault tolerance, and geographic distribution of computational resources. In the context of AI and algorithms, distributed systems are crucial for training large models, processing massive datasets, and serving predictions at scale.
 
+## System Design Decision Flowchart
+
+Designing a distributed system requires making key architectural decisions based on scale, consistency needs, and workload type. Use this flowchart to guide your design:
+
+![Distributed System Design Flowchart](diagrams/system-design-flowchart.png)
+
+**Decision Factors**:
+- **Scale**: Small (<1K users), Medium (1K-100K), Large (>100K)
+- **Consistency**: Strong consistency vs Eventual consistency
+- **Geography**: Single region vs Multi-region
+- **Workload**: General applications vs ML-specific (training/inference)
+
+The flowchart guides you from initial requirements through architecture selection, monitoring setup, and reliability patterns.
+
 ## Core Concepts
 
 ![Distributed Architecture](diagrams/distributed-architecture.png)

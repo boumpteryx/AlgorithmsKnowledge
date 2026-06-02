@@ -1,0 +1,98 @@
+graph TD
+    Start([What type of data?]) --> DataType{Data Type}
+    
+    DataType -->|Images| ImageQ{Task?}
+    DataType -->|Text/Sequences| TextQ{Task?}
+    DataType -->|Tabular| TabularQ{Size?}
+    DataType -->|Time Series| TimeQ{Length?}
+    DataType -->|Audio| AudioQ{Task?}
+    
+    subgraph Images["🖼️ Image Tasks"]
+        ImageQ -->|Classification| ImgClass{Dataset size?}
+        ImageQ -->|Object Detection| ObjDet[CNN + Detection Head<br/>YOLO, Faster R-CNN]
+        ImageQ -->|Segmentation| Segment[U-Net, Mask R-CNN<br/>Semantic/Instance]
+        ImageQ -->|Generation| ImgGen[GAN, Diffusion, VAE<br/>Stable Diffusion]
+        
+        ImgClass -->|Small <10K| Transfer[Transfer Learning<br/>Fine-tune ResNet/EfficientNet]
+        ImgClass -->|Large >100K| TrainCNN[Train CNN<br/>ResNet, EfficientNet, ConvNeXt]
+    end
+    
+    subgraph Text["📝 Text/Sequence Tasks"]
+        TextQ -->|Classification| TxtClass{Length?}
+        TextQ -->|Generation| TxtGen{Model size?}
+        TextQ -->|Translation| Translation[Encoder-Decoder<br/>T5, BART, mBART]
+        TextQ -->|Q&A| QA[Encoder-only<br/>BERT, RoBERTa]
+        
+        TxtClass -->|Short <512| BERT_Class[BERT-based<br/>Fine-tune encoder]
+        TxtClass -->|Long >512| LongFormer[Longformer, BigBird<br/>Efficient attention]
+        
+        TxtGen -->|Small task| GPT_Small[GPT-2, DistilGPT<br/>Fine-tune decoder]
+        TxtGen -->|Large task| GPT_Large[GPT-3/4, LLaMA<br/>Prompt or fine-tune]
+    end
+    
+    subgraph Tabular["📊 Tabular Data"]
+        TabularQ -->|Small <10K| TabSmall[Simple MLP<br/>2-3 hidden layers]
+        TabularQ -->|Medium 10K-1M| TabMed{Feature types?}
+        TabularQ -->|Large >1M| TabLarge[Deep MLP<br/>Residual connections]
+        
+        TabMed -->|Mixed| TabNet[TabNet<br/>Attention-based]
+        TabMed -->|Numeric| DeepMLP[Deep MLP<br/>Batch norm, dropout]
+    end
+    
+    subgraph TimeSeries["📈 Time Series"]
+        TimeQ -->|Short <100| TimeShort{Pattern?}
+        TimeQ -->|Long >100| TimeLong{Need attention?}
+        
+        TimeShort -->|Simple| LSTM_Short[LSTM/GRU<br/>1-2 layers]
+        TimeShort -->|Complex| CNN1D[1D CNN<br/>Temporal patterns]
+        
+        TimeLong -->|Yes| Transformer_TS[Transformer<br/>Temporal Fusion]
+        TimeLong -->|No| Mamba_TS[Mamba/SSM<br/>Efficient long sequences]
+    end
+    
+    subgraph Audio["🎵 Audio Tasks"]
+        AudioQ -->|Speech Recognition| ASR[Wav2Vec2, Whisper<br/>End-to-end]
+        AudioQ -->|Classification| AudioClass[CNN + RNN<br/>Mel spectrograms]
+        AudioQ -->|Generation| AudioGen[WaveNet, Diffusion<br/>Raw waveform]
+    end
+    
+    Transfer --> Eval
+    TrainCNN --> Eval
+    ObjDet --> Eval
+    Segment --> Eval
+    ImgGen --> Eval
+    
+    BERT_Class --> Eval
+    LongFormer --> Eval
+    GPT_Small --> Eval
+    GPT_Large --> Eval
+    Translation --> Eval
+    QA --> Eval
+    
+    TabSmall --> Eval
+    TabNet --> Eval
+    DeepMLP --> Eval
+    TabLarge --> Eval
+    
+    LSTM_Short --> Eval
+    CNN1D --> Eval
+    Transformer_TS --> Eval
+    Mamba_TS --> Eval
+    
+    ASR --> Eval
+    AudioClass --> Eval
+    AudioGen --> Eval
+    
+    Eval{Performance<br/>good?}
+    Eval -->|No| Improve[Improve:<br/>• More data<br/>• Data augmentation<br/>• Better architecture<br/>• Hyperparameter tuning<br/>• Regularization]
+    Eval -->|Yes| Deploy[Deploy Model]
+    
+    Improve -.->|Try again| Start
+    
+    style Start fill:#e1f5ff
+    style Deploy fill:#90EE90
+    style Improve fill:#FFD700
+    style Transfer fill:#90EE90
+    style BERT_Class fill:#90EE90
+    style TabSmall fill:#90EE90
+    style LSTM_Short fill:#90EE90

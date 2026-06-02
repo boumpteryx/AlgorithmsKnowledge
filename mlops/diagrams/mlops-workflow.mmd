@@ -1,0 +1,90 @@
+graph TB
+    subgraph Development["👨‍💻 Development Phase"]
+        Problem[Define Problem] --> Data[Collect Data]
+        Data --> EDA[Exploratory Analysis]
+        EDA --> Features[Feature Engineering]
+        Features --> Experiment[Experiment Tracking<br/>MLflow, W&B]
+        Experiment --> Models[Train Multiple Models]
+        Models --> Compare[Compare & Select Best]
+    end
+    
+    subgraph Validation["✅ Validation Phase"]
+        Compare --> Validate{Validation<br/>Checks}
+        Validate -->|Performance| PerfTest[Performance Tests<br/>Accuracy, Latency]
+        Validate -->|Fairness| FairTest[Fairness Tests<br/>Bias Detection]
+        Validate -->|Robustness| RobustTest[Robustness Tests<br/>Edge Cases]
+        
+        PerfTest --> AllPass{All tests<br/>pass?}
+        FairTest --> AllPass
+        RobustTest --> AllPass
+        
+        AllPass -->|No| Iterate[Iterate on Model]
+        AllPass -->|Yes| Package[Package Model]
+        
+        Iterate -.->|Back to| Features
+    end
+    
+    subgraph Deployment["🚀 Deployment Phase"]
+        Package --> Registry[Model Registry<br/>Version Control]
+        Registry --> Strategy{Deployment<br/>Strategy}
+        
+        Strategy -->|Safe| Canary[Canary Deployment<br/>5% → 50% → 100%]
+        Strategy -->|Compare| AB[A/B Testing<br/>Split traffic]
+        Strategy -->|Fast| BlueGreen[Blue-Green<br/>Instant switch]
+        
+        Canary --> Serve
+        AB --> Serve
+        BlueGreen --> Serve[Model Serving<br/>REST API, gRPC]
+    end
+    
+    subgraph Monitoring["📊 Monitoring Phase"]
+        Serve --> Monitor{Monitor<br/>What?}
+        
+        Monitor -->|Performance| PerfMon[Performance Metrics<br/>Latency, Throughput]
+        Monitor -->|Quality| QualMon[Model Quality<br/>Accuracy, F1]
+        Monitor -->|Data| DataMon[Data Drift<br/>Input Distribution]
+        Monitor -->|Concept| ConceptMon[Concept Drift<br/>Target Distribution]
+        
+        PerfMon --> Alert{Issues<br/>detected?}
+        QualMon --> Alert
+        DataMon --> Alert
+        ConceptMon --> Alert
+        
+        Alert -->|Yes| Investigate[Investigate Issue]
+        Alert -->|No| Continue[Continue Monitoring]
+        
+        Continue -.->|Loop| Monitor
+    end
+    
+    subgraph Maintenance["🔧 Maintenance Phase"]
+        Investigate --> Root{Root<br/>Cause?}
+        
+        Root -->|Data drift| Retrain[Retrain Model<br/>New data]
+        Root -->|Concept drift| Redesign[Redesign Model<br/>New features]
+        Root -->|Performance| Optimize[Optimize Model<br/>Quantization, Pruning]
+        Root -->|Infrastructure| Scale[Scale Infrastructure<br/>More resources]
+        
+        Retrain --> AutoPipeline[Automated Pipeline<br/>CI/CD for ML]
+        Redesign --> AutoPipeline
+        Optimize --> AutoPipeline
+        Scale --> Serve
+        
+        AutoPipeline -.->|New version| Registry
+    end
+    
+    subgraph Governance["🛡️ Governance Layer"]
+        Gov1[Data Governance<br/>Privacy, Security]
+        Gov2[Model Governance<br/>Approval, Audit]
+        Gov3[Compliance<br/>Regulations]
+        
+        Gov1 -.->|Applies to| Data
+        Gov2 -.->|Applies to| Registry
+        Gov3 -.->|Applies to| Serve
+    end
+    
+    style Problem fill:#e1f5ff
+    style Package fill:#90EE90
+    style Serve fill:#90EE90
+    style Alert fill:#FFD700
+    style Iterate fill:#ffcccc
+    style AutoPipeline fill:#90EE90

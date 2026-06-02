@@ -1,0 +1,82 @@
+graph TB
+    subgraph Input["📊 Raw Data"]
+        RawData[Raw Dataset<br/>Missing values, outliers,<br/>mixed scales]
+    end
+    
+    subgraph Preprocessing["🔧 Data Preprocessing"]
+        Missing{Missing<br/>Values?}
+        Outliers{Outliers?}
+        Scale{Different<br/>Scales?}
+        
+        Missing -->|Yes| Imputation[Imputation<br/>KNN, MICE, Mean]
+        Missing -->|No| Outliers
+        Imputation --> Outliers
+        
+        Outliers -->|Yes| OutlierHandle[Handle Outliers<br/>Remove, Cap, Transform]
+        Outliers -->|No| Scale
+        OutlierHandle --> Scale
+        
+        Scale -->|Yes| Scaling[Scaling<br/>StandardScaler, MinMax]
+        Scale -->|No| CleanData
+        Scaling --> CleanData[Clean Data]
+    end
+    
+    subgraph Analysis["🔍 Exploratory Analysis"]
+        CleanData --> EDA{What to<br/>explore?}
+        EDA -->|Distributions| Viz1[Distribution Plots<br/>Histograms, Box plots]
+        EDA -->|Relationships| Viz2[Correlation Analysis<br/>Scatter, Heatmaps]
+        EDA -->|Patterns| Viz3[Multivariate Plots<br/>Pair plots, PCA viz]
+        
+        Viz1 --> Insights
+        Viz2 --> Insights
+        Viz3 --> Insights[Insights & Hypotheses]
+    end
+    
+    subgraph FeatureEng["⚙️ Feature Engineering"]
+        Insights --> FeatQ{Feature<br/>Issues?}
+        FeatQ -->|Too many features| DimRed[Dimensionality Reduction<br/>PCA, UMAP, t-SNE]
+        FeatQ -->|Imbalanced classes| Sampling[Resampling<br/>SMOTE, Undersampling]
+        FeatQ -->|Need encoding| Encoding[Encoding<br/>OneHot, Label, Target]
+        
+        DimRed --> ReadyData
+        Sampling --> ReadyData
+        Encoding --> ReadyData
+        FeatQ -->|Ready| ReadyData[Model-Ready Data]
+    end
+    
+    subgraph Modeling["🤖 Modeling"]
+        ReadyData --> ModelChoice{Choose<br/>Algorithm}
+        ModelChoice -->|Classification| MLClass[ML Classifiers<br/>See ML flowchart]
+        ModelChoice -->|Regression| MLReg[ML Regressors<br/>See ML flowchart]
+        ModelChoice -->|Clustering| MLClust[Clustering<br/>K-Means, DBSCAN]
+        
+        MLClass --> Eval
+        MLReg --> Eval
+        MLClust --> Eval[Model Evaluation]
+    end
+    
+    subgraph Evaluation["📈 Evaluation & Iteration"]
+        Eval --> Metrics{Check<br/>Metrics}
+        Metrics -->|Classification| ClassMetrics[Accuracy, F1, ROC-AUC<br/>Confusion Matrix]
+        Metrics -->|Regression| RegMetrics[MSE, MAE, R²<br/>Residual plots]
+        Metrics -->|Clustering| ClustMetrics[Silhouette, Davies-Bouldin<br/>Calinski-Harabasz]
+        
+        ClassMetrics --> Good{Good<br/>enough?}
+        RegMetrics --> Good
+        ClustMetrics --> Good
+        
+        Good -->|No| Iterate[Iterate:<br/>• Try different algorithms<br/>• Tune hyperparameters<br/>• Engineer more features<br/>• Get more data]
+        Good -->|Yes| Deploy[Deploy Model]
+        
+        Iterate -.->|Back to| FeatureEng
+        Iterate -.->|Or back to| Modeling
+    end
+    
+    RawData --> Missing
+    
+    style RawData fill:#ffcccc
+    style CleanData fill:#ccffcc
+    style ReadyData fill:#ccffcc
+    style Insights fill:#ffffcc
+    style Deploy fill:#90EE90
+    style Iterate fill:#FFD700
