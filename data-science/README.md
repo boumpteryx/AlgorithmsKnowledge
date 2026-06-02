@@ -4,6 +4,77 @@
 
 ## Overview
 
+
+## Historical Timeline
+
+The evolution of Data Science from statistical computing to AI-augmented analytics:
+
+```mermaid
+timeline
+    title Evolution of Data Science
+    
+    1960s-1970s : Statistical Computing
+                : SPSS (1968)
+                : SAS (1976)
+                : Exploratory Data Analysis
+                : Box-Jenkins Methods
+    
+    1980s : Database Era
+          : Relational Databases
+          : SQL Standard (1986)
+          : Data Warehousing Concepts
+          : OLAP Systems
+    
+    1990s : Data Mining Emerges
+          : KDD Process (1996)
+          : CRISP-DM (1996)
+          : Association Rules (Apriori)
+          : Decision Trees Popular
+          : R Language (1993)
+    
+    2000s : Big Data Revolution
+          : Hadoop (2006)
+          : MapReduce
+          : NoSQL Databases
+          : Python for Data Science
+          : Pandas Library (2008)
+    
+    2010-2012 : Data Science Profession
+              : "Data Scientist" Role Defined
+              : Kaggle Founded (2010)
+              : Scikit-learn Mature
+              : IPython Notebook (2011)
+              : Big Data Hype
+    
+    2013-2015 : Visualization & Tools
+              : Jupyter Notebook (2014)
+              : Tableau Popular
+              : D3.js Adoption
+              : Spark (2014)
+              : Data Journalism
+    
+    2016-2018 : ML Integration
+              : AutoML Emergence
+              : Deep Learning Integration
+              : Cloud Data Platforms
+              : Streaming Analytics
+              : DataOps Concepts
+    
+    2019-2020 : Modern Data Stack
+              : dbt (Data Build Tool)
+              : Snowflake IPO (2020)
+              : Data Mesh Concept
+              : Feature Stores
+              : MLOps Integration
+    
+    2021-Present : AI-Augmented Analytics
+                 : LLMs for Data Analysis
+                 : Automated Insights
+                 : Real-time Analytics
+                 : Data Observability
+                 : Ethical AI & Fairness
+```
+
 Data Science focuses on extracting insights from data through statistical analysis, visualization, and modeling. This section covers data manipulation techniques (dimensionality reduction, imputation, sampling, normalization, augmentation) and model analysis methods (fairness, complexity, explainability, metrics).
 
 ## End-to-End Data Science Workflow
