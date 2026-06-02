@@ -264,36 +264,6 @@ Quantum Computing leverages quantum mechanical phenomena such as superposition, 
 - [Distributed Systems](../distributed-systems/README.md) - Parallel computing
 - [Data Science](../data-science/README.md) - Data analysis
 
-## Further Learning
-
-<div style="color: green;">
-
-### Books
-- "Quantum Computation and Quantum Information" by Nielsen & Chuang
-- "Quantum Computing: An Applied Approach" by Jack Hidary
-- "Programming Quantum Computers" by Johnston, Harrigan & Gimeno-Segovia
-- "Quantum Computing for Computer Scientists" by Yanofsky & Mannucci
-
-### Online Courses
-- IBM Quantum Learning
-- Microsoft Quantum Development Kit
-- Qiskit Textbook
-- Coursera Quantum Computing courses
-
-### Research Resources
-- arXiv Quantum Physics section
-- Quantum Algorithm Zoo
-- Quantum Computing Report
-- IEEE Quantum Week
-
-### Platforms
-- IBM Quantum Experience
-- Amazon Braket
-- Azure Quantum
-- Google Quantum AI
-
-</div>
-
 ---
 
 *Quantum Computing represents a paradigm shift in computation, leveraging quantum mechanics to solve problems intractable for classical computers.*

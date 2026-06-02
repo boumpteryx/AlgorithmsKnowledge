@@ -255,25 +255,6 @@ The key difference is illustrated when clustering non-spherical data:
 - `weights`: Weighting scheme ('uniform', 'distance')
 - `metric`: Distance metric ('euclidean', 'manhattan')
 
-## Implementation Libraries
-
-<div style="color: green;">
-
-### Python Libraries
-- **scikit-learn** - Comprehensive ML library
-- **XGBoost** - Optimized gradient boosting
-- **LightGBM** - Fast gradient boosting
-- **CatBoost** - Categorical feature handling
-- **statsmodels** - Statistical modeling
-
-### R Libraries
-- **caret** - Unified ML interface
-- **randomForest** - Random forest implementation
-- **xgboost** - XGBoost for R
-- **e1071** - SVM and other algorithms
-
-</div>
-
 ## Best Practices
 
 ### Model Development
@@ -303,30 +284,6 @@ The key difference is illustrated when clustering non-spherical data:
 - [Data Science](../data-science/README.md) - Data preparation and analysis
 - [MLOps](../mlops/README.md) - Model deployment and monitoring
 - [Tabular Data](../modalities/tabular/README.md) - Techniques for structured data
-
-## Further Learning
-
-<div style="color: green;">
-
-### Books
-- "Hands-On Machine Learning" by Aurélien Géron
-- "The Elements of Statistical Learning" by Hastie, Tibshirani, Friedman
-- "Pattern Recognition and Machine Learning" by Christopher Bishop
-- "Introduction to Statistical Learning" by James, Witten, Hastie, Tibshirani
-
-### Courses
-- Andrew Ng's Machine Learning (Coursera)
-- Fast.ai Machine Learning Course
-- Stanford CS229
-- Applied Machine Learning (Columbia)
-
-### Documentation
-- scikit-learn User Guide
-- XGBoost Documentation
-- LightGBM Documentation
-- CatBoost Documentation
-
-</div>
 
 ---
 

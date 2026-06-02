@@ -289,30 +289,6 @@ Distributed Systems are collections of independent computers that appear to user
 - [Data Science](../data-science/README.md) - Data analysis
 - [Quantum Computing](../quantum-computing/README.md) - Quantum parallelism
 
-## Further Learning
-
-<div style="color: green;">
-
-### Books
-- "Designing Data-Intensive Applications" by Martin Kleppmann
-- "Distributed Systems" by Maarten van Steen & Andrew Tanenbaum
-- "Site Reliability Engineering" by Google
-- "Building Microservices" by Sam Newman
-
-### Courses
-- MIT 6.824: Distributed Systems
-- Coursera: Cloud Computing Specialization
-- Udacity: Scalable Microservices with Kubernetes
-- Linux Foundation: Kubernetes courses
-
-### Resources
-- Papers We Love - Distributed Systems
-- The Morning Paper blog
-- Distributed Systems Reading Group
-- Cloud provider documentation
-
-</div>
-
 ---
 
 *Distributed Systems enable the scale and reliability required for modern AI applications, from training massive models to serving billions of predictions.*

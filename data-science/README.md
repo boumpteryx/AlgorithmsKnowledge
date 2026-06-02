@@ -308,84 +308,23 @@ Data Science focuses on extracting insights from data through statistical analys
 
 ## Statistical Analysis
 
-### Hypothesis Testing
-
-- **[Parametric Tests](parametric-tests.md)** - Distributional assumptions
-  - t-test (one-sample, two-sample, paired)
-  - ANOVA (one-way, two-way)
-  - F-test
-  - Z-test
-  - Assumptions and violations
-
-- **[Non-parametric Tests](nonparametric-tests.md)** - Distribution-free
-  - Mann-Whitney U test
-  - Wilcoxon signed-rank test
-  - Kruskal-Wallis test
-  - Chi-square test
-  - Kolmogorov-Smirnov test
-
-- **[Multiple Testing](multiple-testing.md)** - Correction methods
-  - Bonferroni correction
-  - Holm-Bonferroni
-  - Benjamini-Hochberg (FDR)
-  - Family-wise error rate
-  - False discovery rate
-
-### Correlation and Causation
-
-- **[Correlation Analysis](correlation-analysis.md)** - Relationships
-  - Pearson correlation
-  - Spearman correlation
-  - Kendall's tau
-  - Point-biserial correlation
-  - Partial correlation
-
-- **[Causal Inference](causal-inference.md)** - Causality
-  - Randomized controlled trials
-  - Observational studies
-  - Confounding variables
-  - Propensity score matching
-  - Instrumental variables
-  - Difference-in-differences
+| Category | Method | Type | Key Techniques | Best For |
+|----------|--------|------|----------------|----------|
+| **Hypothesis Testing** | **[Parametric Tests](parametric-tests.md)** | Distributional assumptions | t-test, ANOVA, F-test, Z-test | Normal distributions, known parameters |
+| | **[Non-parametric Tests](nonparametric-tests.md)** | Distribution-free | Mann-Whitney U, Wilcoxon, Kruskal-Wallis, Chi-square, KS test | Non-normal data, ordinal data |
+| | **[Multiple Testing](multiple-testing.md)** | Correction methods | Bonferroni, Holm-Bonferroni, Benjamini-Hochberg (FDR) | Multiple comparisons |
+| **Correlation** | **[Correlation Analysis](correlation-analysis.md)** | Relationships | Pearson, Spearman, Kendall's tau, Point-biserial, Partial | Measuring associations |
+| **Causation** | **[Causal Inference](causal-inference.md)** | Causality | RCT, Observational studies, Propensity score matching, IV, DiD | Establishing cause-effect |
 
 ## Data Visualization
 
-### Exploratory Visualization
-
-- **[Univariate Plots](univariate-plots.md)** - Single variable
-  - Histograms
-  - Box plots
-  - Violin plots
-  - Density plots
-  - QQ plots
-
-- **[Bivariate Plots](bivariate-plots.md)** - Two variables
-  - Scatter plots
-  - Line plots
-  - Heatmaps
-  - Hexbin plots
-  - Joint plots
-
-- **[Multivariate Plots](multivariate-plots.md)** - Multiple variables
-  - Pair plots
-  - Parallel coordinates
-  - Radar charts
-  - 3D scatter plots
-  - Dimensionality reduction plots
-
-### Statistical Visualization
-
-- **[Distribution Plots](distribution-plots.md)** - Data distributions
-  - Empirical CDF
-  - Probability plots
-  - Quantile plots
-  - Kernel density estimation
-
-- **[Comparison Plots](comparison-plots.md)** - Group comparisons
-  - Bar charts
-  - Grouped box plots
-  - Strip plots
-  - Swarm plots
+| Category | Plot Type | Variables | Key Techniques | Best For |
+|----------|-----------|-----------|----------------|----------|
+| **Exploratory** | **[Univariate Plots](univariate-plots.md)** | Single | Histograms, Box plots, Violin plots, Density plots, QQ plots | Distribution analysis |
+| | **[Bivariate Plots](bivariate-plots.md)** | Two | Scatter plots, Line plots, Heatmaps, Hexbin plots, Joint plots | Relationships between two variables |
+| | **[Multivariate Plots](multivariate-plots.md)** | Multiple | Pair plots, Parallel coordinates, Radar charts, 3D scatter, DR plots | Complex relationships |
+| **Statistical** | **[Distribution Plots](distribution-plots.md)** | Single/Multiple | Empirical CDF, Probability plots, Quantile plots, KDE | Distribution properties |
+| | **[Comparison Plots](comparison-plots.md)** | Groups | Bar charts, Grouped box plots, Strip plots, Swarm plots | Group comparisons |
 
 ## Best Practices
 
@@ -416,32 +355,6 @@ Data Science focuses on extracting insights from data through statistical analys
 - [Deep Learning](../deep-learning/README.md) - Neural networks
 - [Tabular Data](../modalities/tabular/README.md) - Structured data techniques
 - [MLOps](../mlops/README.md) - Production considerations
-
-## Further Learning
-
-<div style="color: green;">
-
-### Books
-- "Python for Data Analysis" by Wes McKinney
-- "The Art of Statistics" by David Spiegelhalter
-- "Storytelling with Data" by Cole Nussbaumer Knaflic
-- "Fairness and Machine Learning" by Barocas, Hardt, Narayanan
-
-### Courses
-- Statistical Learning (Stanford)
-- Data Science Specialization (Johns Hopkins/Coursera)
-- Applied Data Science with Python (Michigan/Coursera)
-- Practical Statistics for Data Scientists
-
-### Libraries
-- **pandas** - Data manipulation
-- **NumPy** - Numerical computing
-- **scikit-learn** - ML and preprocessing
-- **matplotlib/seaborn** - Visualization
-- **SHAP** - Model explainability
-- **imbalanced-learn** - Imbalanced data
-
-</div>
 
 ---
 

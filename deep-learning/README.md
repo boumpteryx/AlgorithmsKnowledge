@@ -420,36 +420,6 @@ Deep Learning focuses on neural network architectures and training techniques. T
 - [Computer Vision](../modalities/vision/README.md) - Vision-specific techniques
 - [MLOps](../mlops/README.md) - Model deployment
 
-## Further Learning
-
-<div style="color: green;">
-
-### Books
-- "Deep Learning" by Goodfellow, Bengio, Courville
-- "Dive into Deep Learning" by Zhang et al.
-- "Understanding Deep Learning" by Simon Prince
-- "Deep Learning with PyTorch" by Stevens et al.
-
-### Courses
-- Stanford CS231n (Computer Vision)
-- Stanford CS224n (NLP)
-- Fast.ai Practical Deep Learning
-- DeepLearning.AI Specialization
-
-### Papers
-- "Attention Is All You Need" (Transformers)
-- "BERT: Pre-training of Deep Bidirectional Transformers"
-- "Denoising Diffusion Probabilistic Models"
-- "LoRA: Low-Rank Adaptation of Large Language Models"
-
-### Resources
-- Papers with Code
-- Distill.pub
-- arXiv.org
-- Hugging Face Blog
-
-</div>
-
 ---
 
 *Deep Learning provides powerful models and techniques for learning complex patterns from raw data across diverse domains.*
