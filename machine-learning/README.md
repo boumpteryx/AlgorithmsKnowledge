@@ -103,6 +103,41 @@ Machine Learning encompasses classical algorithms that learn patterns from data 
 
 ![Clustering Methods](diagrams/clustering-methods.png)
 
+**Core Concept**: Grouping similar data points without labels
+
+#### Clustering Paradigms
+
+There are two main approaches to clustering, each with different strengths:
+
+**Centroid-Based Clustering** (e.g., K-Means):
+- Defines clusters by central points (centroids)
+- Requires specifying number of clusters (K) in advance
+- Fast and scalable to large datasets
+- Works best with spherical, well-separated clusters
+- Sensitive to outliers and initialization
+- Examples: K-Means, K-Medoids
+
+**Density-Based Clustering** (e.g., DBSCAN):
+- Defines clusters as dense regions separated by sparse areas
+- Automatically determines number of clusters
+- Can find arbitrarily shaped clusters
+- Robust to outliers (marks them as noise)
+- Struggles with varying density clusters
+- Examples: DBSCAN, HDBSCAN, OPTICS
+
+**Visual Comparison**:
+
+The key difference is illustrated when clustering non-spherical data:
+- **K-Means** (left): Splits the circular pattern incorrectly because it assumes spherical clusters
+- **DBSCAN** (right): Correctly identifies the circular pattern as a single cluster based on density
+
+![K-Means vs DBSCAN Comparison](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*tc8UF-h0nQqUfLC8-0uInQ.gif)
+*Image source: [Clustering Like a Pro: DBSCAN Guide](https://medium.com/@sachinsoni600517/clustering-like-a-pro-a-beginners-guide-to-dbscan-6c8274c362c4)*
+
+**When to Choose**:
+- Use **K-Means** when: clusters are roughly spherical, you know K, speed is critical, data is large
+- Use **DBSCAN** when: clusters have arbitrary shapes, K is unknown, outliers present, varying densities
+
 | Model | Shape Flexibility | Needs K | Handles Noise | Speed | Scalability | Best For |
 |-------|------------------|---------|---------------|-------|-------------|----------|
 | **[K-Means](k-means.md)** | Spherical only | Yes | No | Very Fast | Excellent | Large data, spherical clusters |

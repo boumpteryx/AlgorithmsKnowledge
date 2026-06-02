@@ -14,6 +14,10 @@ Detailed information about t-SNE will be added here, including:
 - Best practices and guidelines
 - Related resources and references
 
+## External Resources
+
+- [t-SNE Clearly Explained](https://medium.com/data-science/t-sne-clearly-explained-d84c537f53a) - Comprehensive explanation of t-SNE algorithm and its applications
+
 ## Related Topics
 
 - [Back to Data Science](README.md)

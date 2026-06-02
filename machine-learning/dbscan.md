@@ -14,9 +14,14 @@ Detailed information about DBSCAN will be added here, including:
 - Best practices and guidelines
 - Related resources and references
 
+## External Resources
+
+- [Clustering Like a Pro: A Beginner's Guide to DBSCAN](https://medium.com/@sachinsoni600517/clustering-like-a-pro-a-beginners-guide-to-dbscan-6c8274c362c4) - Comprehensive beginner-friendly guide to DBSCAN algorithm
+
 ## Related Topics
 
 - [Back to Machine Learning](README.md)
+- [K-Means](k-means.md) - Centroid-based clustering alternative
 
 ---
 
