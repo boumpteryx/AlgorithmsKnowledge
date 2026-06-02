@@ -1,0 +1,23 @@
+# Elastic Net
+
+[← Back to Machine Learning](README.md)
+
+## Overview
+
+This page is currently under development. Please check back later for detailed content.
+
+## Coming Soon
+
+Detailed information about Elastic Net will be added here, including:
+- Core concepts and definitions
+- Practical examples and use cases
+- Best practices and guidelines
+- Related resources and references
+
+## Related Topics
+
+- [Back to Machine Learning](README.md)
+
+---
+
+*This page is part of the Algorithms Knowledge Base. Content is being actively developed.*
