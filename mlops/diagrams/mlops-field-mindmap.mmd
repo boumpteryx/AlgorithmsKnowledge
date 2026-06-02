@@ -1,0 +1,308 @@
+mindmap
+  root((MLOps))
+    Data Management
+      Data Versioning
+        DVC
+          Git-like Interface
+          Remote Storage
+          Pipeline Tracking
+        LakeFS
+          Git for Data Lakes
+          Branching
+          Merging
+        Delta Lake
+          ACID Transactions
+          Time Travel
+          Schema Evolution
+      Data Quality
+        Validation
+          Schema Validation
+          Range Checks
+          Consistency Rules
+        Profiling
+          Statistics
+          Distributions
+          Anomalies
+        Monitoring
+          Data Drift
+          Schema Changes
+          Quality Metrics
+      Feature Stores
+        Feast
+          Online Store
+          Offline Store
+          Feature Registry
+        Tecton
+          Real-time Features
+          Batch Features
+          Feature Pipelines
+        Hopsworks
+          Feature Groups
+          Training Datasets
+          Feature Monitoring
+    Model Development
+      Experiment Tracking
+        MLflow
+          Tracking Server
+          Model Registry
+          Projects
+          Models
+        Weights & Biases
+          Experiments
+          Sweeps
+          Artifacts
+          Reports
+        Neptune
+          Metadata Store
+          Comparison
+          Collaboration
+      Version Control
+        Code
+          Git
+          GitHub/GitLab
+          Branching Strategy
+        Models
+          Model Registry
+          Versioning
+          Lineage
+        Environments
+          Docker
+          Conda
+          Requirements
+      Hyperparameter Tuning
+        Search Methods
+          Grid Search
+          Random Search
+          Bayesian Optimization
+        Tools
+          Optuna
+          Ray Tune
+          Hyperopt
+        Strategies
+          Early Stopping
+          Pruning
+          Multi-fidelity
+    Training Infrastructure
+      Compute Resources
+        GPUs
+          NVIDIA
+          AMD
+          Cloud GPUs
+        TPUs
+          Google TPU
+          TPU Pods
+        CPUs
+          Multi-core
+          Distributed
+      Orchestration
+        Kubernetes
+          Pods
+          Services
+          Deployments
+        Kubeflow
+          Pipelines
+          Notebooks
+          Training Operators
+        Ray
+          Ray Train
+          Ray Tune
+          Ray Serve
+      Distributed Training
+        Data Parallelism
+          Horovod
+          PyTorch DDP
+          TensorFlow Strategy
+        Model Parallelism
+          Pipeline Parallel
+          Tensor Parallel
+          Megatron
+        Parameter Servers
+          PS Architecture
+          Async Updates
+    Model Deployment
+      Serving Platforms
+        TensorFlow Serving
+          REST API
+          gRPC
+          Model Versions
+        TorchServe
+          Multi-model
+          Metrics
+          Logging
+        Seldon Core
+          Kubernetes Native
+          A/B Testing
+          Canary
+        KServe
+          Serverless
+          Auto-scaling
+          Inference Graph
+      Containerization
+        Docker
+          Dockerfile
+          Images
+          Registries
+        Kubernetes
+          Deployments
+          Services
+          Ingress
+        Helm
+          Charts
+          Templates
+          Values
+      Deployment Strategies
+        Blue-Green
+          Zero Downtime
+          Instant Rollback
+        Canary
+          Gradual Rollout
+          Traffic Splitting
+        A/B Testing
+          Variant Testing
+          Metrics Comparison
+        Shadow Mode
+          Parallel Inference
+          Comparison
+    Monitoring
+      Model Monitoring
+        Performance Metrics
+          Accuracy
+          Latency
+          Throughput
+          Error Rate
+        Drift Detection
+          Data Drift
+            KL Divergence
+            PSI
+            KS Test
+          Concept Drift
+            Performance Degradation
+            Label Distribution
+        Explainability
+          SHAP
+          LIME
+          Feature Importance
+      System Monitoring
+        Infrastructure
+          CPU/GPU Usage
+          Memory
+          Network
+          Storage
+        Application
+          Request Rate
+          Response Time
+          Error Rate
+          Queue Length
+        Logging
+          Structured Logs
+          Log Aggregation
+          ELK Stack
+      Alerting
+        Thresholds
+          Static
+          Dynamic
+          Anomaly-based
+        Channels
+          Email
+          Slack
+          PagerDuty
+        Escalation
+          On-call Rotation
+          Severity Levels
+          Runbooks
+    CI/CD for ML
+      Continuous Integration
+        Code Testing
+          Unit Tests
+          Integration Tests
+          Linting
+        Data Testing
+          Schema Validation
+          Distribution Tests
+        Model Testing
+          Performance Tests
+          Bias Tests
+          Robustness Tests
+      Continuous Training
+        Triggers
+          Schedule-based
+          Data-driven
+          Performance-driven
+        Automation
+          Pipeline Execution
+          Model Training
+          Validation
+      Continuous Deployment
+        Automated Deployment
+          Model Packaging
+          Registry Update
+          Service Update
+        Rollback Strategy
+          Automatic Rollback
+          Manual Approval
+          Gradual Rollout
+    Governance
+      Model Governance
+        Approval Workflows
+          Review Process
+          Stakeholder Sign-off
+          Compliance Check
+        Model Registry
+          Versioning
+          Metadata
+          Lineage
+        Audit Trails
+          Change Tracking
+          Decision Logs
+          Access Logs
+      Compliance
+        Regulations
+          GDPR
+          CCPA
+          HIPAA
+          Industry Standards
+        Documentation
+          Model Cards
+          Data Sheets
+          Risk Assessment
+        Privacy
+          Data Anonymization
+          Differential Privacy
+          Federated Learning
+      Security
+        Access Control
+          RBAC
+          Authentication
+          Authorization
+        Model Security
+          Adversarial Robustness
+          Model Encryption
+          IP Protection
+        Data Security
+          Encryption at Rest
+          Encryption in Transit
+          Secure Storage
+    Tools & Platforms
+      Cloud Platforms
+        AWS
+          SageMaker
+          Lambda
+          ECS/EKS
+        GCP
+          Vertex AI
+          Cloud Functions
+          GKE
+        Azure
+          Azure ML
+          Functions
+          AKS
+      Open Source
+        MLflow
+        Kubeflow
+        Airflow
+        DVC
+      Monitoring Tools
+        Prometheus
+        Grafana
+        Evidently
+        WhyLabs

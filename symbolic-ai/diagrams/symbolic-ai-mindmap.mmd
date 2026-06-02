@@ -1,0 +1,372 @@
+mindmap
+  root((Symbolic AI))
+    Knowledge Representation
+      Semantic Networks
+        Nodes
+          Concepts
+          Entities
+          Objects
+        Edges
+          Relationships
+          IS-A Links
+          Part-of Links
+        Inheritance
+          Property Inheritance
+          Multiple Inheritance
+          Default Values
+      Frames
+        Slots
+          Attributes
+          Values
+          Constraints
+        Facets
+          Default Values
+          Range
+          Cardinality
+        Scripts
+          Stereotypical Situations
+          Event Sequences
+          Expectations
+      Ontologies
+        Classes
+          Hierarchy
+          Taxonomy
+          Subsumption
+        Properties
+          Object Properties
+          Data Properties
+          Restrictions
+        Individuals
+          Instances
+          Assertions
+        Languages
+          OWL
+          RDF
+          RDFS
+      Logic Systems
+        Propositional Logic
+          Propositions
+          Connectives
+          Truth Tables
+          Satisfiability
+        First-Order Logic
+          Predicates
+          Quantifiers
+          Variables
+          Unification
+        Higher-Order Logic
+          Functions as Variables
+          Lambda Calculus
+          Type Theory
+        Description Logic
+          Concepts
+          Roles
+          Reasoning Services
+    Reasoning Systems
+      Inference Methods
+        Forward Chaining
+          Data-driven
+          Bottom-up
+          Modus Ponens
+          Production Systems
+        Backward Chaining
+          Goal-driven
+          Top-down
+          Query Answering
+          Prolog
+        Resolution
+          Clause Form
+          Unification
+          Refutation
+          Theorem Proving
+      Non-monotonic Reasoning
+        Default Logic
+          Default Rules
+          Extensions
+          Skeptical/Credulous
+        Circumscription
+          Minimization
+          Abnormality
+          Closed World
+        Truth Maintenance
+          JTMS
+          ATMS
+          Dependency Networks
+      Probabilistic Reasoning
+        Bayesian Networks
+          DAG Structure
+          CPTs
+          Inference
+          Learning
+        Markov Logic
+          Weighted Formulas
+          Grounding
+          Inference
+        Fuzzy Logic
+          Membership Functions
+          Fuzzy Rules
+          Defuzzification
+    Search Algorithms
+      Uninformed Search
+        Breadth-First
+          Queue
+          Complete
+          Optimal Unit Cost
+          O(b^d) Space
+        Depth-First
+          Stack
+          Incomplete
+          O(bm) Space
+          Backtracking
+        Uniform-Cost
+          Priority Queue
+          Optimal
+          Dijkstra-like
+        Iterative Deepening
+          DFS with Depth Limit
+          Complete
+          Optimal
+          O(bd) Space
+      Informed Search
+        Greedy Best-First
+          Heuristic Only
+          Fast
+          Not Optimal
+          Local Minima
+        A* Search
+          f(n) = g(n) + h(n)
+          Optimal
+          Admissible Heuristic
+          Consistent Heuristic
+        IDA*
+          Iterative Deepening A*
+          Memory Efficient
+          Optimal
+        Beam Search
+          Limited Width
+          Incomplete
+          Fast
+      Adversarial Search
+        Minimax
+          Two-player
+          Zero-sum
+          Complete Tree
+          Optimal
+        Alpha-Beta Pruning
+          Branch Pruning
+          Same Result
+          Faster
+          Move Ordering
+        Monte Carlo Tree Search
+          Simulation
+          UCB1
+          Expansion
+          AlphaGo
+    Planning
+      Classical Planning
+        STRIPS
+          Preconditions
+          Effects
+          State Space
+          Plan Search
+        ADL
+          Conditional Effects
+          Quantifiers
+          Equality
+        GraphPlan
+          Planning Graph
+          Mutex Relations
+          Backward Search
+      Hierarchical Planning
+        HTN
+          Task Decomposition
+          Methods
+          Primitive Actions
+          Hierarchical Structure
+        Abstraction
+          Abstract States
+          Refinement
+          Hierarchical Search
+      Temporal Planning
+        Temporal Constraints
+          Duration
+          Deadlines
+          Scheduling
+        Temporal Logic
+          LTL
+          CTL
+          Model Checking
+      Probabilistic Planning
+        MDPs
+          States
+          Actions
+          Transitions
+          Rewards
+        POMDPs
+          Partial Observability
+          Belief States
+          Policy
+        Contingent Planning
+          Sensing Actions
+          Conditional Plans
+          Execution Monitoring
+    Expert Systems
+      Architecture
+        Knowledge Base
+          Facts
+          Rules
+          Heuristics
+        Inference Engine
+          Pattern Matching
+          Conflict Resolution
+          Explanation
+        User Interface
+          Query Interface
+          Explanation Facility
+          Knowledge Acquisition
+      Rule-Based Systems
+        Production Rules
+          IF-THEN
+          Condition-Action
+          Pattern Matching
+        Rete Algorithm
+          Efficient Matching
+          Network Structure
+          Incremental Updates
+        Conflict Resolution
+          Specificity
+          Recency
+          Priority
+      Fuzzy Systems
+        Fuzzification
+          Membership Functions
+          Linguistic Variables
+          Fuzzy Sets
+        Fuzzy Inference
+          Fuzzy Rules
+          Implication
+          Aggregation
+        Defuzzification
+          Centroid
+          Maximum
+          Mean of Maximum
+      Blackboard Systems
+        Blackboard
+          Shared Data
+          Hierarchical
+          Opportunistic
+        Knowledge Sources
+          Independent Modules
+          Specialists
+          Contribution
+        Control
+          Scheduler
+          Focus of Attention
+          Opportunistic Reasoning
+    Operations Research
+      Mathematical Programming
+        Linear Programming
+          Simplex Method
+          Interior Point
+          Dual Simplex
+        Integer Programming
+          Branch and Bound
+          Cutting Planes
+          Branch and Cut
+        Mixed Integer
+          MILP
+          Solvers
+          Applications
+        Nonlinear Programming
+          Convex Optimization
+          Gradient Methods
+          Newton Methods
+        Dynamic Programming
+          Bellman Equation
+          Value Iteration
+          Policy Iteration
+      Constraint Programming
+        CSP
+          Variables
+          Domains
+          Constraints
+        Propagation
+          Arc Consistency
+          Forward Checking
+          Backtracking
+        Global Constraints
+          AllDifferent
+          Cumulative
+          Table
+        Search Strategies
+          Variable Ordering
+          Value Ordering
+          Restart
+      Meta-heuristics
+        Local Search
+          Hill Climbing
+          Simulated Annealing
+          Tabu Search
+          VNS
+        Population-based
+          Genetic Algorithms
+          Evolution Strategies
+          Particle Swarm
+          Ant Colony
+        Hybrid
+          Memetic Algorithms
+          Matheuristics
+          LNS
+      Combinatorial Optimization
+        Exact Methods
+          Branch and Bound
+          Dynamic Programming
+          Integer Programming
+        Approximation
+          Greedy
+          Primal-Dual
+          Randomized Rounding
+        Problem Classes
+          TSP
+          VRP
+          Knapsack
+          Scheduling
+    Natural Language Processing
+      Syntax
+        Parsing
+          CFG
+          Dependency
+          Constituency
+        Grammar
+          Chomsky Hierarchy
+          Production Rules
+      Semantics
+        Logical Forms
+          Lambda Calculus
+          Predicate Logic
+        Semantic Parsing
+          Meaning Representation
+          Compositional
+      Pragmatics
+        Context
+        Speech Acts
+        Discourse
+    Historical Systems
+      MYCIN
+        Medical Diagnosis
+        Rule-based
+        Certainty Factors
+        Explanation
+      DENDRAL
+        Chemical Analysis
+        Structure Elucidation
+        Generate-and-Test
+      SHRDLU
+        Natural Language
+        Blocks World
+        Planning
+      Deep Blue
+        Chess
+        Alpha-Beta
+        Evaluation Function
+        Opening Book

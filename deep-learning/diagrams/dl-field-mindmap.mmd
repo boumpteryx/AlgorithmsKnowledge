@@ -1,0 +1,279 @@
+mindmap
+  root((Deep Learning))
+    Neural Network Architectures
+      Feedforward Networks
+        MLP
+          Input Layer
+          Hidden Layers
+          Output Layer
+          Fully Connected
+        Activation Functions
+          ReLU Family
+            ReLU
+            Leaky ReLU
+            PReLU
+            ELU
+          Smooth Functions
+            GELU
+            Swish
+            Mish
+          Classic Functions
+            Sigmoid
+            Tanh
+            Softmax
+      Convolutional Networks
+        CNN Basics
+          Convolution Layer
+          Pooling Layer
+          Stride & Padding
+          Feature Maps
+        Architectures
+          LeNet
+          AlexNet
+          VGG
+          ResNet
+            Skip Connections
+            Residual Blocks
+          Inception
+            Multi-scale
+            1x1 Convolutions
+          EfficientNet
+            Compound Scaling
+            MBConv Blocks
+        Applications
+          Image Classification
+          Object Detection
+            YOLO
+            Faster R-CNN
+            SSD
+          Segmentation
+            U-Net
+            Mask R-CNN
+            DeepLab
+      Recurrent Networks
+        RNN Basics
+          Hidden State
+          Temporal Dependencies
+          Backprop Through Time
+        LSTM
+          Cell State
+          Gates
+            Forget Gate
+            Input Gate
+            Output Gate
+          Long-term Memory
+        GRU
+          Update Gate
+          Reset Gate
+          Simplified LSTM
+        Bidirectional
+          Forward Pass
+          Backward Pass
+          Concatenation
+        Applications
+          Sequence Modeling
+          Time Series
+          Language Modeling
+      Transformers
+        Attention Mechanism
+          Self-Attention
+            Query, Key, Value
+            Scaled Dot-Product
+          Multi-Head Attention
+            Parallel Heads
+            Concatenation
+          Cross-Attention
+        Positional Encoding
+          Sinusoidal
+          Learned
+          Relative Position
+        Architectures
+          Encoder-only
+            BERT
+            RoBERTa
+            ALBERT
+          Decoder-only
+            GPT
+            GPT-2/3/4
+            LLaMA
+          Encoder-Decoder
+            T5
+            BART
+            mBART
+        Vision Transformers
+          ViT
+          Swin Transformer
+          DeiT
+      State Space Models
+        Mamba
+          Selective SSM
+          Hardware-aware
+          Linear Complexity
+        S4
+          Structured Matrices
+          Long Sequences
+    Training Techniques
+      Optimization
+        Gradient Descent
+          SGD
+          Momentum
+          Nesterov
+        Adaptive Methods
+          AdaGrad
+          RMSprop
+          Adam
+          AdamW
+          RAdam
+        Learning Rate
+          Scheduling
+            Step Decay
+            Exponential
+            Cosine Annealing
+          Warm-up
+          Cyclical LR
+      Regularization
+        Dropout
+          Standard Dropout
+          DropConnect
+          Spatial Dropout
+        Batch Normalization
+          Training Mode
+          Inference Mode
+          Layer Norm
+          Group Norm
+        Weight Decay
+          L2 Regularization
+          Decoupled Weight Decay
+        Data Augmentation
+          Image
+            Flip, Rotate
+            Crop, Scale
+            Color Jitter
+            Mixup, CutMix
+          Text
+            Back-translation
+            Synonym Replacement
+            Random Insertion
+      Advanced Training
+        Transfer Learning
+          Pre-training
+          Fine-tuning
+          Feature Extraction
+        Multi-task Learning
+          Hard Sharing
+          Soft Sharing
+        Curriculum Learning
+          Easy to Hard
+          Self-paced
+        Distillation
+          Teacher-Student
+          Self-distillation
+          Online Distillation
+    Generative Models
+      Variational Autoencoders
+        Encoder
+        Latent Space
+        Decoder
+        KL Divergence
+        Reparameterization
+      GANs
+        Generator
+        Discriminator
+        Adversarial Loss
+        Architectures
+          DCGAN
+          StyleGAN
+          CycleGAN
+          Pix2Pix
+        Training Tricks
+          Wasserstein Loss
+          Spectral Norm
+          Progressive Growing
+      Diffusion Models
+        Forward Process
+          Noise Addition
+          Markov Chain
+        Reverse Process
+          Denoising
+          Score Matching
+        Architectures
+          DDPM
+          DDIM
+          Stable Diffusion
+          Latent Diffusion
+      Autoregressive Models
+        PixelCNN
+        WaveNet
+        Transformer-based
+          GPT for Images
+    Model Optimization
+      Compression
+        Quantization
+          Post-training
+          Quantization-aware
+          INT8, INT4
+        Pruning
+          Magnitude-based
+          Structured
+          Lottery Ticket
+        Knowledge Distillation
+          Response-based
+          Feature-based
+          Relation-based
+      Efficient Architectures
+        MobileNet
+          Depthwise Separable
+          Inverted Residuals
+        EfficientNet
+          Compound Scaling
+          Neural Architecture Search
+        TinyML
+          Edge Deployment
+          Model Compression
+      Hardware Acceleration
+        GPU Optimization
+          CUDA
+          cuDNN
+          Mixed Precision
+        TPU
+          XLA Compilation
+          Tensor Cores
+        Specialized Hardware
+          Neural Engines
+          NPUs
+    Advanced Topics
+      Neural Architecture Search
+        Search Space
+        Search Strategy
+          Random Search
+          Reinforcement Learning
+          Gradient-based
+        Performance Estimation
+          Training from Scratch
+          Weight Sharing
+      Meta-Learning
+        Few-shot Learning
+          Prototypical Networks
+          Matching Networks
+          MAML
+        Zero-shot Learning
+          Semantic Embeddings
+          Generative Models
+      Self-supervised Learning
+        Contrastive Learning
+          SimCLR
+          MoCo
+          BYOL
+        Masked Modeling
+          BERT-style
+          MAE
+        Predictive Learning
+          Rotation Prediction
+          Jigsaw Puzzles
+      Physics-informed Learning
+        PINNs
+          Physics Loss
+          Boundary Conditions
+        Neural ODEs
+          Continuous Depth
+          Adjoint Method

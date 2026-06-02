@@ -1,0 +1,327 @@
+mindmap
+  root((Distributed Systems))
+    Core Principles
+      Scalability
+        Horizontal Scaling
+          Add More Nodes
+          Load Distribution
+          Sharding
+        Vertical Scaling
+          Increase Resources
+          Hardware Upgrade
+          Limitations
+        Elasticity
+          Auto-scaling
+          Dynamic Resources
+          Cost Optimization
+      Fault Tolerance
+        Redundancy
+          Replication
+          Backup Systems
+          Failover
+        Recovery
+          Checkpointing
+          Rollback
+          Self-healing
+        Resilience Patterns
+          Circuit Breaker
+          Retry with Backoff
+          Bulkhead
+      Consistency
+        Strong Consistency
+          Linearizability
+          Sequential Consistency
+          Synchronous Replication
+        Eventual Consistency
+          BASE
+          Asynchronous Replication
+          Conflict Resolution
+        Consistency Models
+          Causal Consistency
+          Read-your-writes
+          Monotonic Reads
+      CAP Theorem
+        Consistency
+          All Nodes Same Data
+          Synchronization
+        Availability
+          System Always Responds
+          Uptime
+        Partition Tolerance
+          Network Failures
+          Split-brain
+        Tradeoffs
+          CP Systems
+          AP Systems
+          CA Systems
+    Architecture Patterns
+      Microservices
+        Service Design
+          Single Responsibility
+          Bounded Context
+          API Gateway
+        Communication
+          REST
+          gRPC
+          Message Queues
+        Service Mesh
+          Istio
+          Linkerd
+          Envoy
+      Event-Driven
+        Event Sourcing
+          Event Store
+          Event Replay
+          CQRS
+        Message Brokers
+          Kafka
+          RabbitMQ
+          NATS
+        Pub/Sub
+          Topics
+          Subscriptions
+          Fan-out
+      Serverless
+        Functions as a Service
+          AWS Lambda
+          Google Cloud Functions
+          Azure Functions
+        Event Triggers
+          HTTP
+          Queue
+          Schedule
+        Cold Start
+          Optimization
+          Warm-up
+    Data Management
+      Databases
+        SQL
+          PostgreSQL
+          MySQL
+          Replication
+        NoSQL
+          Document
+            MongoDB
+            CouchDB
+          Key-Value
+            Redis
+            DynamoDB
+          Column-family
+            Cassandra
+            HBase
+          Graph
+            Neo4j
+            JanusGraph
+      Data Partitioning
+        Sharding
+          Hash-based
+          Range-based
+          Directory-based
+        Consistent Hashing
+          Virtual Nodes
+          Load Balancing
+        Replication
+          Master-Slave
+          Master-Master
+          Quorum
+      Distributed Transactions
+        Two-Phase Commit
+          Prepare Phase
+          Commit Phase
+          Coordinator
+        Saga Pattern
+          Choreography
+          Orchestration
+          Compensation
+        Eventual Consistency
+          Conflict Resolution
+          Vector Clocks
+          CRDTs
+    Communication
+      Protocols
+        HTTP/REST
+          Stateless
+          CRUD Operations
+          JSON/XML
+        gRPC
+          Protocol Buffers
+          Streaming
+          Bidirectional
+        WebSockets
+          Full-duplex
+          Real-time
+          Persistent Connection
+      Message Patterns
+        Point-to-Point
+          Direct Communication
+          Request-Response
+        Broadcast
+          One-to-All
+          Multicast
+        Publish-Subscribe
+          Topics
+          Subscribers
+          Decoupling
+      RPC
+        Synchronous
+          Blocking Calls
+          Timeout Handling
+        Asynchronous
+          Non-blocking
+          Callbacks
+          Futures/Promises
+    Distributed Computing
+      MapReduce
+        Map Phase
+          Parallel Processing
+          Key-Value Pairs
+        Reduce Phase
+          Aggregation
+          Combining
+        Frameworks
+          Hadoop
+          Spark
+      Stream Processing
+        Real-time Processing
+          Apache Flink
+          Apache Storm
+          Kafka Streams
+        Windowing
+          Tumbling
+          Sliding
+          Session
+        State Management
+          Checkpointing
+          Recovery
+      Batch Processing
+        ETL Pipelines
+          Extract
+          Transform
+          Load
+        Scheduling
+          Airflow
+          Luigi
+          Prefect
+    ML-Specific
+      Distributed Training
+        Data Parallelism
+          Split Data
+          Sync Gradients
+          All-Reduce
+        Model Parallelism
+          Split Model
+          Pipeline Stages
+          Tensor Parallel
+        Parameter Servers
+          Centralized
+          Decentralized
+          Async Updates
+      Distributed Inference
+        Model Serving
+          Load Balancing
+          Batching
+          Caching
+        Edge Computing
+          Local Inference
+          Model Compression
+          Quantization
+        Federated Learning
+          Privacy-preserving
+          Local Training
+          Aggregation
+    Orchestration
+      Container Orchestration
+        Kubernetes
+          Pods
+          Services
+          Deployments
+          StatefulSets
+        Docker Swarm
+          Nodes
+          Services
+          Stacks
+      Workflow Orchestration
+        Airflow
+          DAGs
+          Operators
+          Schedulers
+        Kubeflow
+          Pipelines
+          Components
+          Experiments
+      Resource Management
+        Scheduling
+          FIFO
+          Fair Share
+          Priority
+        Resource Allocation
+          CPU
+          Memory
+          GPU
+    Monitoring & Observability
+      Metrics
+        System Metrics
+          CPU, Memory
+          Network
+          Disk I/O
+        Application Metrics
+          Request Rate
+          Latency
+          Error Rate
+        Tools
+          Prometheus
+          Grafana
+          Datadog
+      Logging
+        Centralized Logging
+          Log Aggregation
+          Search
+          Analysis
+        Tools
+          ELK Stack
+          Splunk
+          Loki
+      Tracing
+        Distributed Tracing
+          Trace Context
+          Spans
+          Correlation
+        Tools
+          Jaeger
+          Zipkin
+          OpenTelemetry
+    Reliability Patterns
+      Resilience
+        Circuit Breaker
+          Open State
+          Closed State
+          Half-open State
+        Retry Logic
+          Exponential Backoff
+          Jitter
+          Max Attempts
+        Timeout
+          Connection Timeout
+          Read Timeout
+          Circuit Timeout
+      Load Management
+        Load Balancing
+          Round Robin
+          Least Connections
+          Weighted
+        Rate Limiting
+          Token Bucket
+          Leaky Bucket
+          Fixed Window
+        Throttling
+          Request Queuing
+          Backpressure
+      Chaos Engineering
+        Fault Injection
+          Network Failures
+          Service Failures
+          Resource Exhaustion
+        Tools
+          Chaos Monkey
+          Gremlin
+          Litmus
